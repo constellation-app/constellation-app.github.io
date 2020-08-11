@@ -1,0 +1,22 @@
+{
+    "name": "Constellation",
+    "version": "1.0.0",
+    "private": true,
+    "keywords": [],
+    "author": "arcturus",
+    "contributors": [],
+    "devDependencies": {
+        "css-loader": "^4.2.1",
+        "extract-loader": "^5.1.0",
+        "file-loader": "^6.0.0",
+        "postcss-loader": "^3.0.0",
+        "sass": "^1.26.10",
+        "sass-loader": "^9.0.3",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    },
+    "scripts": {
+        "build": "webpack",
+        "watch": "webpack --watch"
+    }
+}
