@@ -9,7 +9,7 @@ module.exports = {
     ],
     output: {
         filename: 'app.js',
-        path: path.resolve(__dirname, 'public_html/assets/js')
+        path: path.resolve(__dirname, 'docs/assets/js')
     },
     module: {
         rules: [
