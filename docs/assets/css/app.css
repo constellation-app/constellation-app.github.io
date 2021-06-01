@@ -158,9 +158,8 @@ em, i {
 }
 
 a {
-  color: inherit;
+  color: #9e248e;
   border-bottom: solid 1px rgba(128, 128, 128, 0.15);
-  text-decoration: none;
   -moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
   -webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
   -ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
