@@ -182,9 +182,8 @@ em, i {
 }
 
 a {
-    color: inherit;
+    color: $primary-color;
     border-bottom: solid 1px rgba(128, 128, 128, 0.15);
-    text-decoration: none;
     @include vendor('transition', ('background-color 0.35s ease-in-out', 'color 0.35s ease-in-out', 'border-bottom-color 0.35s ease-in-out'));
 
     &:hover {
