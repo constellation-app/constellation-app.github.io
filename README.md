@@ -12,7 +12,7 @@ Presently the images and html files live in the `docs` folder. The
 javascript and css files are inside the `src` folder and running the
 build script will compile, minify and move the files into `docs/assets`.
 
-The colours of the site are controlled my `src/sass/libs/_vars.scss`.
+The colours of the site are controlled by `src/sass/libs/_vars.scss`.
 
 # How to Build
 
