@@ -15,10 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: prepare output directories
         run: |
-          for d /r in **/; do
-            echo "making dir at:"$d
-            mkdir -p output/$d
-          done
+          find . -type d -exec mkdir -p -- output/{}
       - name: convert md to html
         run: |
           find ./ -iname '*.md' -type f -exec sh -c 'pandoc ${0} -o output/${0%.md}.html' {} \;
