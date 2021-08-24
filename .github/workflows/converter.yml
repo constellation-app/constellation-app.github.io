@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: prepare output directories
         run: |
-          for /D /R %%a in */docs/help; do
+          for d in **/; do
             echo "making dir at:"$d
             mkdir -p output/$d
           done
