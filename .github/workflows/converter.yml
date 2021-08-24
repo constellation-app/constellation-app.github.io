@@ -16,11 +16,12 @@ jobs:
       - name: prepare output directories
         run: |
           for d in */; do
+            echo "making dir at:"$d
             mkdir -p output/$d
           done
       - name: convert md to html
         run: |
-          find ./ -iname '*.md' -type f -exec sh -c 'pandoc ${0} -o output/${0%.md}.html' {} \;
+          find -iname '*.md' -type f -exec sh -c 'pandoc ${0} -o output/${0%.md}.html' {} \;
       - uses: actions/upload-artifact@master
         with:
           name: output
