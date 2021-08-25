@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-20.04
     container:
       image: docker://pandoc/latex:2.9
-      options: --entrypoint=sh
+      options: --entrypoint=bash
     steps:
       - uses: actions/checkout@v2
       - name: prepare output directories
@@ -23,7 +23,6 @@ jobs:
               echo "making dir:"$dir
             fi
           done
-        shell: bash
       - name: convert md to html
         run: |
           find ./ -iname '*.md' -type f -exec sh -c 'pandoc ${0} -o output/${0%.md}.html' {} \;
