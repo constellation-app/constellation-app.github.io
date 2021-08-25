@@ -14,15 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: prepare output directories
-        run: |
-          shopt -s globstar
-          for dir in ./**/docs/help/**;
-          do
-            if [ -d "$dir" ]; then
-              mkdir -p output/$dir
-              echo "making dir:"$dir
-            fi
-          done
+        run: ./test.sh
       - name: convert md to html
         run: |
           find ./ -iname '*.md' -type f -exec sh -c 'pandoc ${0} -o output/${0%.md}.html' {} \;
