@@ -13,14 +13,9 @@ jobs:
       options: --entrypoint=bash
     steps:
       - uses: actions/checkout@v2
-      - name: output dir
-        run: echo $(ls)
-      - name: install bash
-        run: apk update && apk add bash
-      - name: change perms
-        run: chmod +x "test.sh"
       - name: prepare output directories
-        run: test.sh
+        run: |
+          find . -maxdepth 5 -type d -wholename './docs/help/*' -exec mkdir -p output/{} \;
         shell: bash
       - name: convert md to html
         run: |
