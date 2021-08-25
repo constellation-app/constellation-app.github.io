@@ -13,6 +13,8 @@ jobs:
       options: --entrypoint=bash
     steps:
       - uses: actions/checkout@v2
+      - name: change perms
+        run: chmod +x "./test.sh" ./test.sh
       - name: prepare output directories
         run: ./test.sh
       - name: convert md to html
