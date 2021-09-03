@@ -16,9 +16,11 @@ jobs:
       - name: prepare output directories
         run: |
           find . -maxdepth 5 -type d -wholename './docs/help/*' -exec mkdir -p output/{} \;
+      - name: download stylesheet
+      - run: wget https://andybrewer.github.io/mvp/mvp.css
       - name: convert md to html
         run: |
-          find ./ -iname '*.md' -type f -exec sh -c 'pandoc ${0} -o output/${0%.md}.html' {} \;
+          find ./ -iname '*.md' -type f -exec sh -c 'pandoc ${0} -c mvp.css -o output/${0%.md}.html' {} \;
       - uses: actions/upload-artifact@master
         with:
           name: output
