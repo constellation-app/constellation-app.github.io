@@ -1,3 +1,5 @@
+<link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+
 # Chinese Whispers Clustering
 
 **Chinese Whispers - an Efficient Graph Clustering Algorithm and its
