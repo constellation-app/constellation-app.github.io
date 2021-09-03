@@ -20,7 +20,7 @@ jobs:
         run: wget https://andybrewer.github.io/mvp/mvp.css
       - name: convert md to html
         run: |
-          find ./ -iname '*.md' -type f -exec sh -c 'pandoc ${0} --css https://andybrewer.github.io/mvp/mvp.css -o output/${0%.md}.html' {} \;
+          find ./ -iname '*.md' -type f -exec sh -c 'pandoc -s ${0} --css https://andybrewer.github.io/mvp/mvp.css -o output/${0%.md}.html' {} \;
       - uses: actions/upload-artifact@master
         with:
           name: output
