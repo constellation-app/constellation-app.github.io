@@ -95,7 +95,7 @@ html {
 
 body {
   background: #f0f4f4;
-  color: #5b5b5b;
+  color: #1b1a1a;
   font-size: 15pt;
   line-height: 1.85em;
   font-family: "Source Sans Pro", sans-serif;
@@ -1889,7 +1889,7 @@ body.homepage.is-preload #header:after {
 }
 #nav > ul > li > a, #nav > ul > li > span {
   display: block;
-  color: inherit;
+  color: #fff;
   text-decoration: none;
   border: 0;
   outline: 0;
@@ -2389,7 +2389,7 @@ button,
   #navButton .toggle:before {
     text-decoration: none;
     font-style: normal;
-    content: "";
+    content: "\f0c9";
     color: #fff;
     color: rgba(255, 255, 255, 0.75);
     text-align: center;
