@@ -13,8 +13,7 @@ jobs:
     steps:
       - name: get curl
         run: |
-          sudo apt update \
-          sudo apt install curl
+          apk add curl
       - name: Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
