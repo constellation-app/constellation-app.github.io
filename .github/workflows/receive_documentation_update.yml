@@ -32,6 +32,7 @@ jobs:
           repository: aldebaran30701/constellation
           path: const
           #ref: documentation_update
+      - name: converting
         run: |
             // convert .md to HTML in place
             // find all html and copy to /pages/docs/*
@@ -48,6 +49,7 @@ jobs:
           # git commit -m "Automated Help Page Update"
           # git push
 
+      - name: upload items
       - uses: actions/upload-artifact@master
         with:
           name: upload pages/constydocs
