@@ -6,7 +6,10 @@ on: [repository_dispatch]
 
 jobs:
   ping-pong:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    container:
+      image: docker://pandoc/latex:2.9
+      options: --entrypoint=bash
     steps:
       - name: Event Information
         run: |
