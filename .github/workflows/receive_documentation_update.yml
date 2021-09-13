@@ -19,7 +19,7 @@ jobs:
           -u ${{ secrets.ACCESS_TOKEN }} \
           --data '{"event_type": "pong", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
       - name: Build file structure for placing TOCfiles within
-       run: |
+        run: |
           echo "build directory structure for .md .png .html within constellation repo docs/resources"
 
       - name: Checkout GHPages
@@ -32,7 +32,10 @@ jobs:
           repository: aldebaran30701/constellation
           path: const
           #ref: documentation_update
-            - run: |
+        run: |
+            // convert .md to HTML in place
+            // find all html and copy to /pages/docs/*
+            // commit
                 echo "TODO: getting all toc files, getting all help files, getting all resources" \
                 find /const -maxdepth 15 -type d -path '*/docs/*' -exec mkdir -p /pages/constydocs/{} \
                 echo "TODO: Converting necessary files to HTML && pushing changes to this GHPages repo" \
