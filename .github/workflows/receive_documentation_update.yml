@@ -11,6 +11,10 @@ jobs:
       image: docker://pandoc/latex:2.9
       options: --entrypoint=bash
     steps:
+      - name: get curl
+        run: |
+          sudo apt update \
+          sudo apt install curl
       - name: Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
@@ -41,7 +45,7 @@ jobs:
                find */src/ -path '*/docs/*' -name "*.md" | \
                 while read x \
                 do \
-               	 pandoc --template="onlinePandocTemplate.txt" -f commonmark -t html $x > "$x".html \
+               	 pandoc --template="const/onlinePandocTemplate.txt" -f commonmark -t html $x > "$x".html \
                 done \
                 echo "done converting...." \
                 echo "renaming all .md.html to .html" \
@@ -51,10 +55,10 @@ jobs:
                         mv "$x" "${x%.md.html}".html \
                     done \
                 echo "done renaming...." \
-                echo "Moving all html png jpg to /pages/constydocs" \
-                find */src/ -path '*/docs/*' -name "*html" | xargs cp --parents -t /pages/constydocs \
-                find */src/ -path '*/docs/*' -name "*.png" | xargs cp --parents -t /pages/constydocs \
-                find */src/ -path '*/docs/*' -name "*.jpg" | xargs cp --parents -t /pages/constydocs
+                echo "Moving all html png jpg to /pages/docs/constydocs" \
+                find */src/ -path '*/docs/*' -name "*html" | xargs cp --parents -t /pages/docs/constydocs \
+                find */src/ -path '*/docs/*' -name "*.png" | xargs cp --parents -t /pages/docs/constydocs \
+                find */src/ -path '*/docs/*' -name "*.jpg" | xargs cp --parents -t /pages/docs/constydocs
                 echo "done moving...." \
 
         # Make changes here and then commit them
@@ -68,4 +72,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: upload pages/constydocs
-          path: /pages/constydocs
+          path: /pages/docs/constydocs
