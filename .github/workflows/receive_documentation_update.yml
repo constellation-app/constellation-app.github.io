@@ -34,20 +34,32 @@ jobs:
           #ref: documentation_update
       - name: converting
         run: |
-            // convert .md to HTML in place
-            // find all html and copy to /pages/docs/*
-            // commit
-                echo "TODO: getting all toc files, getting all help files, getting all resources" \
-                find /const -maxdepth 15 -type d -path '*/docs/*' -exec mkdir -p /pages/constydocs/{} \
-                echo "TODO: Converting necessary files to HTML && pushing changes to this GHPages repo" \
-                find /const -maxdepth 15 -iname '*.md' -type f -path '*/docs/*' -exec sh -c 'pandoc -s ${0} -o /pages/constydocs/${0%.md}.html' {}
+              echo "converting .md to .html using template" \
+               find */src/ -path '*/docs/*' -name "*.md" | \
+                while read x \
+                do \
+               	 pandoc --template="onlinePandocTemplate.txt" -f commonmark -t html $x > "$x".html \
+                done \
+                echo "done converting...." \
+                echo "renaming all .md.html to .html" \
+                find */src/ -name *.md.html | \
+                    while read x \
+                    do \
+                        mv "$x" "${x%.md.html}".html \
+                    done \
+                echo "done renaming...." \
+                echo "Moving all html png jpg to /pages/constydocs" \
+                find */src/ -path '*/docs/*' -name "*html" | xargs cp --parents -t /pages/constydocs \
+                find */src/ -path '*/docs/*' -name "*.png" | xargs cp --parents -t /pages/constydocs \
+                find */src/ -path '*/docs/*' -name "*.jpg" | xargs cp --parents -t /pages/constydocs
+                echo "done moving...." \
 
-          # Make changes here and then commit them
-          # git config user.name github-actions
-          # git config user.email github-actions@github.com
-          # git add .
-          # git commit -m "Automated Help Page Update"
-          # git push
+        # Make changes here and then commit them
+        # git config user.name github-actions
+        # git config user.email github-actions@github.com
+        # git add .
+        # git commit -m "Automated Help Page Update"
+        # git push
 
       - name: upload items
         uses: actions/upload-artifact@master
