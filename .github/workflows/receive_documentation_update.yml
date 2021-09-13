@@ -27,7 +27,7 @@ jobs:
         with:
           path: pages
       - name: Get documentation files
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
         with:
           repository: aldebaran30701/constellation
           path: const
@@ -50,7 +50,7 @@ jobs:
           # git push
 
       - name: upload items
-      - uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@master
         with:
           name: upload pages/constydocs
           path: /pages/constydocs
