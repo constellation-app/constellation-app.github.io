@@ -1,0 +1,51 @@
+name: Receive documentation update trigger
+# Receives a trigger from Constellation repository to update documentation.
+# Sends a pong request to acknowledge that it has been received.
+
+on: [repository_dispatch]
+
+jobs:
+  ping-pong:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event Information
+        run: |
+          echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
+      - name: PONG - Dispatch response to received PING
+        if: github.event.action == 'ping'
+        run: |
+          curl -X POST https://api.github.com/repos/aldebaran30701/constellation/dispatches \
+          -H 'Accept: application/vnd.github.v3+json' \
+          -u ${{ secrets.ACCESS_TOKEN }} \
+          --data '{"event_type": "pong", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+      - name: Build file structure for placing TOCfiles within
+       run: |
+          echo "build directory structure for .md .png .html within constellation repo docs/resources"
+
+      - name: Checkout GHPages
+        uses: actions/checkout@v2
+        with:
+          path: pages
+      - name: Get documentation files
+      - uses: actions/checkout@v2
+        with:
+          repository: aldebaran30701/constellation
+          path: const
+          #ref: documentation_update
+            - run: |
+                echo "TODO: getting all toc files, getting all help files, getting all resources" \
+                find /const -maxdepth 15 -type d -path '*/docs/*' -exec mkdir -p /pages/constydocs/{} \
+                echo "TODO: Converting necessary files to HTML && pushing changes to this GHPages repo" \
+                find /const -maxdepth 15 -iname '*.md' -type f -path '*/docs/*' -exec sh -c 'pandoc -s ${0} -o /pages/constydocs/${0%.md}.html' {}
+
+          # Make changes here and then commit them
+          # git config user.name github-actions
+          # git config user.email github-actions@github.com
+          # git add .
+          # git commit -m "Automated Help Page Update"
+          # git push
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: upload pages/constydocs
+          path: /pages/constydocs
