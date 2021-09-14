@@ -53,4 +53,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: upload pages/constydocs
-          path: /pages/docs/constydocs
+          path: /pages/docs
