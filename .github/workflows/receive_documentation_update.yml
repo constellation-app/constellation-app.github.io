@@ -24,10 +24,6 @@ jobs:
           -H 'Accept: application/vnd.github.v3+json' \
           -u ${{ secrets.ACCESS_TOKEN }} \
           --data '{"event_type": "pong", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
-      - name: Build file structure for placing TOCfiles within
-        run: |
-          echo "build directory structure for .md .png .html within constellation repo docs/resources"
-
       - name: Checkout GHPages
         uses: actions/checkout@v2
         with:
@@ -36,7 +32,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: aldebaran30701/constellation
-          path: const
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: ./const
           #ref: documentation_update
       - name: converting
         run: |
