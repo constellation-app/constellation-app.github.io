@@ -35,9 +35,8 @@ jobs:
           path: ./const
           #ref: documentation_update
       - name: chmod
-        shell: bash
         run: |
-              chmod +x chmod +x "${GITHUB_WORKSPACE}/.github/workflows/file_convert.sh"
+              chmod +x "${GITHUB_WORKSPACE}/.github/workflows/file_convert.sh"
 
       - name: run file_convert
         shell: bash
