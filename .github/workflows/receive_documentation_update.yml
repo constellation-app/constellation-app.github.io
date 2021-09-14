@@ -34,9 +34,14 @@ jobs:
           repository: aldebaran30701/constellation
           path: ./const
           #ref: documentation_update
-      - name: mkdirs
+      - name: cd
         run: |
-          mkdir ~/pages/docs/constydocs
+          cd ~/ \
+          ls \
+          cd pages \
+          ls \
+          cd docs \
+          ls 
       - name: chmod
         run: |
               chmod +x ./pages/.github/workflows/file_convert.sh
