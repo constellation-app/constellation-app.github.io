@@ -36,11 +36,11 @@ jobs:
           #ref: documentation_update
       - name: chmod
         run: |
-              chmod +x file_convert.sh
+              chmod +x ./pages/.github/workflows/file_convert.sh
 
       - name: run file_convert
         run: |
-              ./file_convert.sh
+              ./pages/.github/workflows/file_convert.sh
         # Make changes here and then commit them
         # git config user.name github-actions
         # git config user.email github-actions@github.com
