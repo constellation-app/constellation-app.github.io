@@ -39,8 +39,7 @@ jobs:
 
       - name: mkdir
         run: |
-              cd ./pages/docs \
-              mkdir constydocs
+              mkdir -p ./pages/docs/constydocs
       - name: chmod convert
         run: |
               chmod +x ./pages/.github/workflows/file_convert.sh
