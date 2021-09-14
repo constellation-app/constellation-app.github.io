@@ -52,5 +52,5 @@ jobs:
       - name: upload items
         uses: actions/upload-artifact@master
         with:
-          name: upload pages/constydocs
+          name: upload pages
           path: ./pages/docs
