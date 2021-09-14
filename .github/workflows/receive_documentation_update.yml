@@ -50,11 +50,7 @@ jobs:
                         mv "$x" "${x%.md.html}".html \
                     done \
                 echo "done renaming...." \
-                echo "Moving all html png jpg to /pages/docs/constydocs" \
-                find */src/ -path '*/docs/*' -name "*html" | xargs cp --parents -t /pages/docs/constydocs \
-                find */src/ -path '*/docs/*' -name "*.png" | xargs cp --parents -t /pages/docs/constydocs \
-                find */src/ -path '*/docs/*' -name "*.jpg" | xargs cp --parents -t /pages/docs/constydocs \
-                echo "done moving...."
+                echo "Moving all html png jpg to /pages/docs/constydocs" ; find */src/ -path '*/docs/*' -name "*html" | xargs cp --parents -t /pages/docs/constydocs ; find */src/ -path '*/docs/*' -name "*.png" | xargs cp --parents -t /pages/docs/constydocs ; find */src/ -path '*/docs/*' -name "*.jpg" | xargs cp --parents -t /pages/docs/constydocs
 
         # Make changes here and then commit them
         # git config user.name github-actions
