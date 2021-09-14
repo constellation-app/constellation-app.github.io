@@ -35,12 +35,14 @@ jobs:
           path: ./const
           #ref: documentation_update
       - name: chmod
+        shell: bash
         run: |
-              chmod +x ./pages/.github/workflows/file_convert.sh
+              chmod +x chmod +x "${GITHUB_WORKSPACE}/.github/workflows/file_convert.sh"
 
       - name: run file_convert
+        shell: bash
         run: |
-              ./pages/.github/workflows/file_convert.sh
+            "${GITHUB_WORKSPACE}/.github/workflows/file_convert.sh"
         # Make changes here and then commit them
         # git config user.name github-actions
         # git config user.email github-actions@github.com
