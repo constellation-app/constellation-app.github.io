@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: get curl
         run: |
-          apk update && apk add --no-cache coreutils && apk add curl && apk add bash
+          apk update && apk add --no-cache coreutils && apk add curl && apk add bash && apk add tree
       - name: Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
@@ -24,31 +24,29 @@ jobs:
           -H 'Accept: application/vnd.github.v3+json' \
           -u ${{ secrets.ACCESS_TOKEN }} \
           --data '{"event_type": "pong", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+
       - name: Checkout GHPages
         uses: actions/checkout@v2
         with:
           path: pages
-      - name: Get documentation files
+
+      - name: Checkout Constellation
         uses: actions/checkout@v2
         with:
           repository: aldebaran30701/constellation
           path: ./const
           #ref: documentation_update
-      - name: cd
-        run: |
-          cd ~/ \
-          ls \
-          cd pages \
-          ls \
-          cd docs \
-          ls 
       - name: chmod
         run: |
-              chmod +x ./pages/.github/workflows/file_convert.sh
+              chmod +x ./pages/.github/workflows/file_convert.sh \
+              chmod +x ./pages/.github/workflows/file_copy.sh
+
+      - name: tree
+        run: |
+              tree -f -L 4
       - name: run file_convert
         shell: bash
         run: |
-            pwd \
             ./pages/.github/workflows/file_convert.sh
         # Make changes here and then commit them
         # git config user.name github-actions
@@ -57,6 +55,10 @@ jobs:
         # git commit -m "Automated Help Page Update"
         # git push
 
+      - name: run file_copy
+        shell: bash
+        run: |
+            ./pages/.github/workflows/file_copy.sh
       - name: upload items
         uses: actions/upload-artifact@master
         with:
