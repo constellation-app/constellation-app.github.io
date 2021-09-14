@@ -38,14 +38,11 @@ jobs:
           repository: aldebaran30701/constellation
           path: ./const
           #ref: documentation_update
-      - name: get
-        run: |
-              install bash
       - name: chmod
         run: |
               chmod +x ./pages/.github/workflows/file_convert.sh
       - name: run file_convert
-        shell: sh
+        shell: bash
         run: |
             ./pages/.github/workflows/file_convert.sh
         # Make changes here and then commit them
