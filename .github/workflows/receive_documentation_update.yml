@@ -36,7 +36,7 @@ jobs:
           #ref: documentation_update
       - name: chmod
         run: |
-              chmod +x ./file_convert.sh
+              chmod +x file_convert.sh
 
       - name: run file_convert
         run: |
