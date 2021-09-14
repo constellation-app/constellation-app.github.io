@@ -14,6 +14,10 @@ jobs:
       - name: get curl
         run: |
           apk add curl
+
+      - name: get bash
+        run: |
+          apk add bash
       - name: Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
@@ -34,14 +38,16 @@ jobs:
           repository: aldebaran30701/constellation
           path: ./const
           #ref: documentation_update
+      - name: get
+        run: |
+              install bash
       - name: chmod
         run: |
-              chmod +x "${GITHUB_WORKSPACE}/.github/workflows/file_convert.sh"
-
+              chmod +x ./pages/.github/workflows/file_convert.sh
       - name: run file_convert
-        shell: bash
+        shell: sh
         run: |
-            "${GITHUB_WORKSPACE}/.github/workflows/file_convert.sh"
+            ./pages/.github/workflows/file_convert.sh
         # Make changes here and then commit them
         # git config user.name github-actions
         # git config user.email github-actions@github.com
