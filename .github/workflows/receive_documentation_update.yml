@@ -36,7 +36,7 @@ jobs:
           #ref: documentation_update
       - name: mkdirs
         run: |
-          mkdir ./pages/docs/constydocs
+          mkdir ~/pages/docs/constydocs
       - name: chmod
         run: |
               chmod +x ./pages/.github/workflows/file_convert.sh
@@ -56,4 +56,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: upload pages
-          path: ./pages/docs/constydocs
+          path: ~/pages/docs/constydocs
