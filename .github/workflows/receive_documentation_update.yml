@@ -36,11 +36,12 @@ jobs:
           repository: aldebaran30701/constellation
           path: ./const
           #ref: documentation_update
-      - name: chmod
+      - name: chmod convert
         run: |
-              chmod +x ./pages/.github/workflows/file_convert.sh \
+              chmod +x ./pages/.github/workflows/file_convert.sh
+      - name: chmod copy
+        run: |
               chmod +x ./pages/.github/workflows/file_copy.sh
-
       - name: tree
         run: |
               tree -f -L 4
