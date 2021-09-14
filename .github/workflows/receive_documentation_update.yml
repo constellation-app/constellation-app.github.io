@@ -36,6 +36,11 @@ jobs:
           repository: aldebaran30701/constellation
           path: ./const
           #ref: documentation_update
+
+      - name: mkdir
+        run: |
+              cd ./pages/docs \
+              mkdir constydocs
       - name: chmod convert
         run: |
               chmod +x ./pages/.github/workflows/file_convert.sh
@@ -64,4 +69,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: upload pages
-          path: ~/pages/docs/constydocs
+          path: ./pages/docs/constydocs
