@@ -63,7 +63,6 @@ jobs:
         uses: EndBug/add-and-commit@v7.3.0
         with:
           author_name: GithubActions
-          branch: master
           cwd: './constellation'
           message: 'Documentation Update Automated'
 
