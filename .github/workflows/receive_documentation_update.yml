@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: get curl
         run: |
-          apk update && apk add --no-cache coreutils && apk add curl && apk add bash && apk add tree
+          apk update && apk add --no-cache coreutils && apk add curl && apk add bash && apk add tree && apk add git
       - name: Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
