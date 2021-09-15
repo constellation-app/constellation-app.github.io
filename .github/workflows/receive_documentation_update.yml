@@ -41,7 +41,7 @@ jobs:
         shell: bash
         run: |
             ./pages/.github/workflows/file_copy.sh
-      - name: Git Auto Commit
+      - name: Auto Commit Documentation Updates
         uses: stefanzweifel/git-auto-commit-action@v4.12.0
         with:
           repository: 'pages'
@@ -49,8 +49,3 @@ jobs:
           skip_fetch: true
           commit_options: '--no-verify'
           add_options: '.'
-      - name: upload items
-        uses: actions/upload-artifact@master
-        with:
-          name: upload pages
-          path: ./pages/docs/help
