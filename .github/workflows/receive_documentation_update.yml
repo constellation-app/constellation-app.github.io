@@ -53,17 +53,17 @@ jobs:
         shell: bash
         run: |
             ./pages/.github/workflows/file_convert.sh
-        # Make changes here and then commit them
-        # git config user.name github-actions
-        # git config user.email github-actions@github.com
-        # git add .
-        # git commit -m "Automated Help Page Update"
-        # git push
+
 
       - name: run file_copy
         shell: bash
         run: |
-            ./pages/.github/workflows/file_copy.sh
+            ./pages/.github/workflows/file_copy.sh \
+            git config user.name github-actions \
+            git config user.email github-actions@github.com \
+            git add . \
+            git commit -m "Automated Help Page Update" \
+            git push
 
       - name: tree after
         run: |
