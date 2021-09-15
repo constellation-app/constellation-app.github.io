@@ -58,12 +58,14 @@ jobs:
       - name: run file_copy
         shell: bash
         run: |
-            ./pages/.github/workflows/file_copy.sh \
-            git config user.name github-actions \
-            git config user.email github-actions@github.com \
-            git add . \
-            git commit -m "Automated Help Page Update" \
-            git push
+            ./pages/.github/workflows/file_copy.sh
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v7.3.0
+        with:
+          author_name: GithubActions
+          branch: master
+          cwd: './constellation'
+          message: 'Documentation Update Automated'
 
       - name: tree after
         run: |
