@@ -64,6 +64,10 @@ jobs:
         shell: bash
         run: |
             ./pages/.github/workflows/file_copy.sh
+
+      - name: tree after
+        run: |
+              tree -f -L 4
       - name: upload items
         uses: actions/upload-artifact@master
         with:
