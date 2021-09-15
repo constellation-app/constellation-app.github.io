@@ -68,7 +68,7 @@ jobs:
       - name: bash remo
         shell: bash
         run: |
-              find */src/ -path '*/docs/*' -name "*html" | xargs -I{} cp {} --parents -t ./pages/docs/constydocs/
+              find */src/ -path '*/docs/*' -name "*html" | xargs -I{} cp {} --parents -t ./pages/docs/constydocs
 
       - name: tree after
         run: |
