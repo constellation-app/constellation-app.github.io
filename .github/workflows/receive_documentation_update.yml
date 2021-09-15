@@ -40,6 +40,12 @@ jobs:
       - name: mkdir
         run: |
               mkdir -p ./pages/docs/help
+        run: |
+              chmod +x ./constellation/toc_update.sh
+      - name: run toc update
+        shell: bash
+        run: |
+            ./constellation/toc_update.sh
       - name: chmod convert
         run: |
               chmod +x ./pages/.github/workflows/file_convert.sh
@@ -47,8 +53,7 @@ jobs:
         run: |
               chmod +x ./pages/.github/workflows/file_copy.sh
       - name: chmod toc update
-        run: |
-              chmod +x ./constellation/toc_update.sh
+
 
       - name: run file_convert
         shell: bash
@@ -61,10 +66,7 @@ jobs:
         run: |
             ./pages/.github/workflows/file_copy.sh
 
-      - name: run toc update
-        shell: bash
-        run: |
-            ./constellation/toc_update.sh
+
       - name: tree
         run: |
               tree -f -L 4
