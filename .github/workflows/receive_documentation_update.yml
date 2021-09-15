@@ -1,6 +1,5 @@
 name: Receive documentation update trigger
 # Receives a trigger from Constellation repository to update documentation.
-# Sends a pong request to acknowledge that it has been received.
 
 on: [repository_dispatch]
 
@@ -13,79 +12,47 @@ jobs:
     steps:
       - name: get curl
         run: |
-          apk update && apk add --no-cache coreutils && apk add curl && apk add bash && apk add tree && apk add git
+          apk update && apk add --no-cache coreutils && apk add bash && apk add git
       - name: Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
-      - name: PONG - Dispatch response to received PING
-        if: github.event.action == 'ping'
-        run: |
-          curl -X POST https://api.github.com/repos/aldebaran30701/constellation/dispatches \
-          -H 'Accept: application/vnd.github.v3+json' \
-          -u ${{ secrets.ACCESS_TOKEN }} \
-          --data '{"event_type": "pong", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
-
       - name: Checkout GHPages
         uses: actions/checkout@v2
         with:
           path: pages
-
       - name: Checkout Constellation
         uses: actions/checkout@v2
         with:
           repository: aldebaran30701/constellation
           path: ./constellation
           ref: documentation_update
-
-      - name: rm
+      - name: rm and mkdir
         run: |
-              rm -r ./pages/docs/help
-
-      - name: mkdir
+              rm -r ./pages/docs/help && mkdir -p ./pages/docs/help
+      - name: chmod scripts
         run: |
-              mkdir -p ./pages/docs/help
-      - name: chmod toc update
-        run: |
-              chmod +x ./constellation/toc_update.sh
+              chmod +x ./constellation/toc_update.sh && chmod +x ./pages/.github/workflows/file_convert.sh && chmod +x ./pages/.github/workflows/file_copy.sh
       - name: run toc update
         shell: bash
         run: |
             ./constellation/toc_update.sh
-      - name: chmod convert
-        run: |
-              chmod +x ./pages/.github/workflows/file_convert.sh
-      - name: chmod copy
-        run: |
-              chmod +x ./pages/.github/workflows/file_copy.sh
-
       - name: run file_convert
         shell: bash
         run: |
             ./pages/.github/workflows/file_convert.sh
-
-
       - name: run file_copy
         shell: bash
         run: |
             ./pages/.github/workflows/file_copy.sh
-
-
-      - name: tree
-        run: |
-              tree -f -L 4
-
       - name: Add & Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           repository: 'pages'
           commit_message: 'Documentation Update Automated'
           skip_fetch: true
+          commit_options: '--no-verify'
           skip_dirty_check: true
           add_options: '.'
-
-      - name: tree after
-        run: |
-              tree -f -L 4
       - name: upload items
         uses: actions/upload-artifact@master
         with:
