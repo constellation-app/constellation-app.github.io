@@ -1,0 +1,140 @@
+<head>
+    <base href="/constellation-app.github.io/documentation/constellation/">
+
+     <!-- Scripts -->
+	<link rel="stylesheet" href="../../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.dropotron.min.js"></script>
+        <script src="../../assets/js/jquery.scrolly.min.js"></script>
+        <script src="../../assets/js/jquery.scrollex.min.js"></script>
+        <script src="../../assets/js/browser.min.js"></script>
+        <script src="../../assets/js/breakpoints.min.js"></script>
+        <script src="../../assets/js/app.js"></script>
+	<script src="../../assets/bootstrap/js/bootstrap.js"></script>
+
+ <script> 
+        $(function(){
+          $("#includedContent").load("../../toc.html"); 
+        });
+    </script> 
+
+<!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="#banner" class="scrolly">About</a></li>
+            <li><a href="#features" class="scrolly">Features</a></li>
+            <li><a href="../../download.html" class="scrolly">Download</a></li>
+            <li><a href="../../blog.html" class="scrolly">Blog</a></li>
+            <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
+            <li><a href="#contact" class="scrolly">Contact</a></li>
+        </ul>
+    </nav>
+
+</head>
+<body style="padding-top: 65px;">
+
+    <div class="row">
+       <div class="col-4 col-sm-3">
+           <div id="includedContent"></div>
+       </div>
+       <div class="col-8 col-sm-9">
+        <h1>Map View</h1>
+        <table data-border="1">
+        <caption>Map View Actions</caption>
+        <colgroup>
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+        <col style="width: 25%" />
+        </colgroup>
+        <thead>
+        <tr class="header">
+        <th scope="col">Constellation Action</th>
+        <th scope="col">Keyboard Shortcut</th>
+        <th scope="col">User Action</th>
+        <th scope="col">Menu Icon</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>Open Map View</td>
+        <td>Ctrl + Shift + M</td>
+        <td>Views -&gt; Map View</td>
+        <td><div style="text-align: center">
+        <img src="../resources/map-view.png" width="16" height="16" />
+        </div></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <p>Map View Actions</p>
+        <h2>Introduction</h2>
+        <p>The Map View provides a visualisation of geospatial data in a Constellation graph as well as features for basic geospatial analysis.</p>
+        <div style="text-align: center">
+
+        <p><img src="resources/MapView.png" alt="Map View" /></p>
+        </div>
+
+        <h2>Base Maps</h2>
+        <p>Base maps are provided by local or network tile servers, with the default map being a simple built-in map consisting only of country borders. The Map View can be extended to source its base map data from a custom location (refer to the Developer Guide for more information on how to do this). You can switch between available base maps using the <img src="resources/MapBaseMapsMenu.png" alt="Base Maps Menu" /> menu.</p>
+        <h2>Layers</h2>
+        <p>Layers can be rendered on top of the map in order to provide additional visualisations for analytic purposes. Layers can be switched on and off using the <img src="resources/MapLayersMenu.png" alt="Layers Menu" /> menu.</p>
+        <h2>Overlays</h2>
+        <p>Overlays can be rendered on top of the map in order to provide additional information or features to the Map View. Overlays can be switched on and off using the <img src="resources/MapOverlayMenu.png" alt="Overlay Menu" /> menu.</p>
+        <h2>Zooming</h2>
+        <p>You can zoom to markers or custom locations on the map using the <img src="resources/MapZoomMenu.png" alt="Zoom Menu" /> menu.</p>
+        <h2>Marker Types</h2>
+        <p>The Map View is capable of rendering points, lines, polygons and multi-polygons to represent geospatial data on a graph. By default, it will read from the "Geo.Latitude" and "Geo.Longitude" attributes for point data, and the "Geo.Shape" attribute for line, polygon and multi-polygon data, where it will expect to find a GeoJSON object representing the shape as a Feature Collection. The Map View can also render clusters (calculated using marker centroids). All of these marker types can be switched on and off using the <img src="resources/MapMarkerVisibilityMenu.png" alt="Marker Visibility Menu" /> menu.</p>
+        <h2>Marker Customisation</h2>
+        <p>You customise markers with colours and labels using data on the graph. This can be achieved by selecting options in the <img src="resources/MapMarkerColoursMenu.png" alt="Marker Colours Menu" /> and <img src="resources/MapMarkerLabelsMenu.png" alt="Marker Labels Menu" /> menus.</p>
+        <h2>Exporting Data</h2>
+        <p>Geospatial data can be exported to a range of open data formats using the <img src="resources/MapExportMenu.png" alt="Export Menu" /> menu.</p>
+        </div>
+    </div>
+
+<!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-139401597-2');
+        </script>
+</body>
+  

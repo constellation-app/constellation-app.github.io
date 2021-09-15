@@ -1,0 +1,134 @@
+<head>
+    <base href="/constellation-app.github.io/documentation/constellation/">
+
+     <!-- Scripts -->
+	<link rel="stylesheet" href="../../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.dropotron.min.js"></script>
+        <script src="../../assets/js/jquery.scrolly.min.js"></script>
+        <script src="../../assets/js/jquery.scrollex.min.js"></script>
+        <script src="../../assets/js/browser.min.js"></script>
+        <script src="../../assets/js/breakpoints.min.js"></script>
+        <script src="../../assets/js/app.js"></script>
+	<script src="../../assets/bootstrap/js/bootstrap.js"></script>
+
+ <script> 
+        $(function(){
+          $("#includedContent").load("../../toc.html"); 
+        });
+    </script> 
+
+<!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="#banner" class="scrolly">About</a></li>
+            <li><a href="#features" class="scrolly">Features</a></li>
+            <li><a href="../../download.html" class="scrolly">Download</a></li>
+            <li><a href="../../blog.html" class="scrolly">Blog</a></li>
+            <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
+            <li><a href="#contact" class="scrolly">Contact</a></li>
+        </ul>
+    </nav>
+
+</head>
+<body style="padding-top: 65px;">
+
+    <div class="row">
+       <div class="col-4 col-sm-3">
+           <div id="includedContent"></div>
+       </div>
+       <div class="col-8 col-sm-9">
+        <h1>Attribute Editor</h1>
+        <table data-border="1">
+        <caption>Attribute Editor Actions</caption>
+        <thead>
+        <tr class="header">
+        <th scope="col">Constellation Action</th>
+        <th scope="col">Keyboard Shortcut</th>
+        <th scope="col">User Action</th>
+        <th style="text-align: center;" scope="col">Menu Icon</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>Open Attribute Editor</td>
+        <td>Ctrl + Shift + E</td>
+        <td>Views -&gt; Attribute Editor</td>
+        <td style="text-align: center;"><img src="../resources/attribute_editor.png" width="16" height="16" alt="Attribute Editor Icon" /></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <p>Attribute Editor Actions</p>
+        <h2>Introduction</h2>
+        <p>The Attribute Editor is the view where you can view, add, and edit Graph, Node, and Transaction attributes on your graph. When you have a graph element (node or transaction) selected, you are able to view all the current values assigned to that particular graph element. If no value is assigned to an attribute for a given graph element, the text "&lt;No Value&gt;" will be displayed. If more than one value is assigned to a set of selected graph elements, the text "&lt;Multiple Values&gt;" will be displayed and the attribute will become a drop-down list which when expanded displays all the values assigned to that attribute (this won't occur if only one graph element selected).</p>
+        <div style="text-align: center">
+
+        <p><img src="resources/AttributeEditor.png" alt="Attribute Editor" /></p>
+        </div>
+
+        <p>There are four different kinds of attributes you can see in the Attribute Editor:</p>
+        <ul>
+        <li><em>Schema Attributes</em> - These are regular old attributes which Constellation has defined in a schema. They have a black background by default.</li>
+        <li><em>Primary Key Attributes</em> - These are important attributes that define a graph element. The set of primary key attribute values are unique to each graph element. They have a red background by default.</li>
+        <li><em>Custom Attributes</em> - These are attributes which are not defined in a Constellation schema. They have a blue background by default.</li>
+        <li><em>Hidden Attributes</em> - These are attributes which have been hidden. You can hide an attribute by right-clicking on it and selecting "Hide Attribute". They have a grey background by default.</li>
+        </ul>
+        <h2>Editing An Attribute</h2>
+        <p>To edit an attribute, select the nodes and transactions you want to edit and then click on the <img src="resources/AttributeEditorEdit.png" alt="Edit Icon" /> button. This will bring up a dialog box to change the value. Once you have finished changing the value, press "Ok" to apply the change. If more than one graph element is selected than the new value will be applied to all the relevant selected graph elements.</p>
+        <p>NOTE: If you want to change the time zone of an attribute, right click on the attribute say "DateTime" and select "Update time-zone of selection" and set the time zone. This will update the time zone for for the selected nodes/transactions only.</p>
+        <h2>Adding An Attribute</h2>
+        <p>To add an attribute to your graph, click on the <img src="resources/AttributeEditorAdd.png" alt="Add Icon" /> button of the relevant graph element type and choose the attribute you want to add. If you select "Custom", you will be required to fill in all the details of the new attribute.</p>
+        <h2>Editing Primary Key</h2>
+        <p>From the Attribute Editor, you can also edit the primary key for a graph element type (recall these are the attributes which uniquely define a graph element). To do so, click on the <img src="resources/AttributeEditorKey.png" alt="Primary Key Icon" /> button of the relevant graph element type and select which elements you want to be a part of the primary key. You will only be able to choose from attributes that are already on the graph (refer to adding an attribute if the attribute you want to add to the primary key isn't currently on the graph).</p>
+        <h2>Autocomplete with Schema</h2>
+        <p>A change made in the Attribute Editor won't be applied to the graph until a Complete with Schema (F5) is run. By default, you will have to perform this step manually but there is an option to have this done automatically for you after you edit an attribute. To enable this, Click on the "Options" menu at the top of the view and select "Complete with Schema After Edits". With this enabled, it will run Complete with Schema after every attribute value you edit via the Attribute Editor. Select that same option to disable it and return to default behaviour.</p>
+        </div>
+    </div>
+
+<!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-139401597-2');
+        </script>
+</body>
+  
