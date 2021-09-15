@@ -62,8 +62,6 @@ jobs:
       - name: Add & Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_user_name: GithubActions
-          commit_author: GithubActions
           repository: './constellation'
           commit_message: 'Documentation Update Automated'
           skip_fetch: true
