@@ -4,7 +4,7 @@ name: Receive documentation update trigger
 on: [repository_dispatch]
 
 jobs:
-  ping-pong:
+  rebuild-documentation:
     runs-on: ubuntu-20.04
     container:
       image: docker://pandoc/latex:2.9
@@ -13,26 +13,23 @@ jobs:
       - name: get curl
         run: |
           apk update && apk add --no-cache coreutils && apk add bash && apk add git
-      - name: Event Information
-        run: |
-          echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
-      - name: Checkout GHPages
+      - name: Checkout GitHub Pages repository
         uses: actions/checkout@v2
         with:
           path: pages
-      - name: Checkout Constellation
+      - name: Checkout Constellation repository
         uses: actions/checkout@v2
         with:
           repository: aldebaran30701/constellation
           path: ./constellation
           ref: documentation_update
-      - name: rm and mkdir
+      - name: remove old pages and make a new directory
         run: |
               rm -r ./pages/docs/help && mkdir -p ./pages/docs/help
-      - name: chmod scripts
+      - name: add execute priveledge onto scripts
         run: |
               chmod +x ./constellation/toc_update.sh && chmod +x ./pages/.github/workflows/file_convert.sh && chmod +x ./pages/.github/workflows/file_copy.sh
-      - name: run toc update
+      - name: update table of contents
         shell: bash
         run: |
             ./constellation/toc_update.sh
@@ -51,7 +48,6 @@ jobs:
           commit_message: 'Documentation Update Automated'
           skip_fetch: true
           commit_options: '--no-verify'
-          skip_dirty_check: true
           add_options: '.'
       - name: upload items
         uses: actions/upload-artifact@master
