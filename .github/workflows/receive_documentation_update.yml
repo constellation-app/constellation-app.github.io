@@ -46,6 +46,9 @@ jobs:
       - name: chmod copy
         run: |
               chmod +x ./pages/.github/workflows/file_copy.sh
+      - name: chmod toc update
+        run: |
+              chmod +x ./constellation/toc_update.sh
       - name: tree
         run: |
               tree -f -L 4
@@ -59,6 +62,13 @@ jobs:
         shell: bash
         run: |
             ./pages/.github/workflows/file_copy.sh
+
+      - name: run toc update
+        shell: bash
+        run: |
+            ./constellation/toc_update.sh
+
+
       - name: Add & Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
