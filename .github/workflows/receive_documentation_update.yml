@@ -49,9 +49,7 @@ jobs:
       - name: chmod toc update
         run: |
               chmod +x ./constellation/toc_update.sh
-      - name: tree
-        run: |
-              tree -f -L 4
+
       - name: run file_convert
         shell: bash
         run: |
@@ -67,7 +65,9 @@ jobs:
         shell: bash
         run: |
             ./constellation/toc_update.sh
-
+      - name: tree
+        run: |
+              tree -f -L 4
 
       - name: Add & Commit
         uses: stefanzweifel/git-auto-commit-action@v4
