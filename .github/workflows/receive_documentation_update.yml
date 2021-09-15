@@ -65,11 +65,6 @@ jobs:
         run: |
             ./pages/.github/workflows/file_copy.sh
 
-      - name: bash remo
-        shell: bash
-        run: |
-              find . -path '*/docs/*' -name "*.html" | xargs cp --parents -t ./pages/docs/constydocs
-
       - name: tree after
         run: |
               tree -f -L 4
