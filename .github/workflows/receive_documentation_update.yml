@@ -60,11 +60,15 @@ jobs:
         run: |
             ./pages/.github/workflows/file_copy.sh
       - name: Add & Commit
-        uses: EndBug/add-and-commit@v7.3.0
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          author_name: GithubActions
-          cwd: './constellation'
-          message: 'Documentation Update Automated'
+          commit_user_name: GithubActions
+          commit_author: GithubActions
+          repository: './constellation'
+          commit_message: 'Documentation Update Automated'
+          skip_fetch: true
+          skip_dirty_check: true
+          add_options: '.'
 
       - name: tree after
         run: |
