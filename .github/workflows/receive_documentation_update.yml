@@ -35,7 +35,7 @@ jobs:
         with:
           repository: aldebaran30701/constellation
           path: ./constellation
-          #ref: documentation_update
+          ref: documentation_update
 
       - name: mkdir
         run: |
