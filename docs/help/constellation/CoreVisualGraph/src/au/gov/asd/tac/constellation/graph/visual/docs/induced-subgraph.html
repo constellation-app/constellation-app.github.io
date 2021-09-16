@@ -24,8 +24,8 @@
     <nav id="nav">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="#banner" class="scrolly">About</a></li>
-            <li><a href="#features" class="scrolly">Features</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
             <li><a href="../../download.html" class="scrolly">Download</a></li>
             <li><a href="../../blog.html" class="scrolly">Blog</a></li>
             <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
@@ -41,8 +41,56 @@
            <div id="includedContent"></div>
        </div>
        <div class="col-8 col-sm-9">
-        <h2>Induced Subgraph</h2>
-        <p>The <em>Induced Subgraph</em> button will add to the selection set all the transactions who source and destination nodes are already selected.</p>
+        <h1>Induced Subgraph</h1>
+        <table class="table table-triped">
+        <thead>
+        <tr class="header">
+        <th>Constellation Action</th>
+        <th>Keyboard Shortcut</th>
+        <th>User Action</th>
+        <th style="text-align: center;">Menu Icon</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>Run Select Half Hop Induced Subgraph</td>
+        <td></td>
+        <td>Selection -&gt; Select Half Hop Induced Subgraph</td>
+        <td style="text-align: center;"><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/half_hop_induced_subgraph.png" alt="Select Half Hop Induced Subgraph Icon" /></td>
+        </tr>
+        <tr class="even">
+        <td>Run Select One Hop Induced Subgraph</td>
+        <td></td>
+        <td>Selection -&gt; Select One Hop Induced Subgraph</td>
+        <td style="text-align: center;"><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/one_hop_induced_subgraph.png" alt="Select One Hop Induced Subgraph Icon" /></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <h2>Half Hop Induced Subgraph</h2>
+        <p>Half Hop Induced Subgraph will add all the transactions whose source and destination nodes are already selected to the current selection.</p>
+        <h2>One Hop Induced Subgraph</h2>
+        <p>One Hop Induced Subgraph will add to the current selection everything the Half Hop Induced Subgraph will add as well as any nodes that have at least two selected neighbours and the transactions connecting the node and those neighbours.</p>
+        <p>Before Any Induced Subgraph Selection is run:</p>
+        <div style="text-align: center">
+
+        <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectInducedSubgraphBefore.png" alt="Graph before Induced Subgraph Selection is
+        run" /></p>
+        </div>
+
+        <p>After Select Half Hop Induced Subgraph is run:</p>
+        <div style="text-align: center">
+
+        <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectHalfHopInducedSubgraphAfter.png" alt="Graph after Select Half Hop Induced Subgraph is
+        run" /></p>
+        </div>
+
+        <p>After Select One Hop Induced Subgraph is run:</p>
+        <div style="text-align: center">
+
+        <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectOneHopInducedSubgraphAfter.png" alt="Graph after Select One Hop Induced Subgraph is
+        run" /></p>
+        </div>
         </div>
     </div>
 

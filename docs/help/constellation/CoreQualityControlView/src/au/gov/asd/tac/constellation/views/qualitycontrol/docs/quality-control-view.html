@@ -24,8 +24,8 @@
     <nav id="nav">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="#banner" class="scrolly">About</a></li>
-            <li><a href="#features" class="scrolly">Features</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
             <li><a href="../../download.html" class="scrolly">Download</a></li>
             <li><a href="../../blog.html" class="scrolly">Blog</a></li>
             <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
@@ -42,14 +42,13 @@
        </div>
        <div class="col-8 col-sm-9">
         <h1>Quality Control View</h1>
-        <table data-border="1">
-        <caption>Quality Control View Actions</caption>
+        <table class="table table-striped">
         <thead>
         <tr class="header">
-        <th scope="col">Constellation Action</th>
-        <th scope="col">Keyboard Shortcut</th>
-        <th scope="col">User Action</th>
-        <th style="text-align: center;" scope="col">Menu Icon</th>
+        <th>Constellation Action</th>
+        <th>Keyboard Shortcut</th>
+        <th>User Action</th>
+        <th style="text-align: center;">Menu Icon</th>
         </tr>
         </thead>
         <tbody>
@@ -57,7 +56,7 @@
         <td>Open Quality Control View</td>
         <td>Keyboard Shortcut: Ctrl + Shift + Q</td>
         <td>Views -&gt; Quality Control View</td>
-        <td style="text-align: center;"><img src="../resources/quality-control-view.png" width="16" height="16" alt="Quality Control View Icon" /></td>
+        <td style="text-align: center;"><img src="../constellation/CoreQualityControlView/src/au/gov/asd/tac/constellation/views/qualitycontrol/docs/resources/quality-control-view.png" width="16" height="16" alt="Quality Control View Icon" /></td>
         </tr>
         <tr class="even">
         <td>Select rows</td>
@@ -86,24 +85,25 @@
         </tbody>
         </table>
 
-        <p>Quality Control View Actions</p>
         <h2>IMPORTANT!!!</h2>
         <p>Although Constellation provides this Quality Control View, the user remains responsible for ensuring that their data is acceptable for further analysis.</p>
         <h2>Introduction</h2>
         <p>The Quality Control View is a quick and easy way to look at nodes on the graph and determine whether or not they have any obvious quality issues based on a series of rules built into Constellation. Selecting nodes in the graph will cause them to be processed against any registered quality control rules, and ranked in the Quality Control View according to their quality. This quality rating will be a given category (see below) along with reasoning as to why they may pose a quality control issue. Users can then highlight rows in the quality control view and apply options via the buttons at the bottom of the view.</p>
         <div style="text-align: center">
 
-        <p><img src="resources/QualityControlView.png" alt="Quality Control View" /></p>
+        <p><img src="../constellation/CoreQualityControlView/src/au/gov/asd/tac/constellation/views/qualitycontrol/docs/resources/QualityControlView.png" alt="Quality Control
+        View" /></p>
         </div>
 
         <h2>Quality Control Categories</h2>
-        <p>There are five levels of quality control categories for nodes that are selected.</p>
+        <p>There are six levels of quality control categories for nodes that are selected.</p>
         <ul>
-        <li><em>FATAL</em> - Any node which is specifically disallowed (whether it be disallowed for queries, or simply should not be in your graph) will have a black background, and may be blocked from further analysis.</li>
+        <li><em>CRITICAL</em> - Any node which is specifically disallowed (whether it be disallowed for queries, or simply should not be in your graph) will have a dark red background, and may be blocked from further analysis.</li>
         <li><em>SEVERE</em> - Any node which is considered of particularly bad quality will have a red background, but will never be blocked.</li>
-        <li><em>WARNING</em> - Any node which is considered of very questionable quality will have a purple background.</li>
-        <li><em>INFO</em> - Any node which is considered of questionable quality will have a blue background.</li>
-        <li><em>DEFAULT</em> - Any node which is considered of good quality will have a white background. This does not mean that these nodes are necessarily of high quality, only that no quality control rules matched - such nodes require manual checking by the user.</li>
+        <li><em>MAJOR</em> - Any node which is considered of very questionable quality will have an orange background.</li>
+        <li><em>MEDIUM</em> - Any node which is considered of questionable quality will have a yellow background.</li>
+        <li><em>MINOR</em> - Any node which is considered of slightly questionable quality will have a blue background.</li>
+        <li><em>OK</em> - Any node which is considered of good quality will have a green background. This does not mean that these nodes are necessarily of high quality, only that no quality control rules matched - such nodes require manual checking by the user.</li>
         </ul>
         <h2>Options</h2>
         <p>These options are accessible from the bottom of the Quality Control View</p>

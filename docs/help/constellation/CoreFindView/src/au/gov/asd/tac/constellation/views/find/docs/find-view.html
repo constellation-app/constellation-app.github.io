@@ -24,8 +24,8 @@
     <nav id="nav">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="#banner" class="scrolly">About</a></li>
-            <li><a href="#features" class="scrolly">Features</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
             <li><a href="../../download.html" class="scrolly">Download</a></li>
             <li><a href="../../blog.html" class="scrolly">Blog</a></li>
             <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
@@ -42,8 +42,7 @@
        </div>
        <div class="col-8 col-sm-9">
         <h1>Find and Replace</h1>
-        <table data-border="1">
-        <caption>Find Actions</caption>
+        <table class="table table-striped">
         <colgroup>
         <col style="width: 25%" />
         <col style="width: 25%" />
@@ -52,10 +51,10 @@
         </colgroup>
         <thead>
         <tr class="header">
-        <th scope="col">Constellation Action</th>
-        <th scope="col">Keyboard Shortcut</th>
-        <th scope="col">User Action</th>
-        <th scope="col">Menu Icon</th>
+        <th>Constellation Action</th>
+        <th>Keyboard Shortcut</th>
+        <th>User Action</th>
+        <th>Menu Icon</th>
         </tr>
         </thead>
         <tbody>
@@ -64,17 +63,17 @@
         <td>Ctrl + F</td>
         <td>Edit -&gt; Find...</td>
         <td><div style="text-align: center">
-        <img src="../resources/find.png" width="16" height="16" />
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find.png" width="16" height="16" />
         </div></td>
         </tr>
         </tbody>
         </table>
 
-        <p>Find Actions</p>
         <p>The Find View allows the creation of sophisticated rules to be searched for, and 'matched' on a graph. You can choose to find on nodes, transactions, edges, or links.</p>
         <div style="text-align: center">
 
-        <p><img src="resources/FindView.png" alt="Find" /></p>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/FindView.png" alt="Find" />
+
         </div>
 
         <h2>Basic Find</h2>
@@ -89,21 +88,21 @@
         <p>There are currently 8 supported attribute types that can be searched for in various ways. Attribute types that are not registered as one of the following types will be searched as 'strings.' The types are as follows:</p>
         <ul>
         <li>Boolean searches:<br />
-        <img src="resources/find-boolean.png" /></li>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find-boolean.png" /></li>
         <li>Colour searches:<br />
-        <img src="resources/find-color.png" /></li>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find-color.png" /></li>
         <li>Date searches:<br />
-        <img src="resources/find-date.png" /></li>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find-date.png" /></li>
         <li>DateTime searches:<br />
-        <img src="resources/find-datetime.png" /></li>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find-datetime.png" /></li>
         <li>Float searches:<br />
-        <img src="resources/find-float.png" /></li>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find-float.png" /></li>
         <li>Icon searches:<br />
-        <img src="resources/find-icon.png" /></li>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find-icon.png" /></li>
         <li>String searches:<br />
-        <img src="resources/find-string.png" /></li>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find-string.png" /></li>
         <li>Time searches:<br />
-        <img src="resources/find-time.png" /></li>
+        <img src="../constellation/CoreFindView/src/au/gov/asd/tac/constellation/views/find/docs/resources/find-time.png" /></li>
         </ul>
         <p>Once you have setup your search, click "Find" to select everything on the graph matching any or all (depending on what was selected) of the specified criteria.</p>
         </div>

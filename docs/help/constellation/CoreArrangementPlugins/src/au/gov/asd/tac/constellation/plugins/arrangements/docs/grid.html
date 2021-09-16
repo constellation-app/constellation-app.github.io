@@ -24,8 +24,8 @@
     <nav id="nav">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="#banner" class="scrolly">About</a></li>
-            <li><a href="#features" class="scrolly">Features</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
             <li><a href="../../download.html" class="scrolly">Download</a></li>
             <li><a href="../../blog.html" class="scrolly">Blog</a></li>
             <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
@@ -41,8 +41,33 @@
            <div id="includedContent"></div>
        </div>
        <div class="col-8 col-sm-9">
-        <h2>Arrange In Grid (General)</h2>
-        <p>Arranges all the nodes in a square grid (regardless of the current selected set).</p>
+        <h1>Grid</h1>
+        <table class="table table-striped">
+        <thead>
+        <tr class="header">
+        <th>Constellation Action</th>
+        <th>Keyboard Shortcut</th>
+        <th>User Action</th>
+        <th style="text-align: center;">Menu Icon</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>Run Grid Arrangement</td>
+        <td>Ctrl + G</td>
+        <td>Arrange -&gt; Grid</td>
+        <td style="text-align: center;"><img src="../constellation/CoreArrangementPlugins/src/au/gov/asd/tac/constellation/plugins/arrangements/docs/resources/arrangeInGrid.png" alt="Grid Arrangement Icon" /></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <p>The grid arrangement arranges each separate component of the graph into a square grid. Nodes within a grid are ordered left-to-right, top-to-bottom by their internal node id's.</p>
+        <p>Example Grid Arrangement:</p>
+        <div style="text-align: center">
+
+        <p><img src="../constellation/CoreArrangementPlugins/src/au/gov/asd/tac/constellation/plugins/arrangements/docs/resources/GridArrangement.png" alt="Example Grid
+        Arrangement" /></p>
+        </div>
         </div>
     </div>
 

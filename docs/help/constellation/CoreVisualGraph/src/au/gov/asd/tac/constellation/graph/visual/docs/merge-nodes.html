@@ -24,8 +24,8 @@
     <nav id="nav">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="#banner" class="scrolly">About</a></li>
-            <li><a href="#features" class="scrolly">Features</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
             <li><a href="../../download.html" class="scrolly">Download</a></li>
             <li><a href="../../blog.html" class="scrolly">Blog</a></li>
             <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
@@ -43,14 +43,13 @@
        <div class="col-8 col-sm-9">
         <h1>Merge Nodes</h1>
         <h2>Merge all the selected nodes into a single node.</h2>
-        <table data-border="1">
-        <caption>Merge Nodes Actions</caption>
+        <table class="table table-striped">
         <thead>
         <tr class="header">
-        <th scope="col">Constellation Action</th>
-        <th scope="col">Keyboard Shortcut</th>
-        <th scope="col">User Action</th>
-        <th style="text-align: center;" scope="col">Menu Icon</th>
+        <th>Constellation Action</th>
+        <th>Keyboard Shortcut</th>
+        <th>User Action</th>
+        <th style="text-align: center;">Menu Icon</th>
         </tr>
         </thead>
         <tbody>
@@ -58,17 +57,17 @@
         <td>Run Merge Nodes</td>
         <td></td>
         <td>Tools -&gt; Merge Nodes</td>
-        <td style="text-align: center;"><img src="../plugins/merge/mergeNodes.png" alt="Merge Nodes Icon" /></td>
+        <td style="text-align: center;"><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/mergeNodes.png" alt="Merge Nodes Icon" /></td>
         </tr>
         </tbody>
         </table>
 
-        <p>Merge Nodes Actions</p>
-        <p>NOTE: This is a standalone plugin. For the Data Access Plugin, go <a href="/au/gov/asd/tac/constellation/views/dataaccess/docs/merge-nodes.html">here</a></p>
+        <p>NOTE: This is a standalone plugin. For the Data Access Plugin, go <a href="../constellation/CoreDataAccessView/src/au/gov/asd/tac/constellation/views/dataaccess/docs/merge-nodes.html">here</a></p>
         <p>This plugin alters the structure of the graph by deleting all but one of the nodes and reconnecting all the transactions to the remaining node. It requires at least two selected nodes in order to work.</p>
         <div style="text-align: center">
 
-        <p><img src="resources/PermanentMergeNodes.png" alt="Merge Nodes Dialog" /></p>
+        <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/PermanentMergeNodes.png" alt="Merge Nodes
+        Dialog" /></p>
         </div>
 
         <h2>Identifying the Nodes to be Merged</h2>
