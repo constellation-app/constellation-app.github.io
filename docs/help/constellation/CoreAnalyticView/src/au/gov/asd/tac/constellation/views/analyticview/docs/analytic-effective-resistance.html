@@ -24,8 +24,8 @@
     <nav id="nav">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="#banner" class="scrolly">About</a></li>
-            <li><a href="#features" class="scrolly">Features</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
             <li><a href="../../download.html" class="scrolly">Download</a></li>
             <li><a href="../../blog.html" class="scrolly">Blog</a></li>
             <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
@@ -43,6 +43,12 @@
        <div class="col-8 col-sm-9">
         <h1>Effective Resistance</h1>
         <p>Otherwise known as the Resistance Distance, this is a measure of the resistance that would be held by each link if it were an electrical network. This is achieved by replacing each link in the graph with a 1 ohm resistor (or if the weighted parameter is set to true, an n ohm resistor, where n is the weight of that link) and using Kirchoff's current/voltage laws to measure the resistance at each junction. These resistances highlight which paths are easy or difficult to traverse, and in general nodes which lie of easily traversable paths can be easily reached.</p>
+        <h2>Parameters</h2>
+        <ul>
+        <li><em>Transaction Types</em> - Calculate on only the subgraph of transactions of these types</li>
+        <li><em>Weighted</em> - Account for the weight of links</li>
+        <li><em>Normalise By Max Available Score</em> - Normalise calculated scores by the maximum calculated score</li>
+        </ul>
         </div>
     </div>
 
