@@ -2590,3 +2590,6 @@ button,
 .btn.btn-link.btn-block.text-left:hover {
    background: #b8b8b8;
 }
+#nav .a {
+        color: white;
+}
