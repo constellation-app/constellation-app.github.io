@@ -1889,7 +1889,7 @@ body.homepage.is-preload #header:after {
 }
 #nav > ul > li > a, #nav > ul > li > span {
   display: block;
-  color: inherit;
+  color: white;
   text-decoration: none;
   border: 0;
   outline: 0;
@@ -2590,8 +2590,3 @@ button,
 .btn.btn-link.btn-block.text-left:hover {
    background: #b8b8b8;
 }
-#nav a {
-    color: white;
-}
-.scrolly {
-    color: white;
