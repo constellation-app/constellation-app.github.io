@@ -1,0 +1,136 @@
+<head>
+    <base href="/constellation-app.github.io/help/constellation/">
+
+     <!-- Scripts -->
+	<link rel="stylesheet" href="../../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.dropotron.min.js"></script>
+        <script src="../../assets/js/jquery.scrolly.min.js"></script>
+        <script src="../../assets/js/jquery.scrollex.min.js"></script>
+        <script src="../../assets/js/browser.min.js"></script>
+        <script src="../../assets/js/breakpoints.min.js"></script>
+        <script src="../../assets/js/app.js"></script>
+	<script src="../../assets/bootstrap/js/bootstrap.js"></script>
+
+ <script> 
+        $(function(){
+          $("#includedContent").load("../toc.html"); 
+        });
+    </script> 
+
+<!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
+            <li><a href="../../download.html" class="scrolly">Download</a></li>
+            <li><a href="../../blog.html" class="scrolly">Blog</a></li>
+            <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
+            <li><a href="#contact" class="scrolly">Contact</a></li>
+        </ul>
+    </nav>
+
+</head>
+<body style="padding-top: 100px;">
+
+    <div class="row">
+       <div class="col-4 col-sm-3">
+           <div id="includedContent"></div>
+       </div>
+       <div class="col-8 col-sm-9">
+        <h1>Extract Types from Text</h1>
+        <h2>Identify schema type values within text and add them to your graph</h2>
+        <p>Extract from Text cycles through the schema node types known by Constellation. For each schema type that has an associated regular expression, all matches for that regular expression in the text are added to the graph.</p>
+        <h2>Parameters</h2>
+        <ul>
+        <li><em>Text</em> - The text to extract the schema types from</li>
+        </ul>
+        <p>New nodes are added with the following attributes:</p>
+        <h2>Source Node</h2>
+        <ul>
+        <li>Seed - True</li>
+        </ul>
+        </div>
+    </div>
+
+<!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-139401597-2');
+        </script>
+	<script>
+             // when a group is shown, save it as active
+             $(\".collapse\").on('shown.bs.collapse', function(e) {
+                  e.stopPropagation();
+                  var active = $(this).attr('id');
+                  Cookies.set(active, \"true\");
+                  $(\"#\" + active).addClass('show');
+             });
+             // when a group is hidden, save it as inactive
+             $(\".collapse\").on('hidden.bs.collapse', function(e) {
+                  e.stopPropagation(); 
+                  var active = $(this).attr('id');
+                  Cookies.set(active, \"false\");
+                  $(\"#\" + active).removeClass('show');
+                  $(\"#\" + active).collapse(\"hide\");
+             });
+              
+             $(document).ready(function() {
+                  var allCookies = Cookies.get();
+                  for (var cookie in allCookies) { 
+                      if (cookie != null) {
+                         //remove default collapse settings
+                         $(\"#\" + cookie).removeClass('show');
+                         //show the group if the value is true 
+                         var cookieValue = Cookies.get(cookie);
+                         if (cookieValue == (\"true\")) {
+                            $(\"#\" + cookie).collapse(\"show\");
+                         } else {
+                            $(\"#\" + cookie).collapse(\"hide\");
+                            $(\"#\" + cookie + \" .collapse\").removeClass('show');
+                         }
+                      }
+                 }
+              });
+       </script>
+</body>
+  

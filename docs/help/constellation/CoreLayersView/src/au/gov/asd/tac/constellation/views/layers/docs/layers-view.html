@@ -1,0 +1,181 @@
+<head>
+    <base href="/constellation-app.github.io/help/constellation/">
+
+     <!-- Scripts -->
+	<link rel="stylesheet" href="../../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.dropotron.min.js"></script>
+        <script src="../../assets/js/jquery.scrolly.min.js"></script>
+        <script src="../../assets/js/jquery.scrollex.min.js"></script>
+        <script src="../../assets/js/browser.min.js"></script>
+        <script src="../../assets/js/breakpoints.min.js"></script>
+        <script src="../../assets/js/app.js"></script>
+	<script src="../../assets/bootstrap/js/bootstrap.js"></script>
+
+ <script> 
+        $(function(){
+          $("#includedContent").load("../toc.html"); 
+        });
+    </script> 
+
+<!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
+            <li><a href="../../download.html" class="scrolly">Download</a></li>
+            <li><a href="../../blog.html" class="scrolly">Blog</a></li>
+            <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
+            <li><a href="#contact" class="scrolly">Contact</a></li>
+        </ul>
+    </nav>
+
+</head>
+<body style="padding-top: 100px;">
+
+    <div class="row">
+       <div class="col-4 col-sm-3">
+           <div id="includedContent"></div>
+       </div>
+       <div class="col-8 col-sm-9">
+        <h1>Layers View</h1>
+        <table class="table table-striped">
+        <thead>
+        <tr class="header">
+        <th>Constellation Action</th>
+        <th>Keyboard Shortcut</th>
+        <th>User Action</th>
+        <th>Menu Icon</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>Open Layers View</td>
+        <td>Ctrl + Shift + L</td>
+        <td>Experimental -&gt; Views -&gt; Layers View</td>
+        <td><div style="text-align: center">
+        <img src="../constellation/CoreLayersView/src/au/gov/asd/tac/constellation/views/layers/docs/resources/layers-view.png" width="16" height="16" />
+        </div></td>
+        </tr>
+        <tr class="even">
+        <td>Add New Layer</td>
+        <td>Ctrl + Alt + L</td>
+        <td>Click "Add New Layer"</td>
+        <td>N/A</td>
+        </tr>
+        <tr class="odd">
+        <td>Deselect All Layers</td>
+        <td>Ctrl + Alt + D</td>
+        <td>Click "Deselect All Layers"</td>
+        <td>N/A</td>
+        </tr>
+        <tr class="even">
+        <td>Toggle On/Off Layer</td>
+        <td>Ctrl + Alt + x (x is layer number)</td>
+        <td>Toggle Visibility Checkbox</td>
+        <td>N/A</td>
+        </tr>
+        </tbody>
+        </table>
+
+        <p>The Layers View holds a collection of Layers. Each Layer can represent a static set of elements, or a dynamically calculated set of elements which match a query criteria. The query structure is based on the expressions framework.<br />
+        Each layer has a visibility checkbox which determines if that layer is toggled. All elements are on the base layer 0. When one or more check boxes are selected, only the elements that are members of those layers are visibly displayed. All other elements will have their "visibility" attribute value toggled to 0.0 (invisible).<br />
+        Arrangements on graphs with a visual schema will be ran on the base layer 0.</p>
+        <p>&lt;img src../constellation/CoreLayersView/src/au/gov/asd/tac/constellation/views/layers/docs/resources/layers-view-example.png" alt="Fig.1 - Layers view interface" /&gt;</p>
+        <h2>Creating and Using Layers</h2>
+        <p>The two main ways to create and use layers are through the Layers View window and through the use of shortcut keys (see table at the top of the page for shortcut details). The maximum amount of layers you can create is 64.</p>
+        <p>When a single layer is toggled on, that layer will be displayed on the graph. When multiple manual layers are selected, it will display everything on layer x, as well as everything on layer y (i.e. the union of all selected layers). Combining both query and manual layers will produce undefined results and should not be used when accuracy of results is needed.</p>
+        <h2>Layer Types</h2>
+        <p><img src="../constellation/CoreLayersView/src/au/gov/asd/tac/constellation/views/layers/docs/resources/layers-context.png" alt="Fig.2 - Right-click context menu used for adding elements to a manual
+        layer." /></p>
+        <p>There are two main layer types within the Layers View. The differentiating factor of the two being the way elements are chosen to be displayed.</p>
+        <h3>Manual Layer</h3>
+        <p>A manual layer is a static layer only containing elements added via right click context menu (see above image) or manually set layer_mask Attribute.</p>
+        <h3>Query Layer</h3>
+        <p>A query layer is a dynamic layer that shows the elements represented by the specified Vertex and Transaction queries. Query layers are dynamically recalculated upon changes to those attributes being queried. This is to ensure the accuracy of the shown layer. e.g. Layer 1 has a vertex query described as Label == 'Vertex #0'. This will show the vertex with that label. If you then change Vertex #0's label to something like 'V#0', the query will note the change and recalculate for the whole graph.</p>
+        <p>NOTE: Layers View does not allow for the use of the assignment operator = or keyword assign.</p>
+        <p>Click <a href="../constellation/CoreGraphFramework/src/au/gov/asd/tac/constellation/graph/docs/expressions-framework.html">here</a> for more information on the structure of the expression framework</p>
+        </div>
+    </div>
+
+<!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-139401597-2');
+        </script>
+	<script>
+             // when a group is shown, save it as active
+             $(\".collapse\").on('shown.bs.collapse', function(e) {
+                  e.stopPropagation();
+                  var active = $(this).attr('id');
+                  Cookies.set(active, \"true\");
+                  $(\"#\" + active).addClass('show');
+             });
+             // when a group is hidden, save it as inactive
+             $(\".collapse\").on('hidden.bs.collapse', function(e) {
+                  e.stopPropagation(); 
+                  var active = $(this).attr('id');
+                  Cookies.set(active, \"false\");
+                  $(\"#\" + active).removeClass('show');
+                  $(\"#\" + active).collapse(\"hide\");
+             });
+              
+             $(document).ready(function() {
+                  var allCookies = Cookies.get();
+                  for (var cookie in allCookies) { 
+                      if (cookie != null) {
+                         //remove default collapse settings
+                         $(\"#\" + cookie).removeClass('show');
+                         //show the group if the value is true 
+                         var cookieValue = Cookies.get(cookie);
+                         if (cookieValue == (\"true\")) {
+                            $(\"#\" + cookie).collapse(\"show\");
+                         } else {
+                            $(\"#\" + cookie).collapse(\"hide\");
+                            $(\"#\" + cookie + \" .collapse\").removeClass('show');
+                         }
+                      }
+                 }
+              });
+       </script>
+</body>
+  

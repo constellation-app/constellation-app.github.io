@@ -1,0 +1,236 @@
+<head>
+    <base href="/constellation-app.github.io/help/constellation/">
+
+     <!-- Scripts -->
+	<link rel="stylesheet" href="../../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.dropotron.min.js"></script>
+        <script src="../../assets/js/jquery.scrolly.min.js"></script>
+        <script src="../../assets/js/jquery.scrollex.min.js"></script>
+        <script src="../../assets/js/browser.min.js"></script>
+        <script src="../../assets/js/breakpoints.min.js"></script>
+        <script src="../../assets/js/app.js"></script>
+	<script src="../../assets/bootstrap/js/bootstrap.js"></script>
+
+ <script> 
+        $(function(){
+          $("#includedContent").load("../toc.html"); 
+        });
+    </script> 
+
+<!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
+            <li><a href="../../download.html" class="scrolly">Download</a></li>
+            <li><a href="../../blog.html" class="scrolly">Blog</a></li>
+            <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
+            <li><a href="#contact" class="scrolly">Contact</a></li>
+        </ul>
+    </nav>
+
+</head>
+<body style="padding-top: 100px;">
+
+    <div class="row">
+       <div class="col-4 col-sm-3">
+           <div id="includedContent"></div>
+       </div>
+       <div class="col-8 col-sm-9">
+        <h1>Example Constellation File Writer</h1>
+        <p>The Constellation file format uses JSON to store data. One of the advantages of using JSON is that a .star file can be manipulated using any language that has a JSON library.</p>
+        <p>This section will use Python 2.6 to provide examples of writing .star files.</p>
+        <h2>Writing a .star file</h2>
+        <p>Suppose we have some data that we want to use to create a graph that can be displayed in Constellation. The easiest way of importing the data is probably to import it in CSV format. Another way would be to use the built-in scripting capability to directly build the graph from the data.</p>
+        <p>However, here we will create a JSON document from scratch that, when properly saved, can be loaded directly into Constellation.</p>
+        <p>Because JSON corresponds closely with Python's built-in dictionary and list data types, we can use idiomatic Python to build the graph, then save it using the "json.dumps()" method.</p>
+        <pre><code>        #
+                # Write a CONSTELLATION .star file.
+                #
+
+                from __future__ import division
+                from __future__ import print_function
+
+                import json
+                import math
+                import pprint
+                import sys
+                import zipfile
+
+                def attr(label, type, descr, default=None):
+                    a = {
+                        #&#39;mod_count&#39;: 0,
+                        &#39;label&#39;: label,
+                        &#39;type&#39;: type,
+                        &#39;descr&#39;: descr
+                    }
+                    if default is not None:
+                        a[&#39;default&#39;] = default
+
+                    return a
+
+                def create_graph(vertexCount):
+                    &#39;&#39;&#39;Create a graph containing vertexCount vertices.&#39;&#39;&#39;
+
+                    incAngle = 360 / vertexCount
+                    radius = (vertexCount*3) / (2 * math.pi)
+
+                    vx_attrs = [
+                        attr(&#39;x&#39;, &#39;float&#39;, &#39;x coord&#39;, 0),
+                        attr(&#39;y&#39;, &#39;float&#39;, &#39;y coord&#39;, 0),
+                        attr(&#39;z&#39;, &#39;float&#39;, &#39;z coord&#39;, 0),
+                        attr(&#39;Name&#39;, &#39;string&#39;, &#39;Node name&#39;),
+                        attr(&#39;background_icon&#39;, &#39;icon&#39;, &#39;icon&#39;),
+                        attr(&#39;color&#39;, &#39;color&#39;, &#39;color&#39;)
+                    ]
+
+                    tx_attrs = []
+
+                    vx_data = []
+                    for i in range(vertexCount):
+                        name = &#39;Node %d&#39; % i
+                        x = radius * math.cos(math.radians(i * incAngle))
+                        y = radius * math.sin(math.radians(i * incAngle))
+                        color = &#39;Yellow&#39; if x&gt;0 else &#39;Blue&#39;
+                        vx = {
+                            &#39;vx_id_&#39;: i,
+                            &#39;Name&#39;: name,
+                            &#39;x&#39;: x,
+                            &#39;y&#39;: y,
+                            &#39;z&#39;: 0,
+                            &#39;background_icon&#39;: &#39;Background.Round Circle&#39;,
+                            &#39;color&#39;: color
+                        }
+                        vx_data.append(vx)
+
+                    tx_data = []
+                    for i in range(vertexCount):
+                        src = i
+                        dst = i+1 if i&lt;(vertexCount-1) else 0
+                        tx = {
+                            &#39;vx_src_&#39;: src,
+                            &#39;vx_dst_&#39;: dst,
+                            &#39;tx_dir_&#39;: True
+                        }
+                        tx_data.append(tx)
+
+                    labels_data = {&#39;bottom&#39; : [{&#39;attr&#39;:&#39;Name&#39;, &#39;color&#39;:&#39;Green&#39;}]}
+
+                    graph = [
+                        {&#39;version&#39;:1, &#39;global_mod_count&#39;:0, &#39;structure_mod_count&#39;: 0, &#39;attribute_mod_count&#39;: 0},
+                        #{&#39;version&#39;:1},
+                        {&#39;graph&#39;: [{&#39;attrs&#39;:[attr(&#39;color&#39;, &#39;color&#39;, &#39;color&#39;, &#39;Black&#39;)]}, {&#39;data&#39;:[]}]},
+                        {&#39;vertex&#39;: [{&#39;attrs&#39;:vx_attrs}, {&#39;data&#39;:vx_data}]},
+                        {&#39;transaction&#39;: [{&#39;attrs&#39;:tx_attrs}, {&#39;data&#39;:tx_data}]},
+                        {&#39;meta&#39;: [{&#39;attrs&#39;:[attr(&#39;labels&#39;, &#39;labels&#39;, &#39;labels&#39;)]}, {&#39;data&#39;:[{&#39;labels&#39;:labels_data}]}]}
+                    ]
+
+                    return graph
+
+                def write_file(graph, fnam):
+                    f = open(fnam, &#39;wb&#39;)
+                    doc = json.dumps(graph, indent=2, encoding=&#39;UTF-8&#39;)
+                    f.write(doc)
+                    f.close()
+
+                def write_graph(graph, fnam):
+                    zf = zipfile.ZipFile(fnam, &#39;w&#39;)
+                    try:
+                        doc = json.dumps(graph, indent=2, encoding=&#39;UTF-8&#39;)
+                        #print(doc)
+                        zf.writestr(&#39;graph.txt&#39;, doc)
+                    finally:
+                        zf.close()
+
+                if __name__==&#39;__main__&#39;:
+                    graph = create_graph(10)
+                    #pprint.pprint(graph, indent=2)
+
+                    write_graph(graph, &#39;circle.star&#39;)
+                    write_file(graph, &#39;graph.txt&#39;)
+        </code></pre>
+        </div>
+    </div>
+
+<!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-139401597-2');
+        </script>
+	<script>
+             // when a group is shown, save it as active
+             $(\".collapse\").on('shown.bs.collapse', function(e) {
+                  e.stopPropagation();
+                  var active = $(this).attr('id');
+                  Cookies.set(active, \"true\");
+                  $(\"#\" + active).addClass('show');
+             });
+             // when a group is hidden, save it as inactive
+             $(\".collapse\").on('hidden.bs.collapse', function(e) {
+                  e.stopPropagation(); 
+                  var active = $(this).attr('id');
+                  Cookies.set(active, \"false\");
+                  $(\"#\" + active).removeClass('show');
+                  $(\"#\" + active).collapse(\"hide\");
+             });
+              
+             $(document).ready(function() {
+                  var allCookies = Cookies.get();
+                  for (var cookie in allCookies) { 
+                      if (cookie != null) {
+                         //remove default collapse settings
+                         $(\"#\" + cookie).removeClass('show');
+                         //show the group if the value is true 
+                         var cookieValue = Cookies.get(cookie);
+                         if (cookieValue == (\"true\")) {
+                            $(\"#\" + cookie).collapse(\"show\");
+                         } else {
+                            $(\"#\" + cookie).collapse(\"hide\");
+                            $(\"#\" + cookie + \" .collapse\").removeClass('show');
+                         }
+                      }
+                 }
+              });
+       </script>
+</body>
+  

@@ -1,0 +1,160 @@
+<head>
+    <base href="/constellation-app.github.io/help/constellation/">
+
+     <!-- Scripts -->
+	<link rel="stylesheet" href="../../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/jquery.dropotron.min.js"></script>
+        <script src="../../assets/js/jquery.scrolly.min.js"></script>
+        <script src="../../assets/js/jquery.scrollex.min.js"></script>
+        <script src="../../assets/js/browser.min.js"></script>
+        <script src="../../assets/js/breakpoints.min.js"></script>
+        <script src="../../assets/js/app.js"></script>
+	<script src="../../assets/bootstrap/js/bootstrap.js"></script>
+
+ <script> 
+        $(function(){
+          $("#includedContent").load("../toc.html"); 
+        });
+    </script> 
+
+<!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
+            <li><a href="../../download.html" class="scrolly">Download</a></li>
+            <li><a href="../../blog.html" class="scrolly">Blog</a></li>
+            <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
+            <li><a href="#contact" class="scrolly">Contact</a></li>
+        </ul>
+    </nav>
+
+</head>
+<body style="padding-top: 100px;">
+
+    <div class="row">
+       <div class="col-4 col-sm-3">
+           <div id="includedContent"></div>
+       </div>
+       <div class="col-8 col-sm-9">
+        <h1>Conversation View</h1>
+        <table class="table table-striped">
+        <thead>
+        <tr class="header">
+        <th>Constellation Action</th>
+        <th>Keyboard Shortcut</th>
+        <th>User Action</th>
+        <th style="text-align: center;">Menu Icon</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+        <td>Open Conversation View</td>
+        <td>Ctrl + Shift + C</td>
+        <td>Views -&gt; Conversation View</td>
+        <td style="text-align: center;"><img src="../constellation/CoreConversationView/src/au/gov/asd/tac/constellation/views/conversationview/docs/resources/conversation_view.png" alt="Conversation View Icon" /></td>
+        </tr>
+        </tbody>
+        </table>
+
+        <h2>Introduction</h2>
+        <p>The Conversation View displays the text of the "Content" attribute of transactions selected between two nodes in a format resembling a messaging application. Like a messaging application, the content is ordered chronologically by the "DateTime" attribute. Only the content for selected transactions with datetime values are displayed. If transactions between more than two sets of unique nodes are selected then no conversation text will be displayed.</p>
+        <div style="text-align: center">
+
+        <p><img src="../constellation/CoreConversationView/src/au/gov/asd/tac/constellation/views/conversationview/docs/resources/ConversationView.png" alt="Conversation
+        View" /></p>
+        </div>
+
+        <p>The content is displayed in chat "bubbles", similar to those used by some smart phones and instant messaging clients. The text and time stamps can be selected and copied. To copy selected text, press Ctrl-C or right click and use the context menu. Constellation will "beep" if you use Ctrl-C but copy the text anyway. When text is selected in a bubble, any text already selected in other bubbles is not automatically deselected however only text in the current bubble is copied.</p>
+        <h2>Translations</h2>
+        <p>If translated content is present in the graph (the "Content.Translated" transaction attribute), you can choose to view the original content, the translation, or both using the buttons at the top of the window. If you are viewing translations only and a particular transaction does not have a translation, then the original content will be displayed in italics.</p>
+        <p>You can enable or disable the hover translation capability available for certain languages using the check box at the top of the Conversation View. Disabling this will make it easier to select and copy text from the window.</p>
+        <h2>Adding Content attributes</h2>
+        <p>The "Content" Attribute needs to be present in order to be able to use the Conversation View. If it is not already there, you can click on the "Add Content Attributes" button found at the top of the Conversation View. This will add all of the content attributes to your graph (including "Content" and "Content.Translated").</p>
+        <h2>Searching Conversations</h2>
+        <p>Using the search bar at the top of the view, you are able to search the conversations (and translations) currently presented. Simply type in a search term and the view will highlight all the matches found as well as present a count of how many matches there are. It will only search the visible parts of a bubble (i.e. the parts toggled on using the buttons at the top of the window). If you change what parts of the bubble are shown, the search will update with the new results.</p>
+        </div>
+    </div>
+
+<!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-139401597-2');
+        </script>
+	<script>
+             // when a group is shown, save it as active
+             $(\".collapse\").on('shown.bs.collapse', function(e) {
+                  e.stopPropagation();
+                  var active = $(this).attr('id');
+                  Cookies.set(active, \"true\");
+                  $(\"#\" + active).addClass('show');
+             });
+             // when a group is hidden, save it as inactive
+             $(\".collapse\").on('hidden.bs.collapse', function(e) {
+                  e.stopPropagation(); 
+                  var active = $(this).attr('id');
+                  Cookies.set(active, \"false\");
+                  $(\"#\" + active).removeClass('show');
+                  $(\"#\" + active).collapse(\"hide\");
+             });
+              
+             $(document).ready(function() {
+                  var allCookies = Cookies.get();
+                  for (var cookie in allCookies) { 
+                      if (cookie != null) {
+                         //remove default collapse settings
+                         $(\"#\" + cookie).removeClass('show');
+                         //show the group if the value is true 
+                         var cookieValue = Cookies.get(cookie);
+                         if (cookieValue == (\"true\")) {
+                            $(\"#\" + cookie).collapse(\"show\");
+                         } else {
+                            $(\"#\" + cookie).collapse(\"hide\");
+                            $(\"#\" + cookie + \" .collapse\").removeClass('show');
+                         }
+                      }
+                 }
+              });
+       </script>
+</body>
+  
