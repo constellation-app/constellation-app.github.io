@@ -1,173 +1,177 @@
+<!DOCTYPE html>
+
 <head>
-    <base href="/constellation-app.github.io/help/constellation/">
+  <base href="/constellation-app.github.io/documentation/constellation/">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../assets/css/app.css" />
-    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
-    <noscript>
-        <link rel="stylesheet" href="../../assets/css/noscript.css" />
-    </noscript>
 
-    <!-- Scripts -->
-    <script src="../../assets/js/jquery.min.js" />
-    <script src="../../assets/js/js.cookie.min.js" />
-    <script src="../../assets/js/jquery.dropotron.min.js" />
-    <script src="../../assets/js/jquery.scrolly.min.js" />
-    <script src="../../assets/js/jquery.scrollex.min.js" />
-    <script src="../../assets/js/browser.min.js" />
-    <script src="../../assets/js/breakpoints.min.js" />
-    <script src="../../assets/js/app.js" />
-    <script src="../../assets/bootstrap/js/bootstrap.js" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../assets/css/app.css" />
+  <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../assets/css/noscript.css" />
+  </noscript>
 
-    <!-- Nav -->
-    <nav id="nav">
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../index.html#banner" class="scrolly">About</a></li>
-            <li><a href="../../index.html#features" class="scrolly">Features</a></li>
-            <li><a href="../../download.html" class="scrolly">Download</a></li>
-            <li><a href="../../blog.html" class="scrolly">Blog</a></li>
-            <li><a href="CoreFunctionality\src\au\gov\asd\tac\constellation\functionality\docs\about-constellation.html" class="scrolly">Documentation</a></li>
-            <li><a href="#contact" class="scrolly">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Scripts -->
+  <script src="../../assets/js/jquery.min.js"></script>
+  <script src="../../assets/js/js.cookie.min.js"></script>
+  <script src="../../assets/js/jquery.dropotron.min.js"></script>
+  <script src="../../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../../assets/js/browser.min.js"></script>
+  <script src="../../assets/js/breakpoints.min.js"></script>
+  <script src="../../assets/js/app.js"></script>
+  <script src="../../assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+      <li><a href="../../index.html#features" class="scrolly">Features</a></li>
+      <li><a href="../../download.html" class="scrolly">Download</a></li>
+      <li><a href="../../blog.html" class="scrolly">Blog</a></li>
+      <li><a href="CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/docs/about-constellation.html" class="scrolly">Documentation</a></li>
+      <li><a href="#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
 
 </head>
+
 <body style="padding-top: 100px;">
 
-    <div class="row">
-       <div class="col-4 col-sm-3">
-           <div id="includedContent"></div>
-       </div>
-       <div class="col-8 col-sm-9">
-        <h1>Induced Subgraph</h1>
-        <table class="table table-triped">
-        <thead>
-        <tr class="header">
-        <th>Constellation Action</th>
-        <th>Keyboard Shortcut</th>
-        <th>User Action</th>
-        <th style="text-align: center;">Menu Icon</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="odd">
-        <td>Run Select Half Hop Induced Subgraph</td>
-        <td></td>
-        <td>Selection -&gt; Select Half Hop Induced Subgraph</td>
-        <td style="text-align: center;"><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/half_hop_induced_subgraph.png" alt="Select Half Hop Induced Subgraph Icon" /></td>
-        </tr>
-        <tr class="even">
-        <td>Run Select One Hop Induced Subgraph</td>
-        <td></td>
-        <td>Selection -&gt; Select One Hop Induced Subgraph</td>
-        <td style="text-align: center;"><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/one_hop_induced_subgraph.png" alt="Select One Hop Induced Subgraph Icon" /></td>
-        </tr>
-        </tbody>
-        </table>
-
-        <h2>Half Hop Induced Subgraph</h2>
-        <p>Half Hop Induced Subgraph will add all the transactions whose source and destination nodes are already selected to the current selection.</p>
-        <h2>One Hop Induced Subgraph</h2>
-        <p>One Hop Induced Subgraph will add to the current selection everything the Half Hop Induced Subgraph will add as well as any nodes that have at least two selected neighbours and the transactions connecting the node and those neighbours.</p>
-        <p>Before Any Induced Subgraph Selection is run:</p>
-        <div style="text-align: center">
-
-        <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectInducedSubgraphBefore.png" alt="Graph before Induced Subgraph Selection is
-        run" /></p>
-        </div>
-
-        <p>After Select Half Hop Induced Subgraph is run:</p>
-        <div style="text-align: center">
-
-        <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectHalfHopInducedSubgraphAfter.png" alt="Graph after Select Half Hop Induced Subgraph is
-        run" /></p>
-        </div>
-
-        <p>After Select One Hop Induced Subgraph is run:</p>
-        <div style="text-align: center">
-
-        <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectOneHopInducedSubgraphAfter.png" alt="Graph after Select One Hop Induced Subgraph is
-        run" /></p>
-        </div>
-        </div>
+  <div class="row">
+    <div class="col-4 col-sm-3">
+      <div id="includedContent"></div>
     </div>
+    <div class="col-8 col-sm-9">
+      <h1>Induced Subgraph</h1>
+      <table class="table table-triped">
+      <thead>
+      <tr class="header">
+      <th>Constellation Action</th>
+      <th>Keyboard Shortcut</th>
+      <th>User Action</th>
+      <th style="text-align: center;">Menu Icon</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="odd">
+      <td>Run Select Half Hop Induced Subgraph</td>
+      <td></td>
+      <td>Selection -&gt; Select Half Hop Induced Subgraph</td>
+      <td style="text-align: center;"><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/half_hop_induced_subgraph.png" alt="Select Half Hop Induced Subgraph Icon" /></td>
+      </tr>
+      <tr class="even">
+      <td>Run Select One Hop Induced Subgraph</td>
+      <td></td>
+      <td>Selection -&gt; Select One Hop Induced Subgraph</td>
+      <td style="text-align: center;"><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/one_hop_induced_subgraph.png" alt="Select One Hop Induced Subgraph Icon" /></td>
+      </tr>
+      </tbody>
+      </table>
 
-<!-- Footer -->
-            <div id="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
+      <h2>Half Hop Induced Subgraph</h2>
+      <p>Half Hop Induced Subgraph will add all the transactions whose source and destination nodes are already selected to the current selection.</p>
+      <h2>One Hop Induced Subgraph</h2>
+      <p>One Hop Induced Subgraph will add to the current selection everything the Half Hop Induced Subgraph will add as well as any nodes that have at least two selected neighbours and the transactions connecting the node and those neighbours.</p>
+      <p>Before Any Induced Subgraph Selection is run:</p>
+      <div style="text-align: center">
 
-                            <!-- Contact Us -->
-                            <section id="contact" class="contact">
-                                <header>
-                                    <h3>Contact Us</h3>
-                                </header>
-                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
-                                <p>
-                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
-                                    <span>&nbsp;&nbsp;&nbsp;</span>
-                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
-                                </p>
-                            </section>
+      <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectInducedSubgraphBefore.png" alt="Graph before Induced Subgraph Selection is
+      run" /></p>
+      </div>
 
-                            <!-- Copyright -->
-                            <div class="copyright">
-                                <ul class="menu">
-                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <p>After Select Half Hop Induced Subgraph is run:</p>
+      <div style="text-align: center">
+
+      <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectHalfHopInducedSubgraphAfter.png" alt="Graph after Select Half Hop Induced Subgraph is
+      run" /></p>
+      </div>
+
+      <p>After Select One Hop Induced Subgraph is run:</p>
+      <div style="text-align: center">
+
+      <p><img src="../constellation/CoreVisualGraph/src/au/gov/asd/tac/constellation/graph/visual/docs/resources/SelectOneHopInducedSubgraphAfter.png" alt="Graph after Select One Hop Induced Subgraph is
+      run" /></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Contact Us -->
+          <section id="contact" class="contact">
+            <header>
+              <h3>Contact Us</h3>
+            </header>
+            <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+            <p>
+              <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+            </p>
+          </section>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <ul class="menu">
+              <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <script>
-            $(function(){
-                $("#includedContent").load("../../toc.html"); 
-            });
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'UA-139401597-2');
-        
-            $(document).ready(function() {
-                var allCookies = Cookies.get();
-                for (var cookie in allCookies) { 
-                    if (cookie != null) {
-                        $("#" + cookie).removeClass('show');
-                        var cookieValue = Cookies.get(cookie);
-                        if (cookieValue == ("true")) {
-                            $("#" + cookie).collapse('show');
-                        } else {
-                            $("#" + cookie).collapse('hide');
-                            $("#" + cookie + " .collapse").removeClass('show');
-                        }
-                    }
-                }
-            });
+  <script>
+    $(function() {
+      $("#includedContent").load("../../toc.html");
+    });
 
-            $(".collapse").on('shown.bs.collapse', function(e) {
-                console.log('shown');
-                e.stopPropagation();
-                var active = $(this).attr('id');
-                Cookies.set(active, "true");
-                $("#" + active).addClass('show');
-            });
-            $(".collapse").on('hidden.bs.collapse', function(e) {
-                console.log('collapsed');
-                e.stopPropagation(); 
-                var active = $(this).attr('id');
-                Cookies.set(active, "false");
-                $("#" + active).removeClass('show');
-                $("#" + active).collapse('hide');
-            });
-        </script>
+    $(document).ready(function() {
+      var allCookies = Cookies.get();
+      for (var cookie in allCookies) {
+        if (cookie != null) {
+          $("#" + cookie).removeClass('show');
+          var cookieValue = Cookies.get(cookie);
+          if (cookieValue == ("true")) {
+            $("#" + cookie).collapse('show');
+          } else {
+            $("#" + cookie).collapse('hide');
+            $("#" + cookie + " .collapse").removeClass('show');
+          }
+        }
+      }
+    });
+
+    $(".collapse").on('shown.bs.collapse', function(e) {
+      console.log('shown');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "true");
+      $("#" + active).addClass('show');
+    });
+    $(".collapse").on('hidden.bs.collapse', function(e) {
+      console.log('collapsed');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "false");
+      $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-139401597-2');
+  </script>
 </body>
-  
