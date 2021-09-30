@@ -15,3 +15,11 @@
 body.homepage.is-preload #header:after {
     opacity: 0;
 }
+
+.btn.btn-link.btn-block.text-left.collapsed:hover {
+   background: #b8b8b8;
+}
+
+.btn.btn-link.btn-block.text-left:hover {
+   background: #b8b8b8;
+}
