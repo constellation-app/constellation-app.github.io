@@ -20,7 +20,7 @@ jobs:
       - name: Checkout Constellation repository
         uses: actions/checkout@v2
         with:
-          repository: aldebaran30701/constellation
+          repository: constellation-app/constellation
           path: ./constellation
           ref: documentation_update
       - name: remove old pages and make a new directory
