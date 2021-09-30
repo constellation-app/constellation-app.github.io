@@ -1,11 +1,6 @@
 <base href="/constellation-app.github.io/help/constellation/">
   <script src="../../assets/js/jquery.min.js"></script>
   <script src="../../assets/js/js.cookie.min.js"></script>
-  <script src="../../assets/js/jquery.dropotron.min.js"></script>
-  <script src="../../assets/js/jquery.scrolly.min.js"></script>
-  <script src="../../assets/js/jquery.scrollex.min.js"></script>
-  <script src="../../assets/js/browser.min.js"></script>
-  <script src="../../assets/js/breakpoints.min.js"></script>
   <script src="../../assets/js/app.js"></script>
   <script src="../../assets/bootstrap/js/bootstrap.js"></script>
 <div class="container">
@@ -192,34 +187,12 @@
 </div>
 <script>
 
-    $(document).ready(function() {
-      var allCookies = Cookies.get();
-      for (var cookie in allCookies) {
-        if (cookie != null) {
-          $("#" + cookie).removeClass('show');
-          var cookieValue = Cookies.get(cookie);
-          if (cookieValue == ("true")) {
-            $("#" + cookie + " .collapse").removeClass('hide');
-            $("#" + cookie + " .collapse").addClass('show');
-            $("#" + cookie).collapse('show');
-          } elseif (cookieValue == ("false")) {
-            $("#" + cookie + " .collapse").removeClass('show');
-            $("#" + cookie + " .collapse").addClass('hide');
-            $("#" + cookie).collapse('hide');
-            
-          } else {
-            console.log('in else, not true or false');
-        }
-      }
-    });
-
     $(".collapse").on('shown.bs.collapse', function(e) {
       console.log('shown');
       e.stopPropagation();
       var active = $(this).attr('id');
       Cookies.set(active, "true");
       $("#" + active).addClass('show');
-      $("#" + active).removeClass('hide');
       $("#" + active).collapse('show');
     });
   
@@ -228,7 +201,6 @@
       e.stopPropagation();
       var active = $(this).attr('id');
       Cookies.set(active, "false");
-      $("#" + active).addClass('hide');
       $("#" + active).removeClass('show');
       $("#" + active).collapse('hide');
     });
