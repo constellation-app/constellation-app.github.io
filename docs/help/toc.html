@@ -199,11 +199,16 @@
           $("#" + cookie).removeClass('show');
           var cookieValue = Cookies.get(cookie);
           if (cookieValue == ("true")) {
+            $("#" + cookie + " .collapse").removeClass('hide');
+            $("#" + cookie + " .collapse").addClass('show');
             $("#" + cookie).collapse('show');
-          } else {
-            $("#" + cookie).collapse('hide');
+          } elseif (cookieValue == ("false")) {
             $("#" + cookie + " .collapse").removeClass('show');
-          }
+            $("#" + cookie + " .collapse").addClass('hide');
+            $("#" + cookie).collapse('hide');
+            
+          } else {
+            console.log('in else, not true or false');
         }
       }
     });
@@ -214,13 +219,18 @@
       var active = $(this).attr('id');
       Cookies.set(active, "true");
       $("#" + active).addClass('show');
+      $("#" + active).removeClass('hide');
+      $("#" + active).collapse('show');
     });
+  
     $(".collapse").on('hidden.bs.collapse', function(e) {
-      console.log('collapsed');
+      console.log('hidden');
       e.stopPropagation();
       var active = $(this).attr('id');
       Cookies.set(active, "false");
+      $("#" + active).addClass('hide');
       $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
     });
 
   </script>
