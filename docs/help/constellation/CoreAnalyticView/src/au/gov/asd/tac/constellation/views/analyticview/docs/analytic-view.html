@@ -139,21 +139,6 @@
       }
     });
 
-    $(".collapse").on('shown.bs.collapse', function(e) {
-      console.log('shown');
-      e.stopPropagation();
-      var active = $(this).attr('id');
-      Cookies.set(active, "true");
-      $("#" + active).addClass('show');
-    });
-    $(".collapse").on('hidden.bs.collapse', function(e) {
-      console.log('collapsed');
-      e.stopPropagation();
-      var active = $(this).attr('id');
-      Cookies.set(active, "false");
-      $("#" + active).removeClass('show');
-      $("#" + active).collapse('hide');
-    });
 
     window.dataLayer = window.dataLayer || [];
 
