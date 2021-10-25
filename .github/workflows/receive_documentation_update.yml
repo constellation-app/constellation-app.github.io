@@ -23,6 +23,16 @@ jobs:
           repository: constellation-app/constellation
           path: ./constellation
           ref: documentation_update
+      - name: Checkout Constellation-Adaptors repository
+        uses: actions/checkout@v2
+        with:
+          repository: constellation-app/constellation-adaptors
+          path: ./constellation-adaptors
+      - name: Checkout constellation_cyber_plugins repository
+        uses: actions/checkout@v2
+        with:
+          repository: AustralianCyberSecurityCentre/constellation_cyber_plugins
+          path: ./constellation_cyber_plugins
       - name: remove old pages and make a new directory
         run: |
               rm -r ./pages/docs/help && mkdir -p ./pages/docs/help
