@@ -28,6 +28,7 @@ jobs:
         with:
           repository: constellation-app/constellation-adaptors
           path: ./constellation-adaptors
+          ref: documentation_update
       - name: Checkout constellation_cyber_plugins repository
         uses: actions/checkout@v2
         with:
