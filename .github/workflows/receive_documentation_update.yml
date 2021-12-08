@@ -36,7 +36,7 @@ jobs:
           path: ./constellation_cyber_plugins
       - name: remove old pages and make a new directory
         run: |
-              rm -r ./pages/docs/help && mkdir -p ./pages/docs/help
+              rm -rf ./pages/docs/help && mkdir -p ./pages/docs/help
       - name: add execute priveledge and run convert_doc_files.sh
         run: |
               chmod +x ./pages/.github/workflows/convert_doc_files.sh && ./pages/.github/workflows/convert_doc_files.sh
