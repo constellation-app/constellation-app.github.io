@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+  <base href="/constellation-app.github.io/help/constellation/">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../assets/css/app.css" />
+  <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/jquery.min.js"></script>
+  <script src="../../assets/js/js.cookie.min.js"></script>
+  <script src="../../assets/js/jquery.dropotron.min.js"></script>
+  <script src="../../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../../assets/js/browser.min.js"></script>
+  <script src="../../assets/js/breakpoints.min.js"></script>
+  <script src="../../assets/js/app.js"></script>
+  <script src="../../assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+
+  <script>
+    $(function() {
+      $("#includedContent").load("../toc.html");
+    });
+  </script>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../index.html#banner" class="scrolly">About</a></li>
+      <li><a href="../../index.html#features" class="scrolly">Features</a></li>
+      <li><a href="../../download.html" class="scrolly">Download</a></li>
+      <li><a href="../../blog.html" class="scrolly">Blog</a></li>
+      <li><a href="CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/docs/about-constellation.html" class="scrolly">Documentation</a></li>
+      <li><a href="../../index.html#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
+
+</head>
+
+<body style="padding-top: 100px;">
+
+  <div class="row">
+    <div class="col-4 col-sm-3">
+      <div id="includedContent"></div>
+    </div>
+    <div class="col-8 col-sm-9">
+      <h1>Nebula</h1>
+      <p>A nebula is a loosely related collection of graphs that can be opened, saved, and closed together.</p>
+      <h2>Creating and Opening a Nebula</h2>
+      <p>To create a nebula, save or copy some .star files into a directory of your choice. Then select the menu item Experimental -&gt; Tools -&gt; New Nebula, which will ask you for a directory and name for a nebula file, and a colour to represent the nebula. The nebula will automatically be added to the File -&gt; Open Recent list. Alternatively, you can manually create a text file called "name.nebula" in that directory, where "name" can be any name you like.</p>
+      <p>You can open the nebula in the same way that you open a .star file. When opened, Constellation will look for .star files in the same directory as the nebula file, and open them.</p>
+      <p>If a nebula does not have a colour assigned, it will be assigned a random colour. This colour will appear next to the graph icon in the tab at the top of the graph window for each graph that is a member of the nebula. This serves to distinguish the members of multiple nebulae from each other. Each graph's tab tooltip will also be prepended with the name of the nebula file: the graph "MyGraph" that is in the "shiny" nebula will have the tooltip "shiny - &lt;PATH&gt;/MyGraph".</p>
+      <h2>Functionality</h2>
+      <p>If you right-click on the tab of any graph in the nebula, there are a few options for nebulas in the resulting popup menu that may be available:</p>
+      <ul>
+      <li>"Save nebula" will be available if any graphs in the nebula have been modified. Selecting this will save each modified graph.</li>
+      <li>"Close nebula" will be available if all graphs in the nebula have been saved. Selecting this will close all of the graphs in the nebula.</li>
+      <li>"Discard nebula" will always be available. Selecting this will close all graphs in the nebula, whether they have been saved or not.</li>
+      </ul>
+      <p>After a nebula has been opened, the individual graphs in that nebula remain individual graphs; there is no connection between them other than belonging to the same nebula. Any of the actions above could be done by individually acting on each graph; a nebula just makes these actions more efficient. Any of the .star files can still be opened individually without opening the nebula file.</p>
+      <h2>Colour Assignment</h2>
+      <p>You can assign your own colour to the nebula. Edit the nebula file using your favourite text editor and add a "colour = &lt;COLOUR&gt;" line (or change the existing line). &lt;COLOUR&gt; can be a colour name (e.g. red or teal), a HTML colour (e.g. #ff0000 or #008080), or an RGB colour with each element having a value between 0 and 1 (e.g. 1,0,0 or 0,0.5,0.5).</p>
+      <p>NOTE: "color" as a spelling also works</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Contact Us -->
+          <section id="contact" class="contact">
+            <header>
+              <h3>Contact Us</h3>
+            </header>
+            <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+            <p>
+              <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+            </p>
+          </section>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <ul class="menu">
+              <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    $(document).ready(function() {
+      var allCookies = Cookies.get();
+      for (var cookie in allCookies) {
+        if (cookie != null) {
+          $("#" + cookie).removeClass('show');
+          var cookieValue = Cookies.get(cookie);
+          if (cookieValue == ("true")) {
+            $("#" + cookie).collapse('show');
+          } else {
+            $("#" + cookie).collapse('hide');
+            $("#" + cookie + " .collapse").removeClass('show');
+          }
+        }
+      }
+    });
+
+    $(".collapse").on('shown.bs.collapse', function(e) {
+      console.log('shown');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "true");
+      $("#" + active).addClass('show');
+    });
+    $(".collapse").on('hidden.bs.collapse', function(e) {
+      console.log('collapsed');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "false");
+      $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-139401597-2');
+  </script>
+</body>
