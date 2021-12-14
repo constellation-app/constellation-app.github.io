@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v2.5</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v2.5</h2>
+                            <p>
+                                Here is a list of changes we've added to this
+                                version of Constellation v2.5 which are also
+                                included in Constellation Cyber v1.4.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>New Help Page System!</h3>
+                            </header>
+                            <p>
+                                The biggest change introduced in 2.5 is an 
+								overhaul of the help page system. On top of a 
+								fresh new look, you now have the option to either 
+								view the help pages online or offline. This 
+								option can be toggled via Setup -&gt; Options 
+								-&gt; Constellation -&gt; Help. With online 
+								selected, the application will link to the 
+								documentation that is now available on the 
+								Constellation website (when an internet 
+								connection is available, under 
+								<strong>Documentation</strong>). 
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.5.0/new_help_system.png" alt="New Help System" class="image featured"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Freeform Selection on the Graph</h3>
+                            </header>
+                            <p>
+                                The graph window now has a new selection tool. 
+								The current rectangular selection has its 
+								limitations, but the new freeform selection will 
+								allow more flexibility when selecting graph 
+								elements.
+                            </p>
+							<p>
+								To make a freeform selection, hold down the Alt 
+								key while the left mouse button is held down and 
+								drag your mouse around all the parts of your 
+								graph you want to select.
+							</p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.5.0/freeform_select_during.png" alt="Graph during Freeform selection" class="image featured"/>
+							<img src="../images/blogs/whats-new-in-constellation-v2.5.0/freeform_select_after.png" alt="Graph after Freeform selection made" class="image featured"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Conversation View Search Improvements</h3>
+                            </header>
+                            <p>
+                                Having previously been introduced in 2.4, the 
+								search feature of the Conversation View has been 
+								updated for 2.5. The view now scrolls to the 
+								message that matches a search term. You can use 
+								the <strong>Previous</strong> and 
+								<strong>Next</strong> buttons located next to the 
+								search bar to go to the previous and next match 
+								respectively.
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.5.0/conversation_search.png" alt="Conversation View search updates" class="image featured"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Histogram Updates</h3>
+                            </header>
+                            <p>
+                                The Histogram has a couple of notable new 
+								features. Firstly, the state of the histogram is 
+								saved for each graph element (Node, Transaction, 
+								Edge, Link). This means when you switch to a 
+								different graph element and then switch back, the 
+								histogram will remember what categories and 
+								properties were previously selected for that 
+								graph element type.
+                            </p>
+							<p>
+								The second new feature available is the ability 
+								to numerically sort the bins by labels. 
+								Previously, sorting by labels could only be done 
+								lexicographically.
+							</p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Visual Improvements to some Views</h3>
+                            </header>
+                            <p>
+                                Some quality-of-life improvements have been added 
+								to several views and importers including the Data 
+								Access View, Notes View, Import from File and 
+								Import from Database.
+                            </p>
+                            <p>
+								For the Data Access View, the Options menu item 
+								has been renamed to 
+								<strong>Workflow Options</strong> which better 
+								reflects the options it holds. The quality 
+								category and the Go button can also now be found 
+								at the bottom of the view (as well as the top) 
+								for those preferring a more natural workflow 
+								going down the view.
+                            </p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.5.0/data_access.png" alt="Data Access View Visual Improvements" class="image featured"/>
+							
+							<p>
+								For Notes View, user notes have received an 
+								update with all the editing for the note done 
+								inline, rather than opening up a separate window 
+								to make the relevant edits.
+							</p>
+							<p>
+								For Import from File and Database, some changes 
+								have been made to make navigating the importer 
+								workflow clearer, as well as, make other parts 
+								more visible than they were previously.
+							</p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.5.0/file_importer.png" alt="Import From File visual improvements" class="image featured"/>
+							
+							<p>
+								For the Import from Database, there are also some 
+								updates to the Manage connections window to make 
+								workflows clearer and provide better feedback 
+								when something is missing or incorrect.
+							</p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.5.0/manage_connections.png" alt="Manage connections screen improvements" class="image featured"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Anaglyphic Display</h3>
+                            </header>
+                            <p>
+                                A new experimental feature has also been added to 
+								present an anaglyph 3D display of the graph. This 
+								allows you to view your graph through an old pair 
+								of 3D glasses (the ones with coloured lenses). 
+								Simply go Experimental -&gt; Display -&gt; 
+								Anaglyphic to update the graph display. You can 
+								choose which colour will go through each eye via 
+								Setup -&gt; Options -&gt; Constellation -&gt; 
+								Anaglyphic Display. 
+                            </p>
+                        </section>
+						
+						<section>
+							<header>
+								<h3>Handy Reset Script</h3>
+							</header>
+							<p>
+								The installation files now include a Reset script 
+								which is useful for existing users of 
+								Constellation to clear the local cache between 
+								versions. This will make new features more 
+								visible.   
+							</p>
+						</section>
+
+                        <section>
+                            <header>
+                                <h3>Bug Fixes</h3>
+                            </header>
+                            <p>
+                                Release 2.5 includes numerous bug fixes such as:
+                            </p>
+
+                            <ul>
+                                <li>Screenshots missing from recent files on the Welcome Page</li>
+                                <li>File and Database importer filter search now correctly handles special characters in column names</li>
+                                <li>Layer by Time now creates a graph with the schema matching that of the original graph</li>
+								<li>Open Recent no longer duplicates files in the list</li>
+								<li>Analytic View results now sorted again</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 2.5. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v2.5.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v2.5.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for
+                                improvement? Noticed a bug? You can log an issue
+                                via the Help menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
