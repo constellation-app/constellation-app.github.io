@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v2.6</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v2.6</h2>
+                            <p>
+                                Here is a list of changes we've added to this
+                                version of Constellation v2.6 which are also
+                                included in Constellation Cyber v1.5.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>New Find View</h3>
+                            </header>
+							<p>
+								2.6 introduces a fresh new version of the Find 
+								View which can be found under Experimental -&gt; 
+								Views -&gt; Find, or Ctrl-B for those who like 
+								keyboard shortcuts. This comes with all your 
+								favourite features from the old version but also 
+								has fresh new features as well: 
+							</p>
+							<ul>
+								<li>
+									You can now view or replace one result at a 
+									time via the <strong>Find Previous</strong> 
+									and <strong>Find/Replace Next</strong> 
+									buttons. You can still also apply to all 
+									results at once if desired.
+								</li>									
+								<li>
+									Instead of the search being applied to just 
+									the current graph, you can now choose to 
+									optionally apply your search to all open 
+									graphs. 
+								</li>
+								<li>
+									On top of adding the results to the current 
+									selection, you also have the option to remove 
+									the results from the current selection or 
+									narrow the search scope to just the current 
+									selection.
+								</li>
+							</ul>
+							<p>
+								The most notable difference compared to the 
+								previous version is that this is a JavaFX 
+								implementation of the view which means it will 
+								have a similar look and feel to most of the other 
+								views available in Constellation. It is also 
+								undocked by default to make it similar to other 
+								applications with a find functionality. The 
+								intention is that this new version will 
+								eventually replace the old version of the Find 
+								View in a future release.  
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.6.0/new_find_view.png" alt="New Find View" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Named Data Access View Step Tabs</h3>
+                            </header>
+							<p>
+								A description can now be added to the Step tabs 
+								located in the Data Access View. This is helpful 
+								for identifying the intended purpose of a step. 
+								To add a description, simply double-click on the 
+								tab you want to edit, type in your description, 
+								and then press Enter (or click out of the tab) to 
+								set it. Descriptions are also saved with 
+								templates so when you load a template, you will 
+								get all the existing descriptions with it. 
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.6.0/step_tab_names_during.png" alt="Adding a description to a Data Access View Step Tab" class="image"/>
+							<img src="../images/blogs/whats-new-in-constellation-v2.6.0/step_tab_names_after.png" alt="After the description has been applied" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Quality Control View Improvement</h3>
+                            </header>
+							<p>
+								A helpful improvement has been made to the 
+								Quality Control View Category Priority window. 
+								When you open the window, if any of the rules 
+								have had their severity changed to a level other 
+								than the default, the Reset button for that rule 
+								will specify the default severity which that rule 
+								will be reset to. Note that this change only 
+								occurs on loading the window so you won’t see the 
+								label on the reset button change while you are 
+								changing the severities.
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.6.0/quality_rule_set_to_default.png" alt="Category Priority Window when some rules have had priority changed" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>File Importer Improvement</h3>
+                            </header>
+							<p>
+								A number of useful updates have been made to the 
+								File Importer to better handle importing multiple 
+								files at the same time. In previous versions, the 
+								only restriction on importing multiple files was 
+								that the files had to be of the same type (e.g. 
+								csv, excel, etc). While only one of the files 
+								would display in the preview at any given time, 
+								the mapping specified would get applied to all 
+								the files added to the list. This caused issues 
+								then if the structure of each file was different 
+								(e.g. had a different numbers of columns). This 
+								issue has been rectified in this release. 
+							</p>
+							<p>
+								When you try add a second file to the file list, 
+								if the file you try to add has a different number 
+								of columns to first file or has different column 
+								headers (if 'Files Include Headers' is selected), 
+								a popup will be displayed indicating a mismatch 
+								and that file won’t be added to the list. This 
+								means you can only import multiple files at the 
+								same time if all files have the same column 
+								structure.
+                            </p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.6.0/file_importer_warning.png" alt="File Importer Warning" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Histogram Selected Bins Count</h3>
+                            </header>
+							<p>
+								The Histogram View has also received an update. 
+								On top of displaying the total number of bins, 
+								the Histogram will now also specify how many of 
+								those bins are selected. This makes it easier to 
+								analyse the data in your graph when filters are 
+								applied.
+                            </p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.6.0/histogram_selected_bin_count.png" alt="Histogram Selected Bin Count" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 2.6. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v2.6.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v2.6.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for 
+								improvement? Have a comment on the new Find View? 
+								Noticed a bug? You can log an issue via the Help 
+								menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2021 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
