@@ -108,7 +108,9 @@
       <h2>Add and Remove Files to Import</h2>
       <p>Add files to import using the <img src="../constellation/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/docs/resources/plus_coloured.png" alt="Add File
       Button" /> and remove a file using the <img src="../constellation/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/docs/resources/minus_coloured.png" alt="Remove File
-      Button" />. Once a file has been selected, the full name will appear. If the entire file location is not visible, extend the window to see the full name.</p>
+      Button" />.</p>
+      <p>All the files that are being added should have the same column structure. When the "Files Include Headers" option is enabled, the column headings of all the files should be the same. When it is disabled, the number of columns should be the same. Otherwise a warning message is displayed and the files with a different structure to the first file added are removed.</p>
+      <p>Once a file has been added, the full name will appear. If the entire file location is not visible, extend the window to see the full name.</p>
       <p>Once you add a file, the Configuration section will display the first 100 rows of the file as a preview. If you have imported multiple files, selecting the file will update the preview.</p>
       <p>With the "Initialise With Schema" option enabled, new nodes and transactions added to the graph will follow the rules governed by the schema. If this is not enabled, nodes imported will not have attributes such as label and icon defined.</p>
       <p>With the "Files Include Headers" option enabled, the importer will treat the first row of the file as a header and it not be imported. The header row is then displayed as the column names in the preview. With the option disabled, the importer will import every row including the first row. The preview in this case will add some auto-generated column names (these won't affect the file or the import).</p>
