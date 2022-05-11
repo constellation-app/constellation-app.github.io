@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+
 body {
   line-height: 1;
 }
@@ -2581,4 +2582,12 @@ button,
   .carousel article .image {
     margin-bottom: 2em;
   }
+}
+
+.btn.btn-link.btn-block.text-left.collapsed:hover {
+   background: #b8b8b8;
+}
+
+.btn.btn-link.btn-block.text-left:hover {
+   background: #b8b8b8;
 }
