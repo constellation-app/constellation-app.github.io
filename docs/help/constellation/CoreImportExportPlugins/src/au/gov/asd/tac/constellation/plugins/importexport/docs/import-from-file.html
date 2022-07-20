@@ -119,7 +119,15 @@
       <h2>Apply Attributes</h2>
       <p>Applying an attribute to the column is simple as dragging and dropping an attribute onto a column in the preview.</p>
       <p>By default, not all attributes available to the selected schema are visible because there can be an overwhelming number of attributes depending on the schema. To see all possible attributes you can apply to a graph, select "Show all schema attributes".</p>
-      <p>If you have a specific format for example the DateTime, then you can right click on the DateTime attribute and select the format from the drop down list or enter your own.</p>
+      <p>If you have a specific format for example the DateTime, then you can right click on the DateTime attribute and select the format from the drop down list or enter your own Custom Format.</p>
+      <p>E.g.</p>
+      <ul>
+      <li>Select "MM/dd/yyyy HH:mm:ss" (for 05/12/2009 23:59:13)</li>
+      <li>Enter Custom format "yyyy-MM-dd'T'HH:mmXXX" (for 1999-07-16T19:20-03:30)</li>
+      <li>Enter Custom format "yyyy-MM-dd HH:mm:ss.SSS XXX" (for 2020-05-09 22:14:14.037 +09:00)</li>
+      <li>Enter Custom format "yyyy-MM-dd'T'HH:mm:ssXX" (for 2016-06-10T13:53:22+0400)</li>
+      </ul>
+      <p>If the DateTime format is not EPOCH and it doesn't contain a time zone in the Datetime Parameters window, the "Time Zone" field is enabled and you can specify the input time zone specially when it's not GMT.</p>
       <p>If you want to create your own attributes then you can by clicking on <img src="../constellation/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/docs/resources/plus_black.png" alt="Add Attribute
       Icon" /> and selecting a type and entering a label.</p>
       <h2>Directed and Undirected Transactions</h2>
