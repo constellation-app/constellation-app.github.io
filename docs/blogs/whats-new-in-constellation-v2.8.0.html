@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v2.8</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v2.8</h2>
+                            <p>
+                                Here is a list of changes we've added to this
+                                version of Constellation v2.8 which are also
+                                included in Constellation Cyber v1.7.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>Layers View Enhanced Interface</h3>
+                            </header>
+							<p>
+								Layers View has had a complete user interface 
+								rework and is now available under the Views menu.
+							</p>
+							<p>
+								This enhanced Layers View allows you to add 
+								vertices and transactions of up to 32 layers by 
+								either using the right click context menu or 
+								defining a query. The view allows for toggling 
+								of layers via a checkbox which links to subsets 
+								of graph elements. This will either hide or show 
+								the subsets based on element visibility changes 
+								to reduce clutter when analysing large data sets.
+							</p>
+							<p>
+								Having the new Layers View allows for graphs to 
+								be analysed from different perspectives to better 
+								determine relationships between entities.  
+							</p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.8.0/layers_view_before.png" alt="Graph Before Layers View layer applied" class="image" height="100%" width="100%"/>
+							<img src="../images/blogs/whats-new-in-constellation-v2.8.0/layers_view_after.png" alt="Graph After Layers View layer applied" class="image" height="100%" width="100%"/>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Active Graph Tab Enhancement</h3>
+                            </header>
+							<p>
+								The Active Graph tab is now highlighted in blue 
+								to clearly distinguish it from the other tabs 
+								which is handy when there are numerous graphs 
+								open. This works with all of the different look 
+								and feel options that are available under 
+								Constellation options.  
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.8.0/active_graph_tab.png" alt="Active Graph Tab" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Timezone Enhancements</h3>
+                            </header>
+							<p>
+								The File and Database Importers now have the 
+								ability to specify a timezone when importing 
+								datetimes that don't have one specified. 
+								Additionally, UX enhancements have been made, 
+								giving the ability to specify the preferred 
+								timezone to import datetimes in. 
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.8.0/timezone_import.png" alt="Timezone addition to Datetime Formatter" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Import Graph File Plugin</h3>
+                            </header>
+							<p>
+								A new plugin "Import Graph File" has been added 
+								to the Import section of Data Access View. This 
+								allows you to import data from graph file types 
+								such as GML, GraphML, and Pajek. This is now the 
+								way to import these file types with the existing 
+								“Import From GML File”, “Import From GraphML 
+								File” and “Import From Pajek File” plugins now 
+								removed.  
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Clear Button for Queries </h3>
+                            </header>
+							<p>
+								The Database Importer now has a clear button next 
+								to the query button. Clicking Clear will remove 
+								both the results in the current run and the query 
+								text.   
+							</p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Several Bug Fixes</h3>
+                            </header>
+							<p>
+								On top of the above new features and 
+								improvements, a number of bugs were also fixed. 
+								These include: 
+                            </p>
+							<ul>
+								<li>
+									Importing Epoch timestamps now import as 
+									seconds rather than milliseconds bringing 
+									Constellation in line with Unix standards
+								</li>
+								<li>
+									Auto Notes in the Notes View are refreshing 
+									correctly
+								</li>
+								<li>
+									The Welcome Page screenshots properly 
+									generate for graphs with the same name saved 
+									to different locations 
+								</li>
+							</ul>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 2.8. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v2.8.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v2.8.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for 
+								improvement? Noticed a bug? You can log an issue 
+								via the Help menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2022 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
