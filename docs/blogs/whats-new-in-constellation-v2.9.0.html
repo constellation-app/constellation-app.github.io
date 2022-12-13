@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v2.9</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v2.9</h2>
+                            <p>
+                                Here is a list of changes we've added to this
+                                version of Constellation v2.9 which are also
+                                included in Constellation Cyber v1.8.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>Custom Icons Now Saved with the Graph</h3>
+                            </header>
+							<p>
+								Have you ever shared a graph with someone only to 
+								discover that the other person can’t see any of 
+								the cool custom icons you added to your nodes? 
+								Worry no more as changes have now been made so 
+								that custom icons are now saved with the graph. 
+								This means you are now able to share graphs with 
+								others without the extra step of re-adding the 
+								icons for each person it is shared with. 
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Export Results from the Analytic View</h3>
+                            </header>
+							<p>
+								A new feature has been added to allow you to 
+								export the table of results from the analytics 
+								you run to either a CSV or Excel file. This will 
+								enhance your analysis by allowing you more easily 
+								use the results outside of Constellation if 
+								needed.  
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.9.0/analytic_view_export.png" alt="Analytic View Export" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Enable or Disable Quality Control Rules</h3>
+                            </header>
+							<p>
+								The Quality Control View allows you to verify 
+								your data against some static rules to determine 
+								data quality. Sometimes though, you may find that 
+								certain rules aren’t relevant or useful during 
+								your analysis and so the view can clog up with 
+								unhelpful information.  
+                            </p>
+							<p>
+								New to 2.9, alongside changing rule priorities, 
+								you can also now enable or disable rules to suit 
+								the analysis you are doing. Rules that are 
+								disabled are ignored and not factored into 
+								determining the quality rating of a node (even if 
+								that node would otherwise flag that rule). 
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.9.0/quality_rule_enable1.png" alt="Quality Control View before rule disable" class="image"/>
+							<img src="../images/blogs/whats-new-in-constellation-v2.9.0/quality_rule_enable2.png" alt="Quality Category Priority Dialog" class="image"/>
+							<img src="../images/blogs/whats-new-in-constellation-v2.9.0/quality_rule_enable3.png" alt="Quality Control View after rule disable" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Constellation Preferences now Consolidated</h3>
+                            </header>
+							<p>
+								A number of tabs in Constellation Preferences 
+								(Setup -&gt Options -&gt CONSTELLATION) have been 
+								consolidated to make it easier to use:
+							</p>
+							<ul>
+								<li>
+									The settings previously found in the 
+									Application Font tab are now found in the 
+									Application tab
+								</li>
+								<li>
+									The settings previously found in the 
+									Anaglyphic tab are now found in the Graph 
+									tab 
+								</li>
+							</ul>
+							<p>
+								As a further enhancement, the tabs are now in 
+								Alphabetical order so that they can be more 
+								easily found. 
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Default Datetime Formatter Improvements</h3>
+                            </header>
+							<p>
+								The default datetime formatters used to import 
+								from the File and Database Importers have been 
+								updated to cover single digit hours and dates. A 
+								couple of new formatters with no seconds have 
+								also been added as default options.   
+							</p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Several Bug Fixes</h3>
+                            </header>
+							<p>
+								A number of bug fixes have also been made. These 
+								include:
+                            </p>
+							<ul>
+								<li>
+									Columns in the Table View with numerical data 
+									are now sorted numerically rather than 
+									lexicographically 
+								</li>
+								<li>
+									The EPOCH datetime formatter can now handle 
+									EPOCH datetimes presented in scientific 
+									notation
+								</li>
+								<li>
+									The new Find View (in Experimental) now 
+									properly traverses results when you search 
+									all open graphs 
+								</li>
+								<li>
+									Select All and Deselect All actions are only 
+									applied to UI element in focus (e.g. applying 
+									select all in a text box won’t then select 
+									everything on your graph) 
+								</li>
+							</ul>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 2.9. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v2.9.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v2.9.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for 
+								improvement? Noticed a bug? You can log an issue 
+								via the Help menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2022 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
