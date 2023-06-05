@@ -43,3 +43,14 @@ find ./constellation_cyber_plugins/* -path '*/docs/*' -name "*html" | xargs -I{}
 find ./constellation_cyber_plugins/* -path '*/docs/*' -name "*.png" | xargs -I{} cp {} --parents -t ./pages/docs/help/
 find ./constellation_cyber_plugins/* -path '*/docs/*' -name "*.jpg" | xargs -I{} cp {} --parents -t ./pages/docs/help/
 echo "done moving."
+
+
+# move the help pages into an ext folder instead so that they match the formatting of offline help
+echo "Moving help pages and resources into ext folder"
+find ./pages/docs/help/ -iname "ext" -print0 | xargs -0 -I {} cp -v -R "{}" ./pages/docs/help/
+echo "Done moving to ext folder"
+
+# remove the now duplicated files from the GitHub Pages repo
+echo "Removing duplicated files"
+find ./pages/docs/help -mindepth 1 -type d -name "ext" -prune -o -exec rm -rf {} +
+echo "Done removing duplicated files" 
