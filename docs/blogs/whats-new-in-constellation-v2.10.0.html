@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v2.10</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v2.10</h2>
+                            <p>
+                                Here is a list of changes we've added to this
+                                version of Constellation v2.10 which are also
+                                included in Constellation Cyber v1.9.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>New Features and Improvements to Notes View</h3>
+                            </header>
+							<p>
+								Notes View has been updated with new features and 
+								a new look! 
+							</p>
+							<p>
+								Firstly, you can now customise the colour of your 
+								user notes. This will allow you to distinguish 
+								different notes for different situations. 
+								Different colours could be used for different 
+								parts of your graph, different stages in your 
+								analysis, or perhaps different kinds of notes 
+								(e.g. general remarks, notes for future, 
+								questions to answer) 
+							</p>
+							<p>
+								Secondly, a datetime filter has been added. This 
+								gives you another way to filter notes by only 
+								displaying notes that were created during a 
+								selected time frame.
+							</p>
+							<p>
+								Lastly, the Notes View interface has been updated 
+								to optimise the way notes are displayed. This has 
+								been primarily achieved by moving the section to 
+								create new notes into a dialog box which pops up 
+								when you click the Create Note button. Also for 
+								notes that are more than five lines long, notes 
+								are contracted with a show more button to expand 
+								the note (and a show less button to contract 
+								again). These together allow more space to view 
+								more notes with less scrolling required.   
+							</p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.10.0/notes_view_updates.png" alt="New Look Notes View" class="image"/>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>New Error Report View</h3>
+                            </header>
+							<p>
+								Previously in Constellation, an error would pop 
+								up any time something went wrong. In some 
+								instances though, this could result in multiple 
+								pops up being displayed at the same time which 
+								could be a pain to remove and potentially slow 
+								down your computer. 
+							</p>
+							<p>
+								Introducing the Error Report View: a view to help 
+								better manage how errors are displayed in 
+								Constellation. It can be accessed via Help -> 
+								Error Report. In the view, you choose which level 
+								of errors you want to popup as well as display 
+								reports for. Errors which occur more than once 
+								will display a count alongside the existing error 
+								rather than displaying a popup for each instance 
+								which will significantly decrease the number of 
+								errors displayed. You also have the option to 
+								stop displaying specific errors when they pop up 
+								altogether if you so desire. Altogether, the view 
+								should make for a better experience when errors 
+								occur.  
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.10.0/error_report_popup.png" alt="New Look Error Popup" class="image"/>
+							</br>
+							<img src="../images/blogs/whats-new-in-constellation-v2.10.0/error_report_view.png" alt="New Error Report View" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>New Find View Dropdowns Improved</h3>
+                            </header>
+							<p>
+								The Current Selection dropdown in the new Find 
+								View was a little confusing. Some options 
+								suggested what to do for the search itself while 
+								others pointed to actions that occur after the 
+								search. To remove this confusion, we’ve replaced 
+								the Current Selection dropdown with two 
+								dropdowns: Search In, and Post-Search Action.
+							</p>
+							<p>
+								With the Search In dropdown, you can choose the 
+								scope of your search with options of either the 
+								current graph, current selection, or all open 
+								graphs (which has moved from its previous 
+								location as a checkbox at the bottom of the view).
+							</p>
+							<p>
+								The Post-Search Action dropdown allows you to 
+								determine what to do with the results after the 
+								search has completed with options to either 
+								replace, add to, or remove from the current 
+								selection. To compliment this dropdown, there is 
+								also now a button at the bottom of the view to 
+								delete the results from the graph (or graphs if 
+								searching all open ones). 
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.10.0/new_find_view_updates.png" alt="Updates to New Find View" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Plugin Reporter now displays Child Plugins</h3>
+                            </header>
+							<p>
+								Some plugins in Constellation are made up of 
+								several child plugins which will execute in 
+								sequence. Previously though, these plugins would 
+								display the main parent plugin and its status on 
+								its own in the Plugin Reporter. This meant that 
+								if the plugin failed, there was no way of telling 
+								from the Plugin Reporter which child plugin the 
+								error occurred in (as it would simply tell you 
+								the parent plugin had failed). The child plugins 
+								would have a report displayed as well, but they 
+								were presented on the same level as the parent 
+								and so there was no apparent connection between 
+								parent and child.
+							</p>
+							<p>
+								This has changed now in v2.10 with the reports 
+								for child plugins being displayed under the 
+								parent plugin that it was executed under. This 
+								means you can now see how long each individual 
+								child plugin takes to run and should any errors 
+								occur during execution, you will know exactly 
+								which plugin caused the error to occur. 
+                            </p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.10.0/plugin_reporter_changes.png" alt="Comparing plugin report from 2.9 to 2.10" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>JPG and GIF now supported as Icon Types</h3>
+                            </header>
+							<p>
+								Alongside PNG, you can now select JPG and GIF 
+								images to be icons for nodes on your graph.    
+							</p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Several Bug Fixes</h3>
+                            </header>
+							<p>
+								A number of bug fixes have also been made. These 
+								include:
+                            </p>
+							<ul>
+								<li>
+									The Excel datetime formatter is now working 
+									again 
+								</li>
+								<li>
+									Some data access view plugins which were auto 
+									selected by default when launching the view 
+									are no longer doing so 
+								</li>
+								<li>
+									Recent graphs on the Welcome Page are no 
+									longer occasionally missing 
+								</li>
+							</ul>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 2.10. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v2.10.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v2.10.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for 
+								improvement? Noticed a bug? You can log an issue 
+								via the Help menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2022 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
