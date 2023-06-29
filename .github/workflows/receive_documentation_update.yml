@@ -9,6 +9,8 @@ jobs:
     container:
       image: docker://pandoc/latex:2.9
       options: --entrypoint=bash
+    permissions:
+      contents: write
     steps:
       - name: get actions tools
         run: |
