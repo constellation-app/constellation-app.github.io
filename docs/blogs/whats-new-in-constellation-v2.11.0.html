@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v2.11</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v2.11</h2>
+                            <p>
+                                Here is a list of changes we've added to this
+                                version of Constellation v2.11 which are also
+                                included in Constellation Cyber v1.10.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>Find View Revamped</h3>
+                            </header>
+							<p>
+								The Find View has finally received its fresh new 
+								look. This revamped version of the Find View had 
+								previously been available via the Experimental 
+								Menu since v2.6 but now that it has stabilised, 
+								it has now been moved out of Experimental and 
+								officially replaced the old version. This means 
+								that the new version now can be accessed via 
+								Ctrl-F, as was the case with the old version (no 
+								longer Ctrl-B as it was while in Experimental). 
+							</p>
+							<p>
+								If you want to hear about some of the cool 
+								features of this revamped version, check out some 
+								of the blogs for previous versions which outline 
+								in detail some of the notable features and other 
+								improvements that were brought in as part of the 
+								revamp. 
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Attribute Editor Updates</h3>
+                            </header>
+							<p>
+								The Attribute Editor has received a couple of 
+								notable updates.
+							</p>
+							<p>
+								The first of these is the ability to hide 
+								attributes with no values. One thing you may have 
+								noticed if you have used the Attribute Editor 
+								previously is that if you have enough attributes 
+								added on the graph, the list of attributes gets 
+								bloated, and it can be difficult to analyse the 
+								values associated with each of those attributes. 
+								This gets even more difficult if a number of 
+								those attributes don’t contain any value for the 
+								given selection. 
+							</p>
+							<p>
+								With this new feature, it will be easier to 
+								analyse your data by decluttering the view of any 
+								attributes that contain no value. To enable, 
+								simply deselect the new “Show Empty” button in 
+								the relevant graph element panel. The number of 
+								attributes that are hidden is then displayed at 
+								the top of graph element panel so that you’re 
+								aware that those attributes are still there (just 
+								not displayed). Which attributes have no value 
+								depends on the graph selection, so an attribute 
+								may be hidden for one graph selection and visible 
+								in another.  
+                            </p>
+							<p>
+								Of course, if you would prefer to always see all 
+								the attributes (as has been the case previously), 
+								then simply select “Show Empty” in the relevant 
+								graph element panel (it is selected by default). 
+							</p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.11.0/attribute_editor_hide_empty.png" alt="Attrbibute Editor Hide Empty Attributes" class="image"/>
+							<p>
+								The second notable update is that the explicit 
+								Edit buttons previously found next to each 
+								attribute have been removed. Some time ago, 
+								Constellation enabled the ability to update 
+								attribute values by clicking on the value itself 
+								and at that point, the Edit buttons became 
+								redundant. The Edit buttons had been kept in 
+								after that to enable a transition period, but it 
+								was finally determined that now was the time for 
+								them to be removed. 
+							</p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.11.0/attribute_editor_edit_button_removed.png" alt="Attribute Editor Edit Button Removed" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Markdown Support in Notes View</h3>
+                            </header>
+							<p>
+								The Notes View received several additions in the 
+								last version of Constellation and in 2.11, we’ve 
+								added another. 
+							</p>
+							<p>
+								If you’ve ever wanted to add more expressiveness 
+								to your user notes, you can now apply Markdown 
+								formatting to your notes. By ticking the Markdown 
+								checkbox found in either the Create Note or Edit 
+								Note dialogs, the text that you write will be 
+								interpreted as having Markdown formatting and 
+								will display accordingly. This allows adding 
+								things such as headers, bold text, and lists in a 
+								much easier way. 
+							</p>
+							<p>
+								If you’re unsure how to apply Markdown formatting 
+								to your notes, the Notes View help page has been 
+								updated with some examples so you should check 
+								that out. You can also use the Preview tab of the 
+								relevant dialog to see what it will look like. 
+								If you would prefer not apply Markdown formatting 
+								to your notes, you can simply leave the checkbox 
+								unticked and your note will display as it always 
+								has. 
+                            </p>
+                            <img src="../images/blogs/whats-new-in-constellation-v2.11.0/notes_view_markdown_dialog.png" alt="Adding Markdown formatting to new note in Notes View" class="image"/>
+							</br>
+							<img src="../images/blogs/whats-new-in-constellation-v2.11.0/notes_view_markdown_result.png" alt="The resulting note in Notes View" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Select All and Clear All Options for Multi-Choice Dropdowns</h3>
+                            </header>
+							<p>
+								Multi choice menus have been present in 
+								Constellation for a long while but one thing they 
+								haven’t had are quick ways to select and clear 
+								lots of options at once. This means that users 
+								must go through and (un)tick all the options they 
+								want manually which can get very tedious the 
+								longer the list of options is. 
+							</p>
+							<p>
+								This has finally changed though, allowing users 
+								to quickly Select All or Clear All options. 
+								Simply right-click on the multi-choice dropdown 
+								to bring up a menu which will present either 
+								option to do. For plugin parameters (such as 
+								those found in Data Access View or Analytic 
+								View), you can also access these options via a 
+								dropdown conveniently located next to the 
+								multi-choice dropdown. 
+                            </p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.11.0/multi_choice_select_all_right_click.png" alt="Multi-Choice Select/Clear Right Click Context Menu" class="image"/>
+							</br>
+							<img src="../images/blogs/whats-new-in-constellation-v2.11.0/multi_choice_select_all_plugin_parameter.png" alt="Multi-Choice Select/Clear Next to Dropdown " class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Data Access Plugin Category Reordering</h3>
+                            </header>
+							<p>
+								Constellation v2.7 introduced the ability to hide 
+								Data Access Plugin categories via Preferences 
+								(Options -> CONSTELLATION -> Data Access View). 
+								In Constellation v2.11, this preference has been 
+								updated to also enable re-ordering of the 
+								categories in the visible list. To do so, click 
+								on a category in the visible list and then press 
+								the up and down arrow buttons to move the 
+								category up and down the list. After saving those 
+								changes and restarting Constellation, you should 
+								see the category order in Data Access View 
+								reflect the order you set in Preferences.     
+							</p>
+							<img src="../images/blogs/whats-new-in-constellation-v2.11.0/data_access_categories_order.png" alt="Data Access View Preferences Panel" class="image"/>
+							</br>
+							<img src="../images/blogs/whats-new-in-constellation-v2.11.0/data_access_categories_result.png" alt="Result of moving categories in Data Access View" class="image"/>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>An update to the Constellation Client</h3>
+                            </header>
+							<p>
+								For the first time in a long time, the 
+								Constellation Client has received an update. For 
+								those not familiar with it, the client is the 
+								library which enables using Constellation via a 
+								script (e.g. In Scripting View, Jupyter Notebook).      
+							</p>
+							<p>
+								In this update, you now can rename graphs, and 
+								this has been done a couple ways. Firstly, there 
+								is a new function “rename_graph” in which you 
+								pass as parameters the new name for the graph and 
+								optionally the graph you want to rename (if you 
+								don’t specify one it will rename the active 
+								graph). The other way is through the existing 
+								“new_graph” function which now allows an optional 
+								parameter to specify a name for the graph (if you 
+								don’t like the default naming convention which 
+								will be applied otherwise). 
+							</p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Several Bug Fixes</h3>
+                            </header>
+							<p>
+								Numerous bug fixes have also been made. These 
+								include: 
+                            </p>
+							<ul>
+								<li>
+									Quick search now remembers searches between 
+									sessions 
+								</li>
+								<li>
+									Auto Notes are removed from the Notes View if 
+									an action is undone
+								</li>
+								<li>
+									Analytic View now remembers the results of 
+									the last analytic run after closing and 
+									re-opening the view
+								</li>
+								<li>
+									Analytic View also now removes the effects of 
+									toggles (Color, Hide, Size) after the view is 
+									closed 
+								</li>
+							</ul>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 2.11. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v2.11.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v2.11.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for 
+								improvement? Noticed a bug? You can log an issue 
+								via the Help menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2023 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
