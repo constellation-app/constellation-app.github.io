@@ -1,11 +1,11 @@
 name: Receive documentation update trigger
 # Receives a trigger from Constellation repository to update documentation.
 
-on: [repository_dispatch]
+on: [repository_dispatch, workflow_dispatch]
 
 jobs:
   rebuild-documentation:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: docker://pandoc/latex:2.9
       options: --entrypoint=bash
@@ -16,23 +16,23 @@ jobs:
         run: |
           apk update && apk add --no-cache coreutils && apk add bash && apk add git
       - name: Checkout GitHub Pages repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: pages
       - name: Checkout Constellation repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: constellation-app/constellation
           path: ./constellation
           ref: documentation_update
       - name: Checkout Constellation-Adaptors repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: constellation-app/constellation-adaptors
           path: ./constellation-adaptors
           ref: documentation_update
       - name: Checkout constellation_cyber_plugins repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: AustralianCyberSecurityCentre/constellation_cyber_plugins
           path: ./constellation_cyber_plugins
@@ -43,7 +43,7 @@ jobs:
         run: |
               chmod +x ./pages/.github/workflows/convert_doc_files.sh && ./pages/.github/workflows/convert_doc_files.sh
       - name: Auto Commit Documentation Updates
-        uses: stefanzweifel/git-auto-commit-action@v4.12.0
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           repository: 'pages'
           commit_message: 'Documentation Update Automated'
