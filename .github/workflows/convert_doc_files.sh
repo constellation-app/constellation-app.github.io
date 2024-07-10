@@ -8,7 +8,7 @@ echo "done converting."
 # replace the markdown links with html ones within toc.md
 echo "replace .md links with .html..."
 sed -i -e 's/.md/.html/g' ./constellation/toc.html
-mv ./constellation/toc.html ./pages/docs/help/toc.html
+cp ./constellation/toc.html ./pages/docs/help/toc.html
 echo "done replacing."
 
 # convert the markdown links to html within the help pages
@@ -54,3 +54,6 @@ echo "Done moving to ext folder"
 echo "Removing duplicated files"
 find ./pages/docs/help -mindepth 1 -type d -name "ext" -prune -o -exec rm -rf {} +
 echo "Done removing duplicated files" 
+
+# move the table of contents at the end so it doesn't get deleted
+mv ./constellation/toc.html ./pages/docs/help/toc.html
