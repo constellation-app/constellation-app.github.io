@@ -50,7 +50,4 @@ echo "Moving help pages and resources into ext folder"
 find ./pages/docs/help/ -iname "ext" -print0 | xargs -0 -I {} cp -v -R "{}" ./pages/docs/help/
 echo "Done moving to ext folder"
 
-# remove the now duplicated files from the GitHub Pages repo
-echo "Removing duplicated files"
-find ./pages/docs/help -mindepth 1 -type d -name "ext" -prune -o -exec rm -rf {} +
-echo "Done removing duplicated files" 
+
