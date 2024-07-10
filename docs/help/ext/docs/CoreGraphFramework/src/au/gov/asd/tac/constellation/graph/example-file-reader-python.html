@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<head>
+  <base href="/constellation-app.github.io/help/constellation/">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../assets/css/app.css" />
+  <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../../assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../../../assets/js/jquery.min.js"></script>
+  <script src="../../../assets/js/js.cookie.min.js"></script>
+  <script src="../../../assets/js/jquery.dropotron.min.js"></script>
+  <script src="../../../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../../../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../../../assets/js/browser.min.js"></script>
+  <script src="../../../assets/js/breakpoints.min.js"></script>
+  <script src="../../../assets/js/app.js"></script>
+  <script src="../../../assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+
+  <script>
+    $(function() {
+      $("#includedContent").load("../../toc.html");
+    });
+  </script>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../index.html#banner" class="scrolly">About</a></li>
+      <li><a href="../../../index.html#features" class="scrolly">Features</a></li>
+      <li><a href="../../../download.html" class="scrolly">Download</a></li>
+      <li><a href="../../../blog.html" class="scrolly">Blog</a></li>
+      <li><a href="CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/about-constellation.html" class="scrolly">Documentation</a></li>
+      <li><a href="../../../index.html#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
+
+</head>
+
+<body style="padding-top: 100px;">
+
+  <div class="row">
+    <div class="col-4 col-sm-3">
+      <div id="includedContent"></div>
+    </div>
+    <div class="col-8 col-sm-9">
+      <h1>Example Constellation File Reader</h1>
+      <p>The Constellation file format uses JSON to store data. One of the advantages of using JSON is that a .star file can be manipulated using any language that has a JSON library.</p>
+      <p>This section will use Python 2.6 to provide examples of reading .star files.</p>
+      <h2>Reading a .star File</h2>
+      <p>The Python script below (given the path of a .star file on the command line) will read the JSON document from the .star file and display some data from the JSON document. We'll use the output of this script to investigate Constellation's JSON document format.</p>
+      <pre><code>        #
+              # Read the JSON document from a Constellation .star file.
+              #
+
+              from __future__ import print_function
+
+              import json
+              import pprint
+              import sys
+              import zipfile
+
+              def read_graph(fnam):
+                  &#39;&#39;&#39;Read a Constellation graph from a .star file.&#39;&#39;&#39;
+
+                  try:
+                      zf = zipfile.ZipFile(fnam, &#39;r&#39;)
+                      bytes = zf.read(&#39;graph.txt&#39;)
+                  finally:
+                      zf.close()
+
+                  json_data = json.loads(bytes, &#39;UTF-8&#39;)
+
+                  return json_data
+
+              def graph_section(graph, section, sub=None):
+                  &#39;&#39;&#39;Given a graph, return the given section of the graph.
+                  If sub is also given, return that subsection.
+
+                  The section argument is one of &#39;graph&#39;, &#39;vertex&#39;, &#39;transaction&#39;, &#39;meta&#39;.
+                  The sub argument is one of &#39;attrs&#39;, &#39;data&#39;.
+                  Returns None if the section is not found.&#39;&#39;&#39;
+
+                  # Loop through the graph looking for the correct section.
+                  # We do it like this in case other sections are added in the future.
+                  #
+                  for sect in graph:
+                      if section in sect:
+                          if sub is None:
+                              return sect[section]
+
+                          for s in sect[section]:
+                              if sub in s:
+                                  return s[sub]
+
+              if __name__==&#39;__main__&#39;:
+                  graph = read_graph(sys.argv[1])
+                  print(&#39;Graph structure:&#39;)
+                  pprint.pprint(graph, indent=2, depth=4)
+
+                  vertices = graph_section(graph, &#39;vertex&#39;)
+                  print(&#39;\nVertex section:&#39;)
+                  pprint.pprint(vertices, indent=2, depth=2)
+
+                  transactions = graph_section(graph, &#39;transaction&#39;)
+                  print(&#39;\nTransaction section:&#39;)
+                  pprint.pprint(transactions, indent=2, depth=2)
+
+                  vertex_data = graph_section(graph, &#39;vertex&#39;, sub=&#39;data&#39;)
+                  print(&#39;\nVertex data:&#39;)
+                  pprint.pprint(vertex_data[0], indent=2)
+      </code></pre>
+      <p>The output from the script (using a typical graph) is shown below:</p>
+      <pre><code>        Graph structure:
+              [ { u&#39;attribute_mod_count&#39;: 65,
+                  u&#39;global_mod_count&#39;: 591,
+                  u&#39;schema&#39;: u&#39;au.gov.asd.tac.constellation.graph.schema.analyticFactory&#39;,
+                  u&#39;structure_mod_count&#39;: 65,
+                  u&#39;version&#39;: 1},
+                { u&#39;graph&#39;: [{ u&#39;attrs&#39;: [...]}, { u&#39;data&#39;: [...]}]},
+                { u&#39;vertex&#39;: [{ u&#39;attrs&#39;: [...]}, { u&#39;data&#39;: [...]}]},
+                { u&#39;transaction&#39;: [{ u&#39;attrs&#39;: [...]}, { u&#39;data&#39;: [...]}]},
+                { u&#39;meta&#39;: [{ u&#39;attrs&#39;: [...]}, { u&#39;data&#39;: [...]}]}]
+
+              Vertex section:
+              [{ u&#39;attrs&#39;: [...]}, { u&#39;data&#39;: [...]}]
+
+              Transaction section:
+              [{ u&#39;attrs&#39;: [...]}, { u&#39;data&#39;: [...]}]
+
+              Vertex data:
+              { u&#39;Country2&#39;: u&#39;Canada&#39;,
+                u&#39;Date&#39;: u&#39;2012-10-31&#39;,
+                u&#39;Datetime&#39;: u&#39;2014-03-24 03:45:41.839&#39;,
+                u&#39;IsGood&#39;: True,
+                u&#39;Name&#39;: u&#39;Node 0&#39;,
+                u&#39;Normalised&#39;: 0.8359702,
+                u&#39;Type&#39;: u&#39;Online Identifier&#39;,
+                u&#39;Time&#39;: u&#39;14:20:37&#39;,
+                u&#39;background_icon&#39;: u&#39;Background.Flat Square&#39;,
+                u&#39;blaze&#39;: u&#39;45;LightBlue;Sphere_48;false&#39;,
+                u&#39;color&#39;: u&#39;0.25076652,0.5779746,0.37560248,1.0&#39;,
+                u&#39;icon&#39;: u&#39;Person.Account&#39;,
+                u&#39;selected&#39;: True,
+                u&#39;visibility&#39;: 0.0,
+                u&#39;vx_id_&#39;: 0,
+                u&#39;x&#39;: 5.0,
+                u&#39;y&#39;: 5.0,
+                u&#39;z&#39;: 6.3245554000000004}
+      </code></pre>
+      <p>The basic top-level structure of the graph document (leaving aside the first 'version' section) consists of lists of dictionaries with a single key. The top level array contains 'graph', 'vertex', 'transaction', and 'meta', each containing a two-element list: a dictionary with the key 'attrs', and a dictionary with the key 'data'.</p>
+      <p>Suppose we want to find the names of nodes that have a secondary country of 'Canada'. The following function will find those nodes. (The function is shown in two variants: one using a list comprehension, and one using long form. Use whichever variant you are most comfortable with.</p>
+      <pre><code>        def find_vertex_country(graph, country):
+                  vertex_data = graph_section(graph, &#39;vertex&#39;, sub=&#39;data&#39;)
+
+                  # Use vx.get() rather than vx[]: if the key doesn&#39;t exist because
+                  # the value is null, we don&#39;t want a KeyError to be thrown.
+                  #
+                  names = [vx.get(&#39;Name&#39;, &#39;Unknown&#39;) for vx in vertex_data
+                      if vx.get(&#39;Country&#39;)==&#39;Canada&#39;]
+
+                  return names
+
+              def find_vertex_country_2(graph, country):
+                  vertex_data = graph_section(graph, &#39;vertex&#39;, sub=&#39;data&#39;)
+                  names = []
+                  for vx in vertex_data:
+                      if &#39;Country&#39; in vx and vx[&#39;Country&#39;]==&#39;Canada&#39;:
+                          if &#39;Name&#39; in vx:
+                              name = vx[&#39;Name&#39;]
+                          else:
+                              name = &#39;Unknown&#39;
+                          names.append(name)
+
+                  return names
+      </code></pre>
+      <p>The output from both functions is (unsurprisingly) the same:</p>
+      <pre><code>        [u&#39;Node 1&#39;, u&#39;Node 6&#39;]
+      </code></pre>
+      <p>NOTE: We use "vx.get" instead of using standard dictionary lookup notation "vx[]". This is because a vertex attribute with a null value is not written to the JSON document, and therefore does not have a key in the Python dictionary when it is read. Attempting to read a dictionary with a non-existent key results in a KeyError being thrown, which isn't good for our output.</p>
+      <p>The documentation for get(key [,default]) says: "Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError." This is just what we want.</p>
+      <p>To find out which nodes do not have a country associated with them:</p>
+      <pre><code>        def find_vertex_no_country(graph):
+                  vertex_data = graph_section(graph, &#39;vertex&#39;, sub=&#39;data&#39;)
+
+                  names = [vx.get(&#39;Name&#39;, &#39;Unknown&#39;) for vx in vertex_data
+                      if &#39;Country&#39; not in vx]
+
+                  return names
+      </code></pre>
+      <p>Output:</p>
+      <pre><code>        [u&#39;Node 0&#39;, u&#39;Node 5&#39;]
+      </code></pre>
+      <p>These examples can be used as starting points for more complicated queries, such as "all countries starting with 'U'", or "events between two dates".</p>
+      <p>To find all of the countries that are associated with vertices in this graph, we use a set to add the known countries, and then display a sorted list.</p>
+      <pre><code>        def find_unique_countries(graph):
+                  vertex_data = graph_section(graph, &#39;vertex&#39;, sub=&#39;data&#39;)
+
+                  countries = set()
+                  for vx in vertex_data:
+                      if &#39;Country&#39; in vx:
+                          countries.add(vx[&#39;Country&#39;])
+
+                  return countries
+
+              countries = find_unique_countries(graph)
+              print(&#39;\nNode countries:\n%s&#39; % &#39;\n&#39;.join(sorted(countries)))
+      </code></pre>
+      <p>Output:</p>
+      <pre><code>        Node countries:
+              Australia
+              Canada
+              Sweden
+              Germany
+              India
+      </code></pre>
+      <p>Because the JSON document is designed for storage rather than graph manipulation, it is more difficult to find results for queries such as "find all transactions with the same country at both ends".</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Contact Us -->
+          <section id="contact" class="contact">
+            <header>
+              <h3>Contact Us</h3>
+            </header>
+            <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+            <p>
+              <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+            </p>
+          </section>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <ul class="menu">
+              <li>&copy; 2023 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    $(document).ready(function() {
+      var allCookies = Cookies.get();
+      for (var cookie in allCookies) {
+        if (cookie != null) {
+          $("#" + cookie).removeClass('show');
+          var cookieValue = Cookies.get(cookie);
+          if (cookieValue == ("true")) {
+            $("#" + cookie).collapse('show');
+          } else {
+            $("#" + cookie).collapse('hide');
+            $("#" + cookie + " .collapse").removeClass('show');
+          }
+        }
+      }
+    });
+
+    $(".collapse").on('shown.bs.collapse', function(e) {
+      console.log('shown');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "true");
+      $("#" + active).addClass('show');
+    });
+    $(".collapse").on('hidden.bs.collapse', function(e) {
+      console.log('collapsed');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "false");
+      $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-139401597-2');
+  </script>
+</body>

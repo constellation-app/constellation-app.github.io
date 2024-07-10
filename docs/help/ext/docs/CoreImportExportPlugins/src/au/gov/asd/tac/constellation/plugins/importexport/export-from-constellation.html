@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<head>
+  <base href="/constellation-app.github.io/help/constellation/">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../assets/css/app.css" />
+  <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../../assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../../../assets/js/jquery.min.js"></script>
+  <script src="../../../assets/js/js.cookie.min.js"></script>
+  <script src="../../../assets/js/jquery.dropotron.min.js"></script>
+  <script src="../../../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../../../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../../../assets/js/browser.min.js"></script>
+  <script src="../../../assets/js/breakpoints.min.js"></script>
+  <script src="../../../assets/js/app.js"></script>
+  <script src="../../../assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+
+  <script>
+    $(function() {
+      $("#includedContent").load("../../toc.html");
+    });
+  </script>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../index.html#banner" class="scrolly">About</a></li>
+      <li><a href="../../../index.html#features" class="scrolly">Features</a></li>
+      <li><a href="../../../download.html" class="scrolly">Download</a></li>
+      <li><a href="../../../blog.html" class="scrolly">Blog</a></li>
+      <li><a href="CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/about-constellation.html" class="scrolly">Documentation</a></li>
+      <li><a href="../../../index.html#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
+
+</head>
+
+<body style="padding-top: 100px;">
+
+  <div class="row">
+    <div class="col-4 col-sm-3">
+      <div id="includedContent"></div>
+    </div>
+    <div class="col-8 col-sm-9">
+      <h1>Export From Constellation</h1>
+      <p>Constellation provides a number of options for exporting graphical information. Some of these export options may provide options to customise the export. Others will simply request a destination file location.</p>
+      <p>Exporting from Constellation can be broken into two groups, <strong>Visualisation Exports</strong> and <strong>Data Exports</strong>.</p>
+      <h2>Visualisation Exports</h2>
+      <p>Visualisation exports, export the graph as viewed from the Constellation Interactive Graph. These exports will typicaly only contain visual information relevant to the visual aspects of the graph, but may contain some other identifying information.</p>
+      <table class="table table-striped">
+      <colgroup>
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      </colgroup>
+      <thead>
+      <tr class="header">
+      <th>Constellation Action</th>
+      <th>User Action</th>
+      <th style="text-align: center;">Menu Icon</th>
+      <th style="text-align: center;">More Help</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="odd">
+      <td>Export to PNG</td>
+      <td>File -&gt; Export -&gt; To Screenshot Image...</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/exportToImage.png" alt="Export to Screenshot Image Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-png.html">More Help</a></td>
+      </tr>
+      <tr class="even">
+      <td>Export to SVG</td>
+      <td>File -&gt; Export -&gt; To SVG...</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/exportToSVG.png" alt="Export to SVG Image Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-svg.html">More Help</a></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <h2>Data Exports</h2>
+      <p>Data exports will export the entirety of the graph in a format that preserves the data used for analysis and visualisation in constellation.<br />
+      These formats typically contain rich information about the element being represented in the graph and are easily transferable into other platforms.</p>
+      <table class="table table-striped">
+      <colgroup>
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      </colgroup>
+      <thead>
+      <tr class="header">
+      <th>Constellation Action</th>
+      <th>User Action</th>
+      <th style="text-align: center;">Menu Icon</th>
+      <th style="text-align: center;">More Help</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="odd">
+      <td>Export to JSON</td>
+      <td>File -&gt; Export -&gt; To JSON...</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/exportToJSON.png" alt="Export to JSON Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-json.html">More Help</a></td>
+      </tr>
+      <tr class="even">
+      <td>Export to GeoJSON</td>
+      <td>File -&gt; Export -&gt; To GeoJSON...</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/exportToGeoJSON.png" alt="Export to GeoJSON Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-geojson.html">More Help</a></td>
+      </tr>
+      <tr class="odd">
+      <td>Export to GeoPackage</td>
+      <td>File -&gt; Export -&gt; To GeoPackage...</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/exportToGeoPackage.png" alt="Export to GeoPackage Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-geopackage.html">More Help</a></td>
+      </tr>
+      <tr class="even">
+      <td>Export to Shapefile</td>
+      <td>File -&gt; Export -&gt; To Shapefile...</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/exportToShapeFile.png" alt="Export to Shapefile Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-shapefile.html">More Help</a></td>
+      </tr>
+      <tr class="odd">
+      <td>Export to KML</td>
+      <td>File -&gt; Export -&gt; To KML...</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/exportToKML.png" alt="Export to KML Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-kml.html">More Help</a></td>
+      </tr>
+      <tr class="even">
+      <td>Export to CSV</td>
+      <td>Views -&gt; Table View -&gt; <img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/TableExport.png" alt="Table Export" /> -&gt; Export To CSV</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/table-view.png" alt="Table View Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-csv.html">More Help</a></td>
+      </tr>
+      <tr class="odd">
+      <td>Export to Excel (XLSX)</td>
+      <td>Views -&gt; Table View -&gt; <img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/TableExport.png" alt="Table Export" /> -&gt; Export To Excel (XLSX)</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/resources/table-view.png" alt="Table View Icon" /></td>
+      <td style="text-align: center;"><a href="../ext/docs/CoreImportExportPlugins/src/au/gov/asd/tac/constellation/plugins/importexport/export-to-xlsx.html">More Help</a></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <ul>
+      <li><em>Screenshot Image</em> - Export a screenshot of the graph window as a .png</li>
+      <li><em>SVG Image</em> - Export a screenshot of the graph window as a .svg</li>
+      <li><em>JSON</em> - Export a JSON representation of the graph (described in detail <a href="../ext/docs/CoreGraphFramework/src/au/gov/asd/tac/constellation/graph/constellation-file-format.html">here</a>)</li>
+      <li><em>GeoJSON</em> - Export a GeoJSON representation of the graph</li>
+      <li><em>GeoPackage</em> - Export the graph as a GeoPackage file</li>
+      <li><em>Shapefile</em> - Export the graph as a Shapefile file</li>
+      <li><em>KML</em> - Export the graph as a KML file</li>
+      <li><em>CSV</em> - Export the graph as a CSV file. Refer <a href="../ext/docs/CoreTableView/src/au/gov/asd/tac/constellation/views/tableview/table-view.html">here</a> for details</li>
+      <li><em>XLSX</em> - Export the graph as an XLSX (Excel Spreadsheet) file. Refer <a href="../ext/docs/CoreTableView/src/au/gov/asd/tac/constellation/views/tableview/table-view.html">here</a> for details</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Contact Us -->
+          <section id="contact" class="contact">
+            <header>
+              <h3>Contact Us</h3>
+            </header>
+            <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+            <p>
+              <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+            </p>
+          </section>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <ul class="menu">
+              <li>&copy; 2023 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    $(document).ready(function() {
+      var allCookies = Cookies.get();
+      for (var cookie in allCookies) {
+        if (cookie != null) {
+          $("#" + cookie).removeClass('show');
+          var cookieValue = Cookies.get(cookie);
+          if (cookieValue == ("true")) {
+            $("#" + cookie).collapse('show');
+          } else {
+            $("#" + cookie).collapse('hide');
+            $("#" + cookie + " .collapse").removeClass('show');
+          }
+        }
+      }
+    });
+
+    $(".collapse").on('shown.bs.collapse', function(e) {
+      console.log('shown');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "true");
+      $("#" + active).addClass('show');
+    });
+    $(".collapse").on('hidden.bs.collapse', function(e) {
+      console.log('collapsed');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "false");
+      $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-139401597-2');
+  </script>
+</body>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<head>
+  <base href="/constellation-app.github.io/help/constellation/">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../assets/css/app.css" />
+  <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../../assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../../../assets/js/jquery.min.js"></script>
+  <script src="../../../assets/js/js.cookie.min.js"></script>
+  <script src="../../../assets/js/jquery.dropotron.min.js"></script>
+  <script src="../../../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../../../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../../../assets/js/browser.min.js"></script>
+  <script src="../../../assets/js/breakpoints.min.js"></script>
+  <script src="../../../assets/js/app.js"></script>
+  <script src="../../../assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+
+  <script>
+    $(function() {
+      $("#includedContent").load("../../toc.html");
+    });
+  </script>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../index.html#banner" class="scrolly">About</a></li>
+      <li><a href="../../../index.html#features" class="scrolly">Features</a></li>
+      <li><a href="../../../download.html" class="scrolly">Download</a></li>
+      <li><a href="../../../blog.html" class="scrolly">Blog</a></li>
+      <li><a href="CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/about-constellation.html" class="scrolly">Documentation</a></li>
+      <li><a href="../../../index.html#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
+
+</head>
+
+<body style="padding-top: 100px;">
+
+  <div class="row">
+    <div class="col-4 col-sm-3">
+      <div id="includedContent"></div>
+    </div>
+    <div class="col-8 col-sm-9">
+      <h1>Extract Words from Text</h1>
+      <h2>Extract Words from a specified transaction attribute</h2>
+      <br />
+      <img src="../ext/docs/CoreDataAccessView/src/au/gov/asd/tac/constellation/views/dataaccess/resources/ExtractWordsFromText.png" alt="Extract Words From Text" />
+      <br />
+
+      <p>This plugin will extract words from content (that is, words found in the specified content attribute of all transactions) and represent them as nodes on the graph. The source node will be linked to the word by a transaction of type Referenced.</p>
+      <h2>Parameters</h2>
+      <ul>
+      <li><em>Content Attribute</em> - Specify which transaction attribute contains the words to be extracted</li>
+      <li><em>Words to Extract</em> - Newline-delimited list of words to be extracted from the content attribute. If left blank, all words will be extracted</li>
+      <li><em>Use Regular Expressions</em> - Treat the Words to Extract as a list of regular expressions (not applicable if Words to Extract is empty)</li>
+      <li><em>Whole Words Only</em> - Match the Words to Extract on whole word only (not applicable if Words to Extract is empty)</li>
+      <li><em>Minimum Word Length</em> - Only extract words of length equal to or greater this number of characters (not applicable if Words to Extract is populated)</li>
+      <li><em>Remove Special Characters</em> - Remove special characters from extracted words (not applicable if Words to Extract is populated)</li>
+      <li><em>Lower Case</em> - Converts content and Words to Extract (if supplied) to lowercase.</li>
+      <li><em>Extract Schema Types</em> - Cycles through the schema node types known by Constellation. For each schema type that has an associated regular expression, all matches for that regular expression found in the content are added to the graph.</li>
+      <li><em>Transactions</em> - Choose whether to link nodes to words found in either incoming or outgoing transactions</li>
+      <li><em>Selected Transactions Only</em> - Extract words from selected transactions only.</li>
+      <li><em>Regular Expression Only</em> - Treat all Words to Extract as regular expressions</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Contact Us -->
+          <section id="contact" class="contact">
+            <header>
+              <h3>Contact Us</h3>
+            </header>
+            <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+            <p>
+              <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+            </p>
+          </section>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <ul class="menu">
+              <li>&copy; 2023 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    $(document).ready(function() {
+      var allCookies = Cookies.get();
+      for (var cookie in allCookies) {
+        if (cookie != null) {
+          $("#" + cookie).removeClass('show');
+          var cookieValue = Cookies.get(cookie);
+          if (cookieValue == ("true")) {
+            $("#" + cookie).collapse('show');
+          } else {
+            $("#" + cookie).collapse('hide');
+            $("#" + cookie + " .collapse").removeClass('show');
+          }
+        }
+      }
+    });
+
+    $(".collapse").on('shown.bs.collapse', function(e) {
+      console.log('shown');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "true");
+      $("#" + active).addClass('show');
+    });
+    $(".collapse").on('hidden.bs.collapse', function(e) {
+      console.log('collapsed');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "false");
+      $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-139401597-2');
+  </script>
+</body>

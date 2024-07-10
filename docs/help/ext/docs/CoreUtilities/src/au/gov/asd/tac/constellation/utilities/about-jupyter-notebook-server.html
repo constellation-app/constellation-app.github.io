@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<head>
+  <base href="/constellation-app.github.io/help/constellation/">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../assets/css/app.css" />
+  <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../../assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../../../assets/js/jquery.min.js"></script>
+  <script src="../../../assets/js/js.cookie.min.js"></script>
+  <script src="../../../assets/js/jquery.dropotron.min.js"></script>
+  <script src="../../../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../../../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../../../assets/js/browser.min.js"></script>
+  <script src="../../../assets/js/breakpoints.min.js"></script>
+  <script src="../../../assets/js/app.js"></script>
+  <script src="../../../assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+
+  <script>
+    $(function() {
+      $("#includedContent").load("../../toc.html");
+    });
+  </script>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../index.html#banner" class="scrolly">About</a></li>
+      <li><a href="../../../index.html#features" class="scrolly">Features</a></li>
+      <li><a href="../../../download.html" class="scrolly">Download</a></li>
+      <li><a href="../../../blog.html" class="scrolly">Blog</a></li>
+      <li><a href="CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/about-constellation.html" class="scrolly">Documentation</a></li>
+      <li><a href="../../../index.html#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
+
+</head>
+
+<body style="padding-top: 100px;">
+
+  <div class="row">
+    <div class="col-4 col-sm-3">
+      <div id="includedContent"></div>
+    </div>
+    <div class="col-8 col-sm-9">
+      <h1>About The Jupyter Notebook Server</h1>
+      <p>Selecting Tools -&gt; Start Jupyter Notebook will start a Jupyter notebook server. This will in turn automatically open a new page in your default web browser. The HTTP REST server will be started automatically if it hasn't already been started.</p>
+      <p>Using Jupyter Notebook with constellation requires various Python related packages and software. These are all included the Anaconda Python distribution, and thus is recommended for users to install.</p>
+      <h2>Starting your own Jupyter notebook</h2>
+      <p>Starting your own Jupyter notebook server by entering the command "jupyter-notebook" at a command prompt in the correct directory has exactly the same result. This is just a convenience provided by Constellation. he notebook server is started in the directory specified by the "Notebook directory" preference (in Application preferences).</p>
+      <p>The command <code>pip install</code>, along with other arguements, is run when starting the server<br />
+      and installs a custom Python package, constellation_client. This package is necessary for using Constellation in your Jupyter notebook.</p>
+      <p>When the notebook server starts, its output is sent to the output window "Jupyter notebook". If you start a notebook server and the new page contains a "Password or token" prompt, look in the output window for text that looks like this:</p>
+      <pre><code>    Copy/paste this URL into your browser when you connect for the first time,
+          to login with a token:
+              http://localhost:8888/?token=7f9658570b3bc41bd04cfb20caa382ab67eee7457c7391dc
+      </code></pre>
+      <p>Copy/paste the token into the "Password or token" input field and select "Log in". Alternatively, you can use the command <code>jupyter notebook list</code> at a command prompt to see what notebook servers are running, and use an existing token.</p>
+      <p>When Constellation exits, it will automatically shut down the Jupyter notebook that it started.</p>
+      <p>If for some reason Constellation cannot start a Jupyter notebook server, you can start one manually using the command above at a command prompt. Don't forget to manually start the REST server. You will also have to manually shut down the notebook server.</p>
+      <h2>Common Errors</h2>
+      <p>If the server fails to start and you get an error such as "Failed to start jupyter-notebook", you may not have Jupyter or pip installed, or may have not added these to your command path (in the case of using Windows).</p>
+      <p>Example of error from pip not being installed on windows: <br /> <img src="../ext/docs/CoreUtilities/src/au/gov/asd/tac/constellation/utilities/PipError.png" alt="Pip Error" /> <br /> <br /> Example of error from Jupyter not being installed on windows: <br /> <img src="../ext/docs/CoreUtilities/src/au/gov/asd/tac/constellation/utilities/JupyterError.png" alt="Jupyter Error" /> <br /> <br /></p>
+      <h2>In Depth Tutorial</h2>
+      <p>A tutorial for how to use Jupyter notebook with Constellation can be found on our github <a href="https://github.com/constellation-app/constellation-training/blob/master/Analyst%20Training/Exercise%2010%20-%20Network%20Analysis%20With%20Python/notebooks_and_constellation.ipynb">here</a>.</p>
+      <p>Simply download the .ipynb file and open it in Jupyter notebook.</p>
+      <br />
+      ## Setup
+
+      <h3>Windows</h3>
+      <p>On Windows, the easiest way to install these and add them to the command path is to install the Anaconda Python distribution and check the box "Add Anaconda3 to my PATH environment variable".</p>
+      <br />
+      <img src="../ext/docs/CoreUtilities/src/au/gov/asd/tac/constellation/utilities/AnacondaInstall.png" alt="Installing Anaconda" />
+      <br />
+
+      <p><strong>NOTE:</strong> Using the "Add Anaconda3 to my PATH environment variable" checkbox to add commands to PATH is not the only way of doing so, it is simply an easy method. If you believe adding commands to PATH using this method will cause issues, simply search online for guides on manually adding commands to PATH.</p>
+      <br />
+      ### Linux and Mac
+      Similar to Windows, the Anaconda Python distribution can also be used to install 
+      all the required software on Linux and Mac.
+
+      <p><strong>NOTE:</strong> The required commands and packages could instead be installed from a command line interface. However, this is only recommended for advanced users.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Contact Us -->
+          <section id="contact" class="contact">
+            <header>
+              <h3>Contact Us</h3>
+            </header>
+            <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+            <p>
+              <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+            </p>
+          </section>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <ul class="menu">
+              <li>&copy; 2023 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    $(document).ready(function() {
+      var allCookies = Cookies.get();
+      for (var cookie in allCookies) {
+        if (cookie != null) {
+          $("#" + cookie).removeClass('show');
+          var cookieValue = Cookies.get(cookie);
+          if (cookieValue == ("true")) {
+            $("#" + cookie).collapse('show');
+          } else {
+            $("#" + cookie).collapse('hide');
+            $("#" + cookie + " .collapse").removeClass('show');
+          }
+        }
+      }
+    });
+
+    $(".collapse").on('shown.bs.collapse', function(e) {
+      console.log('shown');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "true");
+      $("#" + active).addClass('show');
+    });
+    $(".collapse").on('hidden.bs.collapse', function(e) {
+      console.log('collapsed');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "false");
+      $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-139401597-2');
+  </script>
+</body>

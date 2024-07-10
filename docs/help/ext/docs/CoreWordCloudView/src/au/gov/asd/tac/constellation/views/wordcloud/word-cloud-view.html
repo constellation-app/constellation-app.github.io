@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<head>
+  <base href="/constellation-app.github.io/help/constellation/">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../assets/css/app.css" />
+  <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../../assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../../../assets/js/jquery.min.js"></script>
+  <script src="../../../assets/js/js.cookie.min.js"></script>
+  <script src="../../../assets/js/jquery.dropotron.min.js"></script>
+  <script src="../../../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../../../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../../../assets/js/browser.min.js"></script>
+  <script src="../../../assets/js/breakpoints.min.js"></script>
+  <script src="../../../assets/js/app.js"></script>
+  <script src="../../../assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+
+  <script>
+    $(function() {
+      $("#includedContent").load("../../toc.html");
+    });
+  </script>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../index.html#banner" class="scrolly">About</a></li>
+      <li><a href="../../../index.html#features" class="scrolly">Features</a></li>
+      <li><a href="../../../download.html" class="scrolly">Download</a></li>
+      <li><a href="../../../blog.html" class="scrolly">Blog</a></li>
+      <li><a href="CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/about-constellation.html" class="scrolly">Documentation</a></li>
+      <li><a href="../../../index.html#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
+
+</head>
+
+<body style="padding-top: 100px;">
+
+  <div class="row">
+    <div class="col-4 col-sm-3">
+      <div id="includedContent"></div>
+    </div>
+    <div class="col-8 col-sm-9">
+      <h1>Word Cloud View</h1>
+      <table class="table table-striped">
+      <colgroup>
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      </colgroup>
+      <thead>
+      <tr class="header">
+      <th>Constellation Action</th>
+      <th>Keyboard Shortcut</th>
+      <th>User Action</th>
+      <th style="text-align: center;">Menu Icon</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="odd">
+      <td>Open Word Cloud View</td>
+      <td>Ctrl + Shift + W</td>
+      <td>Experimental -&gt; Views -&gt; Word Cloud View</td>
+      <td style="text-align: center;"><img src="../ext/docs/CoreWordCloudView/src/au/gov/asd/tac/constellation/views/wordcloud/resources/word_cloud.png" alt="Word Cloud View Icon" /></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <h2>Introduction</h2>
+      <p>The Word Cloud View is used to create word clouds based on words or phrases found within attributes in nodes and transactions on a graph. The length of the phrase, how many words the phrase can span and the minimum number of times the phrase or word needs to appear on a graph for it to be shown in the word cloud can be modified. A text file is also able to be added to do a background frequency comparison.</p>
+      <div style="text-align: center">
+
+      <img src="../ext/docs/CoreWordCloudView/src/au/gov/asd/tac/constellation/views/wordcloud/resources/WordCloudView.png" alt="Word Cloud View" />
+
+      </div>
+      <br />
+
+      <h2>Generate Word Cloud</h2>
+      <ul>
+      <li><em>Element Type</em> - The type of element to gather data from when generating the word cloud. Options include:
+      <ul>
+      <li>Nodes</li>
+      <li>Transactions</li>
+      </ul></li>
+      <li><em>Attribute</em> - The attribute of the chosen element type to generate the word cloud from. For example, using element type "Node" with the attribute "Geo.Country" will generate a word cloud containing the names of countrys stored in the graph's nodes.</li>
+      <li><em>Phrase Length</em> - The number of words in each "phrase" on the word cloud. For example, continuing with the "Geo.Country" example above, a phrase length of one will seperate each word in a country's name. "New Zealand" would be seperated into two phrases, "New" and "Zealand". Setting the phrase length to two would result in "New Zealand" staying as one phrase, and filter out countries with only one word in their name.</li>
+      <li><em>Phrase Span</em> - The number of words a phrase can span.</li>
+      <li><em>Threshold</em> - The minimum number of graph elements the phrase must occur in the be present in the word cloud (inclusive).</li>
+      <li><em>Background File</em> - A text file can be given containing phrases to filter the word cloud by. If a phrase is present on the graph but not in this text file, it will not appear on the word cloud. See below for additional filtering information.</li>
+      <li><em>Background Filter</em> - Choose how filtering occurs with the given text file in the "background File" section. Options include:
+      <ul>
+      <li>Contain any word in phrase</li>
+      <li>Contain all words in phrase</li>
+      </ul></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Contact Us -->
+          <section id="contact" class="contact">
+            <header>
+              <h3>Contact Us</h3>
+            </header>
+            <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+            <p>
+              <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+            </p>
+          </section>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <ul class="menu">
+              <li>&copy; 2023 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    $(document).ready(function() {
+      var allCookies = Cookies.get();
+      for (var cookie in allCookies) {
+        if (cookie != null) {
+          $("#" + cookie).removeClass('show');
+          var cookieValue = Cookies.get(cookie);
+          if (cookieValue == ("true")) {
+            $("#" + cookie).collapse('show');
+          } else {
+            $("#" + cookie).collapse('hide');
+            $("#" + cookie + " .collapse").removeClass('show');
+          }
+        }
+      }
+    });
+
+    $(".collapse").on('shown.bs.collapse', function(e) {
+      console.log('shown');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "true");
+      $("#" + active).addClass('show');
+    });
+    $(".collapse").on('hidden.bs.collapse', function(e) {
+      console.log('collapsed');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "false");
+      $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-139401597-2');
+  </script>
+</body>
