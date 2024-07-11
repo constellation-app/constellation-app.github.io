@@ -1,7 +1,7 @@
 name: Receive documentation update trigger
 # Receives a trigger from Constellation repository to update documentation.
 
-on: [repository_dispatch, workflow_dispatch]
+on: [repository_dispatch]
 
 jobs:
   rebuild-documentation:
