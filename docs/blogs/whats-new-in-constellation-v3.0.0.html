@@ -1,0 +1,607 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v3.0</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+						<li><a href="//constellation-app.github.io/help/ext/docs/CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/about-constellation.html" class="scrolly">Documentation</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v3.0</h2>
+                            <p>
+                                Here is a (sizeable) list of changes we’ve added 
+								to this version of Constellation.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>All-New Dark and Light Modes + New Menu Icons</h3>
+                            </header>
+							<p>
+								One of the visual standout features added that 
+								you will notice as soon as you load the 
+								application is the new dark and light modes. For 
+								a long time, Constellation has had a mixture of 
+								both light and dark color schemes scattered 
+								throughout the application. With the release of 
+								v3 though, we’ve now consolidated those schemes 
+								into separate light and dark feels. Alongside 
+								that, the icons used in menu options throughout 
+								the application have also been updated to ensure 
+								visibility in either mode.
+							</p>
+							<p>
+								By default, Constellation will run in dark mode. 
+								This can be changed though via the Options Menu. 
+								Simply go to Setup -> Options -> Appearance -> 
+								Look and Feel and choose your preferred look and 
+								feel. Any look and feel with “Dark” in the name 
+								will load with the dark scheme, and all others 
+								will load with the light scheme. We personally 
+								recommend using either FlatLaf Dark (the default) 
+								or FlatLaf Light (if you prefer light mode) as 
+								these were the look and feels used when putting 
+								together the color schemes, but feel free to use 
+								any of the options available. 
+							</p>
+							<p>
+								One thing to keep in mind is that for graphs 
+								themselves, the mode your application is in will 
+								only affect the graph’s background color when 
+								creating a new graph. New graphs created in dark 
+								mode will have the classic Night Sky color, but 
+								graphs created in light mode will have the new 
+								Light Sky color. Opening existing graphs in 
+								either mode will retain the background color that 
+								the graph previously had. Note that the 
+								background color is a graph attribute and so if 
+								you wish to change the background color of your 
+								graph, you can do so by editing the 
+								background_color attribute via the Attribute 
+								Editor.   
+							</p>
+							<img src="../images/blogs/whats-new-in-constellation-v3.0.0/dark_mode.png" alt="Dark Mode" class="image"/>
+							<img src="../images/blogs/whats-new-in-constellation-v3.0.0/light_mode.png" alt="Light Mode" class="image"/>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Colorblind Overlays for your Graph</h3>
+                            </header>
+							<p>
+								Another big addition to v3 is a big one for 
+								accessibility. Previously, Constellation 
+								development hasn’t put much consideration into 
+								whether the color schemes being used are 
+								colorblind-friendly. For v3 though, this is no 
+								longer an oversight as we’ve now introduced the 
+								option to apply colorblind-friendly overlays to 
+								your graph. 
+							</p>
+							<p>
+								Choose a colorblind mode to apply to your graph 
+								by navigating to Setup -> Options -> 
+								CONSTELLATION -> Application -> Colorblind Mode. 
+								Current options include None (i.e. no filter 
+								applied, the default), Deuteranopia, Protanopia, 
+								and Tritanopia. After choosing, when you next 
+								Complete with Schema, your graph will be colored 
+								according to the colorblind mode chosen to ensure 
+								that the colors on your graph are compliant with 
+								the mode selected.  
+							</p>
+							<p>
+								For modes other than None, a new attribute will 
+								be added (if it doesn’t already exist) to your 
+								nodes and transactions called “colorblind_layer” 
+								whose value will either match the value in the 
+								color attribute (if the color is compliant), or a 
+								newly calculated color (if the color was not 
+								compliant). The value in the new attribute is 
+								then what you will see on the graph. 
+							</p>
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<figure style="padding: 1em">
+												<img src="../images/blogs/whats-new-in-constellation-v3.0.0/colorblind_none.png" alt="Graph with no colorblind filter applied" class="image"/>
+												<figcaption>Original Graph (no filter)</figcaption>
+											</figure>
+										</td>
+										<td>
+											<figure style="padding: 1em">
+												<img src="../images/blogs/whats-new-in-constellation-v3.0.0/colorblind_deuteranopia.png" alt="Graph with Deuteranopia filter" class="image"/>
+												<figcaption>With Deuteranopia filter</figcaption>
+											</figure>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<figure style="padding: 1em">
+												<img src="../images/blogs/whats-new-in-constellation-v3.0.0/colorblind_protanopia.png" alt="Graph with Protanopia filter" class="image"/>
+												<figcaption>With Protanopia filter</figcaption>
+											</figure>
+										</td>
+										<td>
+											<figure style="padding: 1em">
+												<img src="../images/blogs/whats-new-in-constellation-v3.0.0/colorblind_tritanopia.png" alt="Graph with Tritanopia filter" class="image"/>
+												<figcaption>With Tritanopia filter</figcaption>
+											</figure>
+										</td>
+									</tr>
+								</tbody>
+							</table>						
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Brand New Word Cloud View</h3>
+                            </header>
+							<p>
+								The newest view available for use in 
+								Constellation is the Word Cloud View. Available 
+								via the Experimental menu (or Ctrl-Shift-W if you 
+								like keyboard shortcuts), the Word Cloud View 
+								allows you to generate a word cloud based on a 
+								string attribute on your graph. This then enables 
+								you to analyse the phrases that appear on your 
+								graph and how often those phrases appear. 
+							</p>
+							<p>
+								Word Clouds can be generated based on phrase 
+								length, phrase span, and a threshold for the 
+								minimum number of times a phrase is found. You 
+								can also filter the cloud based on a 
+								user-supplied text file of phrases you wish to 
+								filter on.  
+                            </p>
+							<img src="../images/blogs/whats-new-in-constellation-v3.0.0/word_cloud_view.png" alt="Word Cloud View" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Export your Graphs to SVG</h3>
+                            </header>
+							<p>
+								Constellation for a long time has had the ability 
+								to save a screenshot of your graph as a PNG file. 
+								This has enabled users to embed their 
+								(non-interactive) graph into word documents, 
+								presentations, and other places to view a graph 
+								without needing to load Constellation. A 
+								limitation of it though, is that the file type 
+								isn’t scalable, meaning attempts to blow up the 
+								image can make it pixelated and hard to look at. 
+								To help with that issue, we’ve introduced 
+								exporting to an SVG file (available from File -> 
+								Export -> To SVG...).  
+							</p>
+							<p>
+								For those who aren’t aware, SVG’s are vector 
+								images, which in simple terms means that the 
+								image will maintain its clarity when being blown 
+								up. This means being able to include much clearer 
+								images in presentations or anywhere you want to 
+								include a view of your graph. Unlike the 
+								Screenshot export, the SVG export also gives you 
+								more flexibility in choosing which angle to 
+								export the graph from (not just the current 
+								camera angle), and even which parts of graph get 
+								exported. 
+							</p>
+							<p>
+								One caveat to be aware of with the functionality 
+								though, is that it is a memory-intensive 
+								operation. Because of that, it is recommended 
+								that you only use the feature for exporting 
+								smaller graphs (it's been noted in environments 
+								it was tested in, that the feature encounters 
+								memory issues once getting past 50,000 nodes, 
+								50,000 transactions).  
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Conversation View Update</h3>
+                            </header>
+							<p>
+								A big change to the interface in the Conversation 
+								View now sees conversations paginated in a 
+								similar way to what is done in the Table View. By 
+								doing this, we’re hoping this helps make the view 
+								more performant by reducing the strain on the 
+								graphics trying to load all the conversation 
+								bubbles. Like the Table View, you have the option 
+								to choose how many conversations bubbles you want 
+								displayed on each page: 50, 100, 250, or 1000.      
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Constellation Client Fixed</h3>
+                            </header>
+							<p>
+								Last release, we made our first update to the 
+								Python client in a long time. What we discovered 
+								out of that though, is that it turns out the 
+								client hasn’t really been working as intended for 
+								quite some time. The primary reason for this was 
+								the .ipython folder (where the client is 
+								installed) was no longer by default added to the 
+								classpath, which means that users could no longer 
+								simply call the client from any folder they so 
+								wished. Other issues with the client also 
+								surfaced including compatibility with newer 
+								Python versions. With all of that to consider, 
+								changes had to be made to the client for it get 
+								back to functioning as intended. 
+							</p>
+							<p>
+								So for v3, we’ve updated the way that the client 
+								is installed. Instead of downloading the client, 
+								Constellation now performs a pip install of the 
+								client (Note that it is installing a local 
+								instance rather than from PyPI). Specifically, it 
+								will run a pip install --update, that way you can 
+								get the latest changes for the client every time. 
+								This will run whenever you launch either Start 
+								Jupyter Notebook or Start REST Server (in case 
+								you prefer to launch your notebook application 
+								separately). 
+							</p>
+							<p>
+								Changes have also been made alongside it to 
+								enable compatibility with later versions of 
+								Python while also maintaining compatibility with 
+								older versions.  
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Keyboard Shortcuts for Zoom In and Out</h3>
+                            </header>
+							<p>
+								Constellation has always allowed zooming in and 
+								out of a graph using the scroll wheel of your 
+								mouse. For those that don’t have access to that 
+								though, Constellation now has keyboard shortcuts 
+								for these actions. Ctrl- - (including Num Pad) 
+								will zoom out and Ctrl- = (and Ctrl- + on Num 
+								Pad) will zoom in on your graph.     
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Reset Data Access View Category Preferences</h3>
+                            </header>
+							<p>
+								Over the last couple versions of Constellation, 
+								we’ve introduced customisation around which 
+								categories of plugins you see (and in which order 
+								you see them) in the Data Access View. For v3, 
+								we’ve extended this further by adding a reset 
+								option. In the preferences menu (Setup -> Options 
+								-> CONSTELLATION -> Data Access View), when you 
+								click on “Restore to Default”, all the categories 
+								will be placed in their default visibility and 
+								ordering.      
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Select All Nodes or Transactions</h3>
+                            </header>
+							<p>
+								Have you ever wanted a quick way to select all 
+								the nodes or all the transactions on your graph, 
+								without having to select everything (or manually 
+								selecting)? The Selection menu now comes with two 
+								new options. “Select Nodes” selects (only) all 
+								the nodes, and “Select Transactions” does a 
+								similar thing for transactions. These are the 
+								inverse operations of the existing “Deselect 
+								Nodes” and “Deselect Transactions”.       
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Attribute Editor Update</h3>
+                            </header>
+							<p>
+								A minor update has been made to the Attribute 
+								Editor in order improve the experience around 
+								editing values for attributes. Previously, if a 
+								graph element had no value for an attribute and 
+								you wished to edit the value, you would first 
+								have to untick the “No Value” checkbox before 
+								proceeding to alter the value. Assuming though 
+								that you intend to edit the value when you bring 
+								up the edit dialog, unticking the checkbox 
+								presents as an extra step you would rather not 
+								have to do or even think about. 
+							</p>
+							<p>
+								For v3, we’ve removed this step so that the No 
+								Value checkbox is always unticked when you enter 
+								the edit dialog. This allows you to get straight 
+								into editing the value as desired. If you wish 
+								the set the value to No Value, the checkbox is 
+								still there for you to check. If you wish to 
+								retain the No Value you had, you can simply close 
+								the dialog box (or press Cancel).       
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Find View Update</h3>
+                            </header>
+							<p>
+								The Find View has a new feature which enables you 
+								to zoom to your search results. By ticking the 
+								“Zoom to Selection” checkbox, when you go through 
+								your results (e.g. with Find All or Find 
+								Next/Previous), Constellation will put the 
+								results in focus in the Graph window. If you’re 
+								someone who has gotten frustrated at not being 
+								able to find where all the search results are on 
+								your graph, this is the feature for you.       
+							</p>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Layers View Update</h3>
+                            </header>
+							<p>
+								The Layers View has received an update to the 
+								logic for determining what is visible on the 
+								graph according to the layers selected. 
+								Previously, the logic was a little messy and 
+								differed depending on whether the graph elements 
+								in the selected layers were determined by query 
+								or by manual addition. This in turn led to a lot 
+								of confusion surrounding what you expected to see 
+								when you had multiple layers selected. To fix 
+								this, the logic has been cleaned up and put in 
+								your hands to determine by introducing two modes: 
+								Union and Intersection. 
+							</p>
+							<p>
+								When multiple layers are selected in Union Mode, 
+								any graph element that belongs to any of the 
+								selected layers will be visible. For example, if 
+								layer 1 contains nodes 1 and 2, and layer 2 
+								contains nodes 2 and 3, then having layers 1 and 
+								2 selected would see all of nodes 1, 2, and 3 
+								visible. 
+							</p>
+							<p>
+								When multiple layers are selected in Intersection 
+								Mode, only graph elements that belong to all the 
+								selected layers will be visible. For example, if 
+								layer 1 contains nodes 1 and 2, and layer 2 
+								contains nodes 2 and 3, then having layers 1 and 
+								2 selected would see only node 2 visible.        
+							</p>
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<figure style="padding: 1em">
+												<img src="../images/blogs/whats-new-in-constellation-v3.0.0/layers_view_graph.png" alt="An example graph with layers" class="image"/>
+												<figcaption>Example Graph</figcaption>
+											</figure>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<figure style="padding: 1em">
+												<img src="../images/blogs/whats-new-in-constellation-v3.0.0/layers_view_union_graph.png" alt="Example graph with layers in Union mode" class="image"/>
+												<figcaption>Layers 1 and 2 turned on: Union Mode</figcaption>
+											</figure>
+										</td>
+										<td>
+											<figure style="padding: 1em">
+												<img src="../images/blogs/whats-new-in-constellation-v3.0.0/layers_view_intersection_graph.png" alt="Example graph with layers in Intersection mode" class="image"/>
+												<figcaption>Layers 1 and 2 turned on: Intersection Mode</figcaption>
+											</figure>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Image Graph Builder Update</h3>
+                            </header>
+							<p>
+								For those who used the Image Graph Builder before 
+								(Experimental -> Build Graph -> From Image...), 
+								you now have the option to import multiple images 
+								at the same time. When doing so, you have the 
+								option to either have each image overlayed on top 
+								of each other or presented side-by-side. You also 
+								have the option to have each image presented in 
+								its own layer in the Layers View.        
+							</p>							
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Several Bug Fixes</h3>
+                            </header>
+							<p>
+								Numerous bug fixes have also been made. The 
+								number of bug fixes that have occurred is quite 
+								extensive so we won’t list them all here, but 
+								include fixes made to the Conversation View, Find 
+								View, Layers View, Notes View, Datetime pickers, 
+								and Help Pages. We hope that each of the fixes 
+								makes your Constellation experience a better one.  
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 3.0. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v3.0.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v3.0.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for 
+								improvement? Noticed a bug? You can log an issue 
+								via the Help menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2024 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
