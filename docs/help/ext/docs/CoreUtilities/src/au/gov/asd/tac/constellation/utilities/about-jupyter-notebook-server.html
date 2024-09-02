@@ -52,10 +52,12 @@
     </div>
     <div class="col-8 col-sm-9">
       <h1>About The Jupyter Notebook Server</h1>
-      <p>Selecting Tools -&gt; Start Jupyter Notebook will start a Jupyter notebook server. This will in turn automatically open a new page in your default web browser. The HTTP REST server will be started automatically if it hasn't already been started.</p>
+      <p>Selecting Tools -&gt; Start Jupyter Notebook will start a Jupyter notebook server. This will in turn automatically open a new page in your default web browser. The HTTP REST server will be started automatically if it hasn't already been started. This is just a convenience provided by Constellation. The notebook server is started in the directory specified by the "Notebook directory" preference (in Application preferences).</p>
       <p>Using Jupyter Notebook with constellation requires various Python related packages and software. These are all included the Anaconda Python distribution, and thus is recommended for users to install.</p>
+      <h3>IMPORTANT</h3>
+      <p>The Constellation Client API package that is installed when starting the notebook server will look for the "rest secret" created by the rest server. It is stored in a file called <code>rest.json</code>. By default the package will check the ".IPython" folder in the home directory, as well as the current notebook directory. If the "REST Directory" has been changed in Constellation's options, the user will have to point Constellation Client to the new path of <code>rest.json</code>. Information on how to do that can be found on our github <a href="https://github.com/constellation-app/constellation-training/blob/master/Analyst%20Training/Exercise%2010%20-%20Network%20Analysis%20With%20Python/notebooks_and_constellation.ipynb">here</a>. Simply download the .ipynb file and open it in Jupyter notebook to view.</p>
       <h2>Starting your own Jupyter notebook</h2>
-      <p>Starting your own Jupyter notebook server by entering the command "jupyter-notebook" at a command prompt in the correct directory has exactly the same result. This is just a convenience provided by Constellation. he notebook server is started in the directory specified by the "Notebook directory" preference (in Application preferences).</p>
+      <p>Starting your own Jupyter notebook server by entering the command <code>jupyter-notebook</code> at a command prompt in the correct directory has exactly the same result.</p>
       <p>The command <code>pip install</code>, along with other arguements, is run when starting the server<br />
       and installs a custom Python package, constellation_client. This package is necessary for using Constellation in your Jupyter notebook.</p>
       <p>When the notebook server starts, its output is sent to the output window "Jupyter notebook". If you start a notebook server and the new page contains a "Password or token" prompt, look in the output window for text that looks like this:</p>
@@ -71,10 +73,10 @@
       <p>Example of error from pip not being installed on windows: <br /> <img src="../ext/docs/CoreUtilities/src/au/gov/asd/tac/constellation/utilities/PipError.png" alt="Pip Error" /> <br /> <br /> Example of error from Jupyter not being installed on windows: <br /> <img src="../ext/docs/CoreUtilities/src/au/gov/asd/tac/constellation/utilities/JupyterError.png" alt="Jupyter Error" /> <br /> <br /></p>
       <h2>In Depth Tutorial</h2>
       <p>A tutorial for how to use Jupyter notebook with Constellation can be found on our github <a href="https://github.com/constellation-app/constellation-training/blob/master/Analyst%20Training/Exercise%2010%20-%20Network%20Analysis%20With%20Python/notebooks_and_constellation.ipynb">here</a>.</p>
-      <p>Simply download the .ipynb file and open it in Jupyter notebook.</p>
+      <p>Simply download the .ipynb file and open it in Jupyter notebook to view.</p>
       <br />
-      ## Setup
 
+      <h2>Setup</h2>
       <h3>Windows</h3>
       <p>On Windows, the easiest way to install these and add them to the command path is to install the Anaconda Python distribution and check the box "Add Anaconda3 to my PATH environment variable".</p>
       <br />
@@ -83,10 +85,9 @@
 
       <p><strong>NOTE:</strong> Using the "Add Anaconda3 to my PATH environment variable" checkbox to add commands to PATH is not the only way of doing so, it is simply an easy method. If you believe adding commands to PATH using this method will cause issues, simply search online for guides on manually adding commands to PATH.</p>
       <br />
-      ### Linux and Mac
-      Similar to Windows, the Anaconda Python distribution can also be used to install 
-      all the required software on Linux and Mac.
 
+      <h3>Linux and Mac</h3>
+      <p>Similar to Windows, the Anaconda Python distribution can also be used to install all the required software on Linux and Mac.</p>
       <p><strong>NOTE:</strong> The required commands and packages could instead be installed from a command line interface. However, this is only recommended for advanced users.</p>
     </div>
   </div>
