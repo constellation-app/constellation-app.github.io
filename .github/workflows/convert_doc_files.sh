@@ -55,5 +55,6 @@ echo "Removing duplicated files"
 find ./pages/docs/help -mindepth 1 -type d -name "ext" -prune -o -exec rm -rf {} +
 echo "Done removing duplicated files" 
 
-# move the table of contents at the end so it doesn't get deleted
+# move the table of contents and search.json files at the end so they don't get deleted
 mv ./constellation/toc.html ./pages/docs/help/toc.html
+mv ./constellation/search.json ./pages/docs/help/search.json
