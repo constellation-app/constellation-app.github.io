@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v3.1</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+						<li><a href="//constellation-app.github.io/help/ext/docs/CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/about-constellation.html" class="scrolly">Documentation</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v3.1</h2>
+                            <p>
+                                Here is a list of changes we’ve added 
+								to this version of Constellation.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>Search Function for Online and Offline Help</h3>
+                            </header>
+							<p>
+								A search function has been added to both the online and offline help 
+								documentation to make finding help topics easier. Offline help is 
+								available within the Constellation application by going to Help -> 
+								Help Pages and Online help is available on the constellation-app.com 
+								website <a href="https://constellation-app.github.io/help/ext/docs/CoreFunctionality/src/au/gov/asd/tac/constellation/functionality/about-constellation.html">here</a>.
+							</p>
+
+							<img src="../images/blogs/whats-new-in-constellation-v3.1.0/search.png" alt="Search" class="image" width="80%"/>
+
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3><Animation Framework Rework/h3>
+                            </header>
+							<p>
+								Significant changes have been made to the way Animations are 
+								handled in Constellation. Animations are now able to be run 
+								concurrently on the same graph. Animations also now allow users 
+								to continue to interact with the graph while they are running. 
+							</p>
+							<p>
+								 Animations can be run from the Experimental -> Animations menu. 
+							</p>
+
+							<img src="../images/blogs/whats-new-in-constellation-v3.1.0/animations.gif" alt="Animations"/>
+					
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Improved Hierarchical Arrangement</h3>
+                            </header>
+							<p>
+								The hierarchical arrangement has been updated to organise nodes 
+								in a stricter top-down arrangement. It will also no longer generate 
+								pendants that are placed in a non-hierarchical orientation as this 
+								would often create links that would extend over the base hierarchy 
+								causing unnecessary overlapping lines. 
+							</p>
+							<p>
+								The arrangement has also been updated to allow one or more selected 
+								nodes to be used as the root nodes in the hierarchy. This has been 
+								made available alongside the existing functionality of choosing a 
+								Named Selection to identify the root nodes of the hierarchy, in which 
+								case any selected nodes will limit which nodes the arrangement will be performed on.
+							</p>
+							<p>
+
+							<img src="../images/blogs/whats-new-in-constellation-v3.1.0/hierarchical_arrangement.png" alt="Hierarchical Arrangement" class="image" width="25%"/>
+
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Word Cloud View Moved Out of Experimental</h3>
+                            </header>
+							<p>
+								The newest view available for use in Constellation 
+								is the Word Cloud View. Available via the Views menu 
+								(or Ctrl-Shift-W if you like keyboard shortcuts), 
+								the Word Cloud View allows you to generate a word cloud 
+								based on a string attribute on your graph. This then 
+								enables you to analyse the phrases that appear on your 
+								graph and how often those phrases appear.
+							</p>
+							<p>
+								Word Clouds can be generated based on phrase 
+								length, phrase span, and a threshold for the 
+								minimum number of times a phrase is found. You 
+								can also filter the cloud based on a 
+								user-supplied text file of phrases you wish to 
+								filter on.  
+                            </p>
+							<img src="../images/blogs/whats-new-in-constellation-v3.1.0/word_cloud_view.png" alt="Word Cloud View" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Layers View Added Selection and Allocation Functions</h3>
+                            </header>
+							<p>
+								Each Layer has a new set of buttons: <b>Select</b>, <b>De-Select</b>, <b>Allocate</b>, 
+								and <b>De-Allocate</b> and a new checkbox option: <b>Include Hidden</b>
+
+							</p>
+							<p>
+								When you click on the <b>Select/<b> button on a Layer, it will select 
+								all visible nodes that are currently allocated to the layer 
+								(and optionally also select matching nodes that are currently hidden, 
+								depending on whether the <b>Include Hidden</b> option is checked). 
+							</p>
+							<p>
+								When you click on the <b>De-Select</b> button on a Layer, it will de-select 
+								all elements allocated to that Layer (and optionally also de-select 
+								matching nodes that are currently hidden, depending on whether the 
+								<b>Include Hidden</b> option is checked).
+                            </p>
+							<p>
+								When you click the <b>Allocate</b> button, all currently visible selected 
+								nodes will be allocated to the layer, and if the <b>Include Hidden</b> option 
+								is checked, all hidden selected nodes will also be allocated to the layer. 
+							</p>
+							<p>
+								When you click the <b>De-Allocate</b> button, all currently visible selected 
+								nodes will be de-allocated from the layer, and if the <b>Include Hidden</b> 
+								option is checked, all hidden selected nodes will also be de-allocated 
+								from the layer. 
+							</p>
+							
+							<img src="../images/blogs/whats-new-in-constellation-v3.1.0/layers.png" alt="Layers Buttons" class="image"/>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Plugin Reporter Contains More Information</h3>
+                            </header>
+							<p>
+								Previously, the Plugin Reporter would contain a minimum amount 
+								of information about the plugins that have been run. The Plugin 
+								Reporter has now been updated to include the datetime that the 
+								plugin was run, the parameters the plugin used and information 
+								about how the graph was interacted with, e.g. how many nodes and 
+								transactions were affected. 
+							</p>
+							
+							<img src="../images/blogs/whats-new-in-constellation-v3.1.0/plugin_reporter.png" alt="Plugin Reporter" class="image"/>
+                        </section>
+						
+
+
+                        <section>
+                            <header>
+                                <h3>Several Bug Fixes</h3>
+                            </header>
+							<p>
+								Numerous bug fixes have also been made including:
+							</p>
+							<ul>
+								<li>Welcome page graph images are no longer duplicated when a Save All occurs</li>
+								<li>Extract Words from Text has been fixed to not ignore the whitelist when using other languages</li>
+								<li>Fixed issue with numerical sort in the Histogram</li>
+								<li>Added missing flag icons for some countries</li>
+							</ul>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 3.1. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v3.1.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v3.1.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for 
+								improvement? Noticed a bug? You can log an issue 
+								via the Help menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2025 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
