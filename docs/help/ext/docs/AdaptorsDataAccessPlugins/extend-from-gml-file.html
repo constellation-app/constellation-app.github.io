@@ -67,18 +67,13 @@
             <ul class="ResultsList"></ul>
         </div>
 
-      <h1>Extend From GDELT Knowledge Graph</h1>
-      <p>This plugin extends an existing graph by importing relationships and related entities from the <a href="https://www.gdeltproject.org/">Global Database of Events, Language, and Tone</a>.</p>
-      <div style="text-align: center">
-          <img src="../ext/docs/AdaptorsDataAccessPlugins/src/au/gov/asd/tac/constellation/views/dataaccess/adaptors/resources/GDELTExtension.png" width="80%" alt="GDELT Extension Example"/>
-      </div>
-
-      <p>Only relationships involving existing and selected nodes on the graph will be imported. Any Entities not currently on the graph will be added. Entities and relationships are imported based on their position in the incoming data. Elements that are received first will be included in the import.</p>
-      <p>To understand more about GDELT Entities and Relationships in Constellation, see <a href="../ext/docs/AdaptorsDataAccessPlugins/src/au/gov/asd/tac/constellation/views/dataaccess/adaptors/import-entities-from-gdelt.html"> Import Entities From GDELT Help </a> and <a href="../ext/docs/AdaptorsDataAccessPlugins/src/au/gov/asd/tac/constellation/views/dataaccess/adaptors/import-relationships-from-gdelt.html"> Import Relationships From GDELT Help </a>.</p>
+      <h1>Extend From GML File</h1>
+      <p>This plugin looks up selected graph nodes extracts their neighbourhood from a GML file and displays the data in Constellation. Note that at this stage it does not search graphs nested within nodes.</p>
       <h2>Parameters</h2>
       <ul>
-      <li><strong>Relationship Options</strong> - The type of relationships to import.</li>
-      <li><strong>Limit</strong> - The maximum number of total relationships to import. The actual number of relationships imported will likely be lower than this limit.</li>
+      <li><strong>GML File</strong> - The GML File from which to retrieve neighbours.</li>
+      <li><strong>Hop On Incoming Transactions</strong> - Toggles whether the plugin will hop out incoming transactions.</li>
+      <li><strong>Hop On Outgoing Transactions</strong> - Toggles whether the plugin will hop out outgoing transactions.</li>
       </ul>
     </div>
   </div>

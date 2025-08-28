@@ -67,21 +67,45 @@
             <ul class="ResultsList"></ul>
         </div>
 
-      <h1>Extend From GML File</h1>
-      <p>This plugin looks up selected graph nodes extracts their neighbourhood from a GML file and displays the data in Constellation. Note that at this stage it does not search graphs nested within nodes.</p>
+      <h1>Import Entities From GDELT Knowledge Graph</h1>
+      <p>This plugin imports entities from the <a href="https://www.gdeltproject.org/">Global Database of Events, Language, and Tone</a>.</p>
+      <div style="text-align: center">
+          <img src="../ext/docs/AdaptorsDataAccessPlugins/resources/GDELTEntityImport.png" width="80%" alt="GDELT Entity import Example"/>
+      </div>
+      Entities are imported based on their position in the incoming data. Elements that are received first will be included in the import. 
+
+      <p>A range of different entity types can be imported using this plugin. These entity types are described as follows.</p>
+      <p><strong>Person</strong> - An entity that represents a single person. Typically an individual that may be real or fictional. Contains the attribute:</p>
+      <ul>
+      <li>Identifier: <em>Person's Full Name</em></li>
+      </ul>
+      <p><strong>Organisation</strong> - An entity that represents a collection of people. Typically, a business, government, or charity. Contains the attribute:</p>
+      <ul>
+      <li>Identifier: <em>Organisation's Name</em></li>
+      </ul>
+      <p><strong>Theme</strong> - An entity that represents a theme in a source. There are currently over 300 themes recognised by GDELT. Contains the attributes:</p>
+      <ul>
+      <li>Identifier: <em>Theme Identifier</em></li>
+      </ul>
+      <p><strong>Location</strong> - An entity that represents a place. Typically, a City, State or Country. Contains the attributes:</p>
+      <ul>
+      <li>Identifier: <em>Location's Extended Name</em></li>
+      <li>Geo.Country: <em>Country of the Location</em></li>
+      <li>Geo.Longitude: <em>Longitudinal Coordinates</em></li>
+      <li>Geo.Latitude: <em>Latitudinal Coordinates</em></li>
+      </ul>
+      <p><strong>Source</strong> - A general point of origin that entity information has been extracted from. Typically, an online publication, forum or site. Contains the attribute:</p>
+      <ul>
+      <li>Identifier: <em>Source's Name</em></li>
+      </ul>
+      <p><strong>URL</strong> - A specific point of origin that entity information has been extracted from. Typically, an online publication, forum or site. Contains the attribute:</p>
+      <ul>
+      <li>Identifier: <em>The Entire URL</em></li>
+      </ul>
       <h2>Parameters</h2>
       <ul>
-      <li><strong>GML File</strong> - The GML File from which to retrieve neighbours.</li>
-      </ul>
-      <!-- -->
-
-      <ul>
-      <li><strong>Hop On Incoming Transactions</strong> - Toggles whether the plugin will hop out incoming transactions.</li>
-      </ul>
-      <!-- -->
-
-      <ul>
-      <li><strong>Hop On Outgoing Transactions</strong> - Toggles whether the plugin will hop out outgoing transactions.</li>
+      <li><strong>Entity Options</strong> - The type of entities to import.</li>
+      <li><strong>Limit</strong> - The maximum number of total entities to import. The actual number of entities imported will likely be lower than this limit.</li>
       </ul>
     </div>
   </div>

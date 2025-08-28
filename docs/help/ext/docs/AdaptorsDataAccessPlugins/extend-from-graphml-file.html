@@ -67,18 +67,13 @@
             <ul class="ResultsList"></ul>
         </div>
 
-      <h1>Import Relationships From GDELT Knowledge Graph</h1>
-      <p>This plugin imports relationships between entities from the <a href="https://www.gdeltproject.org/">Global Database of Events, Language, and Tone</a>.</p>
-      <div style="text-align: center">
-          <img src="../ext/docs/AdaptorsDataAccessPlugins/src/au/gov/asd/tac/constellation/views/dataaccess/adaptors/resources/GDELTRelationshipImport.png" width="80%" alt="GDELT Entity import Example"/>
-      </div>
-
-      <p>A range of different entity relationships can be imported using this plugin. Entity relationships are imported based on their position in the incoming data. Relationships that are received first will be included in the import. If a relationship is between 1 or more entities currently on the graph, these entities will be references in the relationship. If a relationship is between 1 or more entities that are not included in the current graph, these entities will be added. Due to this fact relationship imports are not dependant on existing entities on the graph. For graph dependent GDELT Relationship imports, see <a href="../ext/docs/AdaptorsDataAccessPlugins/src/au/gov/asd/tac/constellation/views/dataaccess/adaptors/extend-from-gdelt.html"> Extend From GDELT Help </a></p>
-      <p>Descriptions on entities can be found in <a href="../ext/docs/AdaptorsDataAccessPlugins/src/au/gov/asd/tac/constellation/views/dataaccess/adaptors/import-entities-from-gdelt.html"> Import Entities From GDELT Help </a>.</p>
+      <h1>Extend From GraphML File</h1>
+      <p>This plugin looks up selected graph nodes extracts their neighbourhood from a GraphML file and displays the data in Constellation. Note that at this stage it does not search graphs nested within nodes.</p>
       <h2>Parameters</h2>
       <ul>
-      <li><strong>Relationship Options</strong> - The type of relationships to import.</li>
-      <li><strong>Limit</strong> - The maximum number of total relationships to import. The actual number of relationships imported will likely be lower than this limit.</li>
+      <li><strong>GraphML File</strong> - The GraphML File from which to retrieve neighbours.</li>
+      <li><strong>Hop On Incoming Transactions</strong> - Toggles whether the plugin will hop out incoming transactions.</li>
+      <li><strong>Hop On Outgoing Transactions</strong> - Toggles whether the plugin will hop out outgoing transactions.</li>
       </ul>
     </div>
   </div>
