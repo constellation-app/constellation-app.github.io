@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<head>
+  <base href="/constellation-app.github.io/help/constellation/">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../assets/css/app.css" />
+  <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="../../../assets/bootstrap/css/search.css" />
+  <noscript>
+    <link rel="stylesheet" href="../../../assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="../../../assets/js/jquery.min.js"></script>
+  <script src="../../../assets/js/js.cookie.min.js"></script>
+  <script src="../../../assets/js/jquery.dropotron.min.js"></script>
+  <script src="../../../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../../../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../../../assets/js/browser.min.js"></script>
+  <script src="../../../assets/js/breakpoints.min.js"></script>
+  <script src="../../../assets/js/app.js"></script>
+  <script src="../../../assets/bootstrap/js/bootstrap.js"></script>
+  <script src="../../../assets/bootstrap/js/index.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+
+  <script>
+    $(function() {
+      $("#includedContent").load("../toc.html");
+    });
+  </script>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../index.html#banner" class="scrolly">About</a></li>
+      <li><a href="../../../index.html#features" class="scrolly">Features</a></li>
+      <li><a href="../../../download.html" class="scrolly">Download</a></li>
+      <li><a href="../../../blog.html" class="scrolly">Blog</a></li>
+      <li><a href="../ext/docs/CoreFunctionality/about-constellation.html" class="scrolly">Documentation</a></li>
+      <li><a href="../../../index.html#contact" class="scrolly">Contact</a></li>
+    </ul>
+  </nav>
+
+</head>
+
+<body style="padding-top: 100px;">
+
+  <div class="row">
+    <div class="col-4 col-sm-3">
+      <div id="includedContent"></div>
+    </div>
+    <div class="col-8 col-sm-9">
+        <!-- Create the searchbar -->
+        <div class="App">
+            <!-- Search bar -->
+            <div class="SearchBox">
+                <div class="Search">
+                    <button class="icon">&#x1F50D</button>
+                    <input type="text" placeholder="Search help documentation" />
+                    <button class="clear">&times;</button>
+                </div>
+                <ul class="SuggestionList"></ul>
+            </div>
+            <ul class="ResultsList"></ul>
+        </div>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <div class="topNav">
+
+      <p><span id="navbar.top"></span></p>
+      <div class="skipNav">
+
+      <p><a href="SGraph.html#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></p>
+      </div>
+
+      <p><span id="navbar.top.firstrow"></span></p>
+      <ul>
+      <li><a href="../overview-summary.html">Overview</a></li>
+      <li><a href="package-summary.html">Package</a></li>
+      <li>Class</li>
+      <li><a href="package-tree.html">Tree</a></li>
+      <li><a href="../deprecated-list.html">Deprecated</a></li>
+      <li><a href="../index-all.html">Index</a></li>
+      <li><a href="../help-doc.html">Help</a></li>
+      </ul>
+      <div class="aboutLanguage">
+
+      <p>au.gov.asd.tac.constellation.views.scripting 1.0</p>
+      </div>
+
+      </div>
+
+      <div class="subNav">
+
+      <ul>
+      <li><a href="SEdge.html" title="class in au.gov.asd.tac.constellation.views.scripting.graph"><font
+      class="typeNameLink">Prev Class</font></a></li>
+      <li><a href="SLink.html" title="class in au.gov.asd.tac.constellation.views.scripting.graph"><font
+      class="typeNameLink">Next Class</font></a></li>
+      </ul>
+      <!-- -->
+
+      <ul>
+      <li><a href="../allclasses-noframe.html">All Classes</a></li>
+      </ul>
+      <div>
+
+      </div>
+
+      <div>
+
+      <ul>
+      <li>Summary: </li>
+      <li>Nested | </li>
+      <li><a href="SGraph.html#field.summary">Field</a> | </li>
+      <li><a href="SGraph.html#constructor.summary">Constructor</a> | </li>
+      <li><a href="SGraph.html#method.summary">Method</a></li>
+      </ul>
+      <!-- -->
+
+      <ul>
+      <li>Detail: </li>
+      <li><a href="SGraph.html#field.detail">Field</a> | </li>
+      <li><a href="SGraph.html#constructor.detail">Constructor</a> | </li>
+      <li><a href="SGraph.html#method.detail">Method</a></li>
+      </ul>
+      </div>
+
+      <p><span id="skip.navbar.top"></span></p>
+      </div>
+
+      <div class="header">
+
+      <div class="subTitle">
+
+      <p>au.gov.asd.tac.constellation.views.scripting.graph</p>
+      </div>
+
+      <h2>Class SGraph</h2>
+      </div>
+
+      <div class="contentContainer">
+
+      <ul>
+      <li><p>java.lang.Object</p></li>
+      <li><ul>
+      <li>au.gov.asd.tac.constellation.views.scripting.graph.SGraph</li>
+      </ul></li>
+      </ul>
+      <div class="description">
+
+      <ul>
+      <li><ul>
+      <li></li>
+      </ul>
+      <hr />
+      <pre><code>public class SGraph
+      extends java.lang.Object
+      </code></pre>
+      <div class="block">
+
+      <p>A representation of a graph for use with scripting.</p>
+      </div>
+
+      <p><span class="simpleTagLabel">Author:</span><br />
+      algol, cygnus_x-1</p></li>
+      </ul>
+      </div>
+
+      <div class="summary">
+
+      <ul>
+      <li><ul>
+      <li><p><span id="field.summary"></span></p>
+      <h3>Field Summary</h3>
+      <table class="memberSummary" data-border="0" data-cellpadding="3" data-cellspacing="0" data-summary="Field Summary table, listing fields, and an explanation">
+      <caption><span>Fields</span><span class="tabEnd"> </span></caption>
+      <colgroup>
+      <col style="width: 50%" />
+      <col style="width: 50%" />
+      </colgroup>
+      <thead>
+      <tr class="header">
+      <th class="colFirst" scope="col">Modifier and Type</th>
+      <th class="colLast" scope="col">Field and Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="odd altColor">
+      <td class="colFirst"><code>static au.gov.asd.tac.constellation.graph.GraphElementType</code></td>
+      <td class="colLast"><code>EDGE</code>
+      <div class="block">
+      A reference to the 'Edge' element type.
+      </div></td>
+      </tr>
+      <tr class="even rowColor">
+      <td class="colFirst"><code>static au.gov.asd.tac.constellation.graph.GraphElementType</code></td>
+      <td class="colLast"><code>GRAPH</code>
+      <div class="block">
+      A reference to the 'Graph' element type.
+      </div></td>
+      </tr>
+      <tr class="odd altColor">
+      <td class="colFirst"><code>static au.gov.asd.tac.constellation.graph.GraphElementType</code></td>
+      <td class="colLast"><code>LINK</code>
+      <div class="block">
+      A reference to the 'Link' element type.
+      </div></td>
+      </tr>
+      <tr class="even rowColor">
+      <td class="colFirst"><code>static au.gov.asd.tac.constellation.graph.GraphElementType</code></td>
+      <td class="colLast"><code>TRANSACTION</code>
+      <div class="block">
+      A reference to the 'Transaction' element type.
+      </div></td>
+      </tr>
+      <tr class="odd altColor">
+      <td class="colFirst"><code>static au.gov.asd.tac.constellation.graph.GraphElementType</code></td>
+      <td class="colLast"><code>VERTEX</code>
+      <div class="block">
+      A reference to the 'Vertex' element type.
+      </div></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <p>Fields<span class="tabEnd"> </span></p></li>
+      </ul>
+      <!-- -->
+
+      <ul>
+      <li><p><span id="constructor.summary"></span></p>
+      <h3>Constructor Summary</h3>
+      <table class="memberSummary" data-border="0" data-cellpadding="3" data-cellspacing="0" data-summary="Constructor Summary table, listing constructors, and an explanation">
+      <caption><span>Constructors</span><span class="tabEnd"> </span></caption>
+      <thead>
+      <tr class="header">
+      <th class="colOne" scope="col">Constructor and Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="odd altColor">
+      <td class="colOne"><code>SGraph(au.gov.asd.tac.constellation.graph.Graph graph)</code> </td>
+      </tr>
+      <tr class="even rowColor">
+      <td class="colOne"><code>SGraph(javax.script.ScriptEngine engine,                                                 au.gov.asd.tac.constellation.graph.Graph graph)</code> </td>
+      </tr>
+      </tbody>
+      </table>
+
+      <p>Constructors<span class="tabEnd"> </span></p></li>
+      </ul>
+      <!-- -->
+
+      <ul>
+      <li><p><span id="method.summary"></span></p>
+      <h3>Method Summary</h3>
+      <table class="memberSummary" data-border="0" data-cellpadding="3" data-cellspacing="0" data-summary="Method Summary table, listing methods, and an explanation">
+      <colgroup>
+      <col style="width: 50%" />
+      <col style="width: 50%" />
+      </colgroup>
+      <thead>
+      <tr class="header">
+      <th class="colFirst" scope="col">Modifier and Type</th>
+      <th class="colLast" scope="col">Method and Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr id="i0" class="odd altColor">
+      <td class="colFirst"><code>void</code></td>
+      <td class="colLast"><code>cleanup()</code>
+      <div class="block">
+      Clean up any graphs created by scripting which remain in memory.
+      </div></td>
+      </tr>
+      <tr id="i1" class="even rowColor">
+      <td class="colFirst"><code>javax.script.ScriptEngine</code></td>
+      <td class="colLast"><code>getEngine()</code>
+      <div class="block">
+      Get the scripting engine currently being used to evaluate scripts.
+      </div></td>
+      </tr>
+      <tr id="i2" class="odd altColor">
+      <td class="colFirst"><code>au.gov.asd.tac.constellation.graph.Graph</code></td>
+      <td class="colLast"><code>getGraph()</code>
+      <div class="block">
+      Get the actual graph on which scripts are being executed.
+      </div></td>
+      </tr>
+      <tr id="i3" class="even rowColor">
+      <td class="colFirst"><code>SReadableGraph</code></td>
+      <td class="colLast"><code>readableGraph()</code>
+      <div class="block">
+      Get a read lock on the graph so that its data can be interrogated.
+      </div></td>
+      </tr>
+      <tr id="i4" class="odd altColor">
+      <td class="colFirst"><code>void</code></td>
+      <td class="colLast"><code>setEngine(javax.script.ScriptEngine engine)</code>
+      <div class="block">
+      Set a new scripting engine to be used for evaluating scripts.
+      </div></td>
+      </tr>
+      <tr id="i5" class="even rowColor">
+      <td class="colFirst"><code>java.lang.String</code></td>
+      <td class="colLast"><code>toString()</code> </td>
+      </tr>
+      <tr id="i6" class="odd altColor">
+      <td class="colFirst"><code>void</code></td>
+      <td class="colLast"><code>withReadableGraph(java.lang.Object callback)</code>
+      <div class="block">
+      Evaluate a function against a read lock on the graph with releases handled automatically.
+      </div></td>
+      </tr>
+      <tr id="i7" class="even rowColor">
+      <td class="colFirst"><code>void</code></td>
+      <td class="colLast"><code>withWritableGraph(java.lang.Object callback)</code>
+      <div class="block">
+      Evaluate a function against a write lock on the graph with commits or rollbacks handled automatically.
+      </div></td>
+      </tr>
+      <tr id="i8" class="odd altColor">
+      <td class="colFirst"><code>SWritableGraph</code></td>
+      <td class="colLast"><code>writableGraph(java.lang.String editName)</code>
+      <div class="block">
+      Get a write lock on the graph so that edits can be made to its data.
+      </div></td>
+      </tr>
+      </tbody>
+      </table>
+
+      <ul>
+      <li><p><span
+      id="methods.inherited.from.class.java.lang.Object"></span></p>
+      <h3>Methods inherited from class java.lang.Object</h3>
+      <p><code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></p></li>
+      </ul></li>
+      </ul></li>
+      </ul>
+      </div>
+
+      <div class="details">
+
+      <ul>
+      <li><ul>
+      <li><p><span id="field.detail"></span></p>
+      <h3>Field Detail</h3>
+      <p><span id="GRAPH"></span></p>
+      <ul>
+      <li><h4>GRAPH</h4>
+      <pre><code>public static final au.gov.asd.tac.constellation.graph.GraphElementType GRAPH
+      </code></pre>
+      <div class="block">
+
+      <p>A reference to the 'Graph' element type.</p>
+      </div>
+      </li>
+      </ul>
+      <p><span id="VERTEX"></span></p>
+      <ul>
+      <li><h4>VERTEX</h4>
+      <pre><code>public static final au.gov.asd.tac.constellation.graph.GraphElementType VERTEX
+      </code></pre>
+      <div class="block">
+
+      <p>A reference to the 'Vertex' element type.</p>
+      </div>
+      </li>
+      </ul>
+      <p><span id="TRANSACTION"></span></p>
+      <ul>
+      <li><h4>TRANSACTION</h4>
+      <pre><code>public static final au.gov.asd.tac.constellation.graph.GraphElementType TRANSACTION
+      </code></pre>
+      <div class="block">
+
+      <p>A reference to the 'Transaction' element type.</p>
+      </div>
+      </li>
+      </ul>
+      <p><span id="EDGE"></span></p>
+      <ul>
+      <li><h4>EDGE</h4>
+      <pre><code>public static final au.gov.asd.tac.constellation.graph.GraphElementType EDGE
+      </code></pre>
+      <div class="block">
+
+      <p>A reference to the 'Edge' element type.</p>
+      </div>
+      </li>
+      </ul>
+      <p><span id="LINK"></span></p>
+      <ul>
+      <li><h4>LINK</h4>
+      <pre><code>public static final au.gov.asd.tac.constellation.graph.GraphElementType LINK
+      </code></pre>
+      <div class="block">
+
+      <p>A reference to the 'Link' element type.</p>
+      </div>
+      </li>
+      </ul></li>
+      </ul>
+      <!-- -->
+
+      <ul>
+      <li><p><span id="constructor.detail"></span></p>
+      <h3>Constructor Detail</h3>
+      <p><span
+      id="SGraph-javax.script.ScriptEngine-au.gov.asd.tac.constellation.graph.Graph-"></span></p>
+      <ul>
+      <li><h4>SGraph</h4>
+      <pre><code>public SGraph(javax.script.ScriptEngine engine,
+                    au.gov.asd.tac.constellation.graph.Graph graph)
+      </code></pre></li>
+      </ul>
+      <p><span
+      id="SGraph-au.gov.asd.tac.constellation.graph.Graph-"></span></p>
+      <ul>
+      <li><h4>SGraph</h4>
+      <pre><code>public SGraph(au.gov.asd.tac.constellation.graph.Graph graph)
+      </code></pre></li>
+      </ul></li>
+      </ul>
+      <!-- -->
+
+      <ul>
+      <li><p><span id="method.detail"></span></p>
+      <h3>Method Detail</h3>
+      <p><span id="getEngine--"></span></p>
+      <ul>
+      <li><h4>getEngine</h4>
+      <pre><code>public javax.script.ScriptEngine getEngine()
+      </code></pre>
+      <div class="block">
+
+      <p>Get the scripting engine currently being used to evaluate scripts.</p>
+      </div>
+
+      <p><span class="returnLabel">Returns:</span><br />
+      the current scripting engine.</p></li>
+      </ul>
+      <p><span id="setEngine-javax.script.ScriptEngine-"></span></p>
+      <ul>
+      <li><h4>setEngine</h4>
+      <pre><code>public void setEngine(javax.script.ScriptEngine engine)
+      </code></pre>
+      <div class="block">
+
+      <p>Set a new scripting engine to be used for evaluating scripts.</p>
+      </div>
+
+      <p><span class="paramLabel">Parameters:</span><br />
+      <code>engine</code> - the scripting engine to use.</p></li>
+      </ul>
+      <p><span id="getGraph--"></span></p>
+      <ul>
+      <li><h4>getGraph</h4>
+      <pre><code>public au.gov.asd.tac.constellation.graph.Graph getGraph()
+      </code></pre>
+      <div class="block">
+
+      <p>Get the actual graph on which scripts are being executed.</p>
+      </div>
+
+      <p><span class="returnLabel">Returns:</span><br />
+      the graph on which scripts are being executed.</p></li>
+      </ul>
+      <p><span id="cleanup--"></span></p>
+      <ul>
+      <li><h4>cleanup</h4>
+      <pre><code>public void cleanup()
+      </code></pre>
+      <div class="block">
+
+      <p>Clean up any graphs created by scripting which remain in memory. After a script completes, we have no way of reliably knowing if the script has called .release(), .commit(), or .rollback() on the graphs it used. It is undesirable to leave graphs remaining in memory if they are no longer in use. To address this issue, we keep track of any graphs used by scripting and offer this method to attempt to force them out of memory if they still exist.</p>
+      </div>
+      </li>
+      </ul>
+      <p><span id="readableGraph--"></span></p>
+      <ul>
+      <li><h4>readableGraph</h4>
+      <pre><code>public SReadableGraph readableGraph()
+                                   throws java.lang.InterruptedException
+      </code></pre>
+      <div class="block">
+
+      <p>Get a read lock on the graph so that its data can be interrogated. Note: If this method is called in a Python script using the 'with' statement, a context manager will be created for you to automatically handle releases as appropriate.</p>
+      </div>
+
+      <p><span class="returnLabel">Returns:</span><br />
+      a graph with an active read lock.</p>
+      <p><span class="throwsLabel">Throws:</span><br />
+      <code>java.lang.InterruptedException</code></p></li>
+      </ul>
+      <p><span id="withReadableGraph-java.lang.Object-"></span></p>
+      <ul>
+      <li><h4>withReadableGraph</h4>
+      <pre><code>public void withReadableGraph(java.lang.Object callback)
+                             throws javax.script.ScriptException,
+                                    java.lang.InterruptedException
+      </code></pre>
+      <div class="block">
+
+      <p>Evaluate a function against a read lock on the graph with releases handled automatically. Note: This method will only work for Python scripts as it makes use of Python specific syntax.</p>
+      </div>
+
+      <p><span class="paramLabel">Parameters:</span><br />
+      <code>callback</code> - the function to evaluate.</p>
+      <p><span class="throwsLabel">Throws:</span><br />
+      <code>javax.script.ScriptException</code></p>
+      <p><code>java.lang.InterruptedException</code></p></li>
+      </ul>
+      <p><span id="writableGraph-java.lang.String-"></span></p>
+      <ul>
+      <li><h4>writableGraph</h4>
+      <pre><code>public SWritableGraph writableGraph(java.lang.String editName)
+                                   throws java.lang.InterruptedException
+      </code></pre>
+      <div class="block">
+
+      <p>Get a write lock on the graph so that edits can be made to its data. Note: If this method is called in a Python script using the 'with' statement, a context manager will be created for you to automatically handle commits and rollbacks as appropriate.</p>
+      </div>
+
+      <p><span class="paramLabel">Parameters:</span><br />
+      <code>editName</code> - a name for the edit operation.</p>
+      <p><span class="returnLabel">Returns:</span><br />
+      a graph with an active write lock.</p>
+      <p><span class="throwsLabel">Throws:</span><br />
+      <code>java.lang.InterruptedException</code></p></li>
+      </ul>
+      <p><span id="withWritableGraph-java.lang.Object-"></span></p>
+      <ul>
+      <li><h4>withWritableGraph</h4>
+      <pre><code>public void withWritableGraph(java.lang.Object callback)
+                             throws javax.script.ScriptException,
+                                    java.lang.InterruptedException
+      </code></pre>
+      <div class="block">
+
+      <p>Evaluate a function against a write lock on the graph with commits or rollbacks handled automatically. Note: This method will only work for Python scripts as it makes use of Python specific syntax.</p>
+      </div>
+
+      <p><span class="paramLabel">Parameters:</span><br />
+      <code>callback</code> - the function to evaluate.</p>
+      <p><span class="throwsLabel">Throws:</span><br />
+      <code>javax.script.ScriptException</code></p>
+      <p><code>java.lang.InterruptedException</code></p></li>
+      </ul>
+      <p><span id="toString--"></span></p>
+      <ul>
+      <li><h4>toString</h4>
+      <pre><code>public java.lang.String toString()
+      </code></pre>
+      <p><span class="overrideSpecifyLabel">Overrides:</span><br />
+      <code>toString</code> in class <code>java.lang.Object</code></p></li>
+      </ul></li>
+      </ul></li>
+      </ul>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- Contact Us -->
+          <section id="contact" class="contact">
+            <header>
+              <h3>Contact Us</h3>
+            </header>
+            <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+            <p>
+              <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+            </p>
+          </section>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            <ul class="menu">
+              <li>&copy; 2025 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      var allCookies = Cookies.get();
+      for (var cookie in allCookies) {
+        if (cookie != null) {
+          $("#" + cookie).removeClass('show');
+          var cookieValue = Cookies.get(cookie);
+          if (cookieValue == ("true")) {
+            $("#" + cookie).collapse('show');
+          } else {
+            $("#" + cookie).collapse('hide');
+            $("#" + cookie + " .collapse").removeClass('show');
+          }
+        }
+      }
+    });
+
+    $(".collapse").on('shown.bs.collapse', function(e) {
+      console.log('shown');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "true");
+      $("#" + active).addClass('show');
+    });
+    $(".collapse").on('hidden.bs.collapse', function(e) {
+      console.log('collapsed');
+      e.stopPropagation();
+      var active = $(this).attr('id');
+      Cookies.set(active, "false");
+      $("#" + active).removeClass('show');
+      $("#" + active).collapse('hide');
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-139401597-2');
+  </script>
+
+  <script>
+    // The script for the search 
+    let pages = [];
+
+    fetch('../search.json')
+        .then(response => response.json())
+        .then((documents) => {
+            pages = documents;
+            return miniSearch.addAll(pages);
+    }, {});
+        
+    const miniSearch = new MiniSearch({
+        fields: ['title', 'category'],
+        storeFields: ['title', 'category', 'link']
+    });
+        
+    const app = document.querySelector('.App');
+    const search = document.querySelector('.Search');
+    const searchInput = document.querySelector('.Search input');
+    const clearButton = document.querySelector('.Search button.clear');
+    const suggestionList = document.querySelector('.SuggestionList');
+    const resultsList = document.querySelector(".ResultsList");
+        
+    const capitalize = (string) => string.replace(/(\b\w)/gi, (char) => char.toUpperCase());
+
+    // Typing into search bar updates search results and suggestions
+    searchInput.addEventListener('input', (event) => {
+        const query = searchInput.value;
+
+        const results = (query.length > 1) ? getSearchResults(query) : [];
+        renderSearchResults(results);
+  
+        const suggestions = (query.length > 1) ? getSuggestions(query) : [];
+        renderSuggestions(suggestions);
+    });
+        
+    // Clicking on clear button clears search and suggestions
+    clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+
+        renderSearchResults([]);
+        renderSuggestions([]);
+    });
+
+    // Clicking on a suggestion selects it
+    suggestionList.addEventListener('click', (event) => {
+        const suggestion = event.target;
+
+        if (suggestion.classList.contains('Suggestion')) {
+            const query = suggestion.innerText.trim();
+            searchInput.value = query;
+            searchInput.focus();
+
+            const results = getSearchResults(query);
+            renderSearchResults(results);
+            renderSuggestions([]);
+        }
+    });
+
+    // Clicking outside of search bar clears suggestions
+    app.addEventListener('click', (event) => {
+        renderSuggestions([]);
+    });
+        
+    // Pressing up/down/enter key while on search bar navigates through suggestions
+    search.addEventListener('keydown', (event) => {
+        const key = event.key;
+
+        if (key === 'ArrowDown') {
+            selectSuggestion(+1);
+        } else if (key === 'ArrowUp') {
+            selectSuggestion(-1);
+        } else if (key === 'Enter' || key === 'Escape') {
+            searchInput.blur();
+            renderSuggestions([]);
+        } else {
+            return;
+        }
+        const query = searchInput.value;
+        const results = getSearchResults(query);
+        renderSearchResults(results);
+    });
+
+    // Get the search results
+    const getSearchResults = (query) => {
+        return miniSearch.search(query).map(({ id }) => pages[id]);
+    };
+
+    // Get possible suggestions for what has been typed
+    const getSuggestions = (query) => {
+        return miniSearch.autoSuggest(query);
+    };
+
+    // Display the search results on the page
+    const renderSearchResults = (results) => {
+        resultsList.innerHTML = results.map(({title, link}) => {
+            return `<li class="Result">
+                <a href=\ ${link}> ${capitalize(title)}</a>
+                </li>`;
+            }).join('\n');
+
+        if (results.length > 0) {
+            app.classList.add('hasResults');
+        } else {
+            app.classList.remove('hasResults');
+        }
+    };
+
+    // Display the suggestions
+    const renderSuggestions = (suggestions) => {
+        suggestionList.innerHTML = suggestions.map(({ suggestion }) => {
+            return `<li class="Suggestion">${suggestion}</li>`;
+        }).join('\n');
+
+        if (suggestions.length > 0) {
+            app.classList.add('hasSuggestions');
+        } else {
+            app.classList.remove('hasSuggestions');
+        }
+    };
+
+    // Select a suggestion and set the text input text to match 
+    const selectSuggestion = (direction) => {
+        const suggestions = document.querySelectorAll('.Suggestion');
+        const selected = document.querySelector('.Suggestion.selected');
+        const index = Array.from(suggestions).indexOf(selected);
+
+        if (index > -1) {
+            suggestions[index].classList.remove('selected');
+        }
+
+        const nextIndex = Math.max(Math.min(index + direction, suggestions.length - 1), 0);
+        suggestions[nextIndex].classList.add('selected');
+        searchInput.value = suggestions[nextIndex].innerText;
+    };     
+        
+    /**
+     * Code for MiniSearch is based on the demo provided at:
+     * https://github.com/lucaong/minisearch/blob/master/examples/plain_js
+     */
+
+  </script>
+</body>
