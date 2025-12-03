@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Constellation - What's new in Constellation v3.3</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="A graph-focused data visualisation and interactive analysis application">
+        <meta name="keywords" content="graph, visualisation, graph analysis, graph, analysis, opengl, open source, free">
+        <meta name="author" content="antares">
+        <link rel="stylesheet" href="../assets/css/app.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+        <!-- favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+    </head>
+    <body class="no-sidebar is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <div>
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#banner" class="scrolly">About</a></li>
+                        <li><a href="../index.html#features" class="scrolly">Features</a></li>
+                        <li><a href="../download.html" class="scrolly">Download</a></li>
+                        <li><a href="../blog.html" class="scrolly">Blog</a></li>
+						<li><a href="//constellation-app.github.io/help/ext/docs/CoreFunctionality/about-constellation.html" class="scrolly">Documentation</a></li>
+                        <li><a href="../index.html#contact" class="scrolly">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main -->
+            <div class="wrapper style1">
+                <div class="container">
+                    <article id="main" class="special">
+                        <header>
+                            <h2>What's new in Constellation v3.3</h2>
+							<p>
+                                The focus of this release has been to improve the overall user experience of Constellation. 
+								Numerous bugs have been fixed that should make Constellation more stable and performant.  
+                            </p>
+                            <p>
+                                Here is a list of changes we’ve added 
+								to this version of Constellation.
+                            </p>
+                        </header>
+
+                        <section>
+                            <header>
+                                <h3>Histogram View Rewrite</h3>
+                            </header>
+							<p>
+								The Histogram View has been rewritten! The new version of the Histogram is 
+								currently available from the Experimental -> Views -> New Histogram menu. 
+								Although this new version looks very similar to the original, the new version 
+								utilises the JavaFX framework that many of the other views use, which offers 
+								significant benefits including a better performance.   
+							</p>
+							
+
+							<img src="../images/blogs/whats-new-in-constellation-v3.3.0/histogram-rewrite.png" alt="Spellcheck"/>
+
+                        </section>
+						
+						<section>
+                            <header>
+                                <h3>Spellcheck in More Views</h3>
+                            </header>
+							<p>
+								Spellcheck, which previously has only been available in select plugins in 
+								the Data Access View, has now been added into the Conversation and Notes 
+								Views, and in the file and database importers. In the Conversation View, 
+								spellcheck has been added to the Create Translation text boxes and in the 
+								Notes View, spellcheck has been added to the text boxes on the new note 
+								and edit note dialogs.  
+							</p>
+
+							<img src="../images/blogs/whats-new-in-constellation-v3.3.0/spellcheck-notes.png" alt="Shortcuts"/>
+					
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Welcome Page Refreshes Recent Graphs </h3>
+                            </header>
+							<p>
+								Previously, when Constellation is opened, the Welcome Page cannot refresh 
+								the Recent graphs shown once it had been opened. A change has been made that 
+								allows the Welcome Page to refresh the graphs shown in the Recent graph 
+								section whenever the Welcome Page is in focus. This means that any new 
+								graphs that have recently been saved or existing graphs that have been 
+								renamed will still be accessible to open through the Welcome Page.  
+							</p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Star Files Cannot Be Manipulated Outside of Constellation</h3>
+                            </header>
+							<p>
+								Star files used to be able to be moved, renamed or deleted while the graph 
+								was open in Constellation which would cause exceptions. Star files have now 
+								been updated to stop any file manipulation while they are open in Constellation, 
+								similar to many other file types.  
+
+							</p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Several Bug Fixes</h3>
+                            </header>
+							<p>
+								Numerous bug fixes have also been made including:
+							</p>
+							<ul>
+								<li>Fixed exceptions thrown when a map that is not the default is selected in the Map View</li>
+								<li>Fixed ability to rename a graph from within Constellation</li>
+								<li>Adjusted text sizing in places where text was being cut off</li>
+								<li>Fixed issues with file-based transport in the Rest API</li>
+								<li>Resolved exception thrown when attempting to edit a Node or Transaction Type attribute in the Attribute Editor</li>
+							</ul>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Want to know more?</h3>
+                            </header>
+                            <p>
+                                You can find out more information about the
+                                latest updates on the What's new page once you
+                                have installed version 3.3. There's loads of
+                                extra details available in the
+                                <a href="https://github.com/constellation-app/constellation/blob/v3.3.0/CoreWhatsNewView/src/au/gov/asd/tac/constellation/views/whatsnew/whatsnew.txt">Release Notes</a>
+                                and <a href="https://github.com/constellation-app/constellation/blob/v3.3.0/CHANGELOG.md">Change Log</a>.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Would you like to learn more about how Constellation works?</h3>
+                            </header>
+                            <p>
+                                There is a <a href="https://github.com/constellation-app/constellation-training">training package</a>
+                                available on GitHub to learn how to make the most
+                                use of the various features in Constellation.
+                                There is also developer training for those
+                                seeking to deep dive into the underlying source
+                                code.
+                            </p>
+                        </section>
+
+                        <section>
+                            <header>
+                                <h3>Contact Us</h3>
+                            </header>
+                            <p>
+                                Do you have any feedback or suggestions for 
+								improvement? Noticed a bug? You can log an issue 
+								via the Help menu or clicking
+                                <a href="https://github.com/constellation-app/constellation/issues">here</a>.
+                            </p>
+                        </section>
+
+                        <!-- Download -->
+                        <section id="download" class="download">
+                            <article class="container special">
+                                <header>
+                                    <h2>Download Constellation</h2>
+                                    <a href="../download.html" class="button">Download Now</a>
+                                </header>
+                            </article>
+                        </section>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <!-- Contact Us -->
+                            <section id="contact" class="contact">
+                                <header>
+                                    <h3>Contact Us</h3>
+                                </header>
+                                <p>Feel free to ask a question on Gitter or file an issue on our GitHub Issues board.</p>
+                                <p>
+                                    <a href="https://gitter.im/constellation-app/community" class="button">Contact Us</a>
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                    <a href="https://github.com/constellation-app/constellation/blob/master/CONTRIBUTING.md#reporting-bugs" class="button">Report Issue</a>
+                                </p>
+                                <!--
+                                <ul class="icons">
+                                  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                  <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                  <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                  <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                  <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                  <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                                </ul>
+                                -->
+                            </section>
+
+                            <!-- Copyright -->
+                            <div class="copyright">
+                                <ul class="menu">
+                                    <li>&copy; 2025 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/app.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139401597-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139401597-2');
+        </script>
+
+    </body>
+    <!--
+    This template was taken from html5up.net called Helios and was developed by @ajlkn
+    -->
+</html>
