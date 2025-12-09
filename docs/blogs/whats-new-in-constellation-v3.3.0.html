@@ -60,11 +60,29 @@
 								currently available from the Experimental -> Views -> New Histogram menu. 
 								Although this new version looks very similar to the original, the new version 
 								utilises the JavaFX framework that many of the other views use, which offers 
-								significant benefits including a better performance.   
+								significant benefits including a better performance. The rewrite also includes
+								a Light Mode which can be seen when the Constellation Look and Feel is set to 
+								FlatLaf Light. 
 							</p>
 							
-
-							<img src="../images/blogs/whats-new-in-constellation-v3.3.0/histogram-rewrite.png" alt="Spellcheck"/>
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<figure style="padding: 1em">											
+												<img src="../images/blogs/whats-new-in-constellation-v3.3.0/original-histogram.png" alt="Spellcheck"/>
+												<figcaption>Original Histogram</figcaption>
+											</figure>
+										</td>
+										<td>
+											<figure style="padding: 1em">
+												<img src="../images/blogs/whats-new-in-constellation-v3.3.0/histogram-rewrite.png" alt="Spellcheck"/>
+												<figcaption>New Histogram</figcaption>
+											</figure>
+										</td>
+									</tr>
+								</tbody>
+							</table>
 
                         </section>
 						
@@ -75,10 +93,13 @@
 							<p>
 								Spellcheck, which previously has only been available in select plugins in 
 								the Data Access View, has now been added into the Conversation and Notes 
-								Views, and in the file and database importers. In the Conversation View, 
+								Views, and in the File and Database Importers. In the Conversation View, 
 								spellcheck has been added to the Create Translation text boxes and in the 
 								Notes View, spellcheck has been added to the text boxes on the new note 
-								and edit note dialogs.  
+								and edit note dialogs. In the File and Database Importers, spellcheck can 
+								be found in the new attribute textbox. Spellcheck has also been added to the 
+								Attribute Editor in the dialogs for String Attributes but it is turned off
+								by default. 
 							</p>
 
 							<img src="../images/blogs/whats-new-in-constellation-v3.3.0/spellcheck-notes.png" alt="Shortcuts"/>
@@ -106,7 +127,7 @@
 							<p>
 								Star files used to be able to be moved, renamed or deleted while the graph 
 								was open in Constellation which would cause exceptions. Star files have now 
-								been updated to stop any file manipulation while they are open in Constellation, 
+								been updated to stop any file manipulation while they are in use, 
 								similar to many other file types.  
 
 							</p>
