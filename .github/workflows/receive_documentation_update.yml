@@ -19,19 +19,19 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           path: pages
       - name: Checkout Constellation repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           repository: constellation-app/constellation
           path: ./constellation
           ref: documentation_update
       - name: Checkout Constellation-Adaptors repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           repository: constellation-app/constellation-adaptors
           path: ./constellation-adaptors
           ref: documentation_update
       - name: Checkout constellation_cyber_plugins repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           repository: AustralianCyberSecurityCentre/constellation_cyber_plugins
           path: ./constellation_cyber_plugins
@@ -42,7 +42,7 @@ jobs:
         run: |
               chmod +x ./pages/.github/workflows/convert_doc_files.sh && ./pages/.github/workflows/convert_doc_files.sh
       - name: Auto Commit Documentation Updates
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           repository: 'pages'
           commit_message: 'Documentation Update Automated'
