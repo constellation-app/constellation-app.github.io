@@ -111,39 +111,88 @@
       </tbody>
       </table>
 
-      <p>The Layers View holds a collection of Layers. Each Layer can represent a static set of elements, or a dynamically calculated set of elements which match a query criteria. The query structure is based on the expressions framework.<br />
-      Each layer has a visibility checkbox which determines if that layer is toggled. All elements are on the base layer 0. When one or more check boxes are selected, only the elements that are members of those layers are visibly displayed. All other elements will have their "visibility" attribute value toggled to 0.0 (invisible).<br />
-      Arrangements on graphs with a visual schema will be ran on the base layer 0.</p>
+      <p>The Layers View holds a collection of Layers. Each Layer can
+      represent a static set of elements, or a dynamically calculated
+      set of elements which match a query criteria. The query structure
+      is based on the expressions framework.<br />
+      Each layer has a visibility checkbox which determines if that
+      layer is toggled. All elements are on the base layer 0. When one
+      or more check boxes are selected, only the elements that are
+      members of those layers are visibly displayed. All other elements
+      will have their "visibility" attribute value toggled to 0.0
+      (invisible).<br />
+      Arrangements on graphs with a visual schema will be ran on the
+      base layer 0.</p>
       <img src="../ext/docs/CoreLayersView/resources/LayersView.png" alt="Layers View" />
 
       <h2>Creating and Using Layers</h2>
-      <p>The two main ways to create and use layers are through the Layers View window and through the use of shortcut keys (see table at the top of the page for shortcut details). The maximum amount of layers you can create is 64.</p>
-      <p>When a single layer is toggled on, that layer will be displayed on the graph. When multiple manual layers are selected, it will display everything on layer x, as well as everything on layer y (i.e. the union of all selected layers).</p>
-      <p>To delete a layer, simply press the Delete button next to the layer you want to remove.</p>
+      <p>The two main ways to create and use layers are through the
+      Layers View window and through the use of shortcut keys (see table
+      at the top of the page for shortcut details). The maximum amount
+      of layers you can create is 64.</p>
+      <p>When a single layer is toggled on, that layer will be displayed
+      on the graph. When multiple manual layers are selected, it will
+      display everything on layer x, as well as everything on layer y
+      (i.e. the union of all selected layers).</p>
+      <p>To delete a layer, simply press the Delete button next to the
+      layer you want to remove.</p>
       <h2>Layer Allocation</h2>
       <p><img src="../ext/docs/CoreLayersView/resources/layers-context.png" alt="Right-click context menu used for adding elements to a manual
       layer." /></p>
-      <p>There are two main ways for a graph element to be allocated to a layer:</p>
+      <p>There are two main ways for a graph element to be allocated to
+      a layer:</p>
       <h3>Manual Allocation to a Layer</h3>
-      <p>Graph Elements can be manually added to a layer via the right click context menu (see above image) or by manually setting the layer_mask Attribute via the Attribute Editor.<br />
-      Note: When any layers are active, any graph elements that are manually created/added to the graph will have their layer_mask automatically allocated to the set of active layers.</p>
+      <p>Graph Elements can be manually added to a layer via the right
+      click context menu (see above image) or by manually setting the
+      layer_mask Attribute via the Attribute Editor.<br />
+      Note: When any layers are active, any graph elements that are
+      manually created/added to the graph will have their layer_mask
+      automatically allocated to the set of active layers.</p>
       <h3>Query Allocation to a Layer</h3>
-      <p>When a query is defined on a layer it provides a dynamic means to include graph elements on that layer as determined by the specified Vertex and Transaction queries. Queries are dynamically recalculated upon changes to any attributes being queried. This is to ensure the accuracy of the shown layer. e.g. Layer 1 has a vertex query described as Label == 'Vertex #0'. This will show the vertex with that label. If you then change Vertex #0's label to something like 'V#0', the query will note the change and recalculate for the whole graph.</p>
-      <p>NOTE: Layers View does not allow for the use of the assignment operator = or keyword assign.</p>
-      <p>Click <a href="../ext/docs/CoreGraphFramework/expressions-framework.html">here</a> for more information on the structure of the expression framework</p>
+      <p>When a query is defined on a layer it provides a dynamic means
+      to include graph elements on that layer as determined by the
+      specified Vertex and Transaction queries. Queries are dynamically
+      recalculated upon changes to any attributes being queried. This is
+      to ensure the accuracy of the shown layer. e.g. Layer 1 has a
+      vertex query described as Label == 'Vertex #0'. This will show the
+      vertex with that label. If you then change Vertex #0's label to
+      something like 'V#0', the query will note the change and
+      recalculate for the whole graph.</p>
+      <p>NOTE: Layers View does not allow for the use of the assignment
+      operator = or keyword assign.</p>
+      <p>Click <a
+      href="../ext/docs/CoreGraphFramework/expressions-framework.html">here</a>
+      for more information on the structure of the expression
+      framework</p>
       <h2>Layer Functions</h2>
       <img src="../ext/docs/CoreLayersView/resources/LayerFunctions.png" alt="Layer specific functions" />  
 
-      <p>The <strong>Select</strong> button will select only the graph elements that are allocated to the corresponding layer.<br />
-      The <strong>De-Select</strong> button will deselect only the graph elements that are allocated to the corresponding layer.<br />
-      The <strong>Allocate</strong> button will directly allocate all selected graph elements to the corresponding layer, while maintaining any allocations to other layers.<br />
-      The <strong>De-Allocate</strong> button will directly deallocate all selected graph elements to the corresponding layer, while maintaining any allocations to other layers.</p>
-      <p>The <strong>Include Hidden</strong> checkbox allows selections and allocations to occur on graph elements even if they are currently not being displayed.<br />
-      When this is unchecked, only the currently displayed graph elements will be affected.</p>
+      <p>The <strong>Select</strong> button will select only the graph
+      elements that are allocated to the corresponding layer.<br />
+      The <strong>De-Select</strong> button will deselect only the graph
+      elements that are allocated to the corresponding layer.<br />
+      The <strong>Allocate</strong> button will directly allocate all
+      selected graph elements to the corresponding layer, while
+      maintaining any allocations to other layers.<br />
+      The <strong>De-Allocate</strong> button will directly deallocate
+      all selected graph elements to the corresponding layer, while
+      maintaining any allocations to other layers.</p>
+      <p>The <strong>Include Hidden</strong> checkbox allows selections
+      and allocations to occur on graph elements even if they are
+      currently not being displayed.<br />
+      When this is unchecked, only the currently displayed graph
+      elements will be affected.</p>
       <h2>Union and Intersection Modes</h2>
-      <p>At the top right of the Layers View you can switch between <img src="../ext/docs/CoreLayersView/resources/UnionMode.png" alt="Layers View : Union Mode" /> and <img src="../ext/docs/CoreLayersView/resources/IntersectionMode.png" alt="Layers View : Intersection Mode" /><br />
-      In Union Mode, when multiple layers are selected/active, then <strong>all</strong> graph elements belonging to <strong>any</strong> active layer will be displayed.<br />
-      In Intersection Mode, when multiple layers are selected/active, then <strong>only</strong> graph elements belonging to <strong>every</strong> active layer will be displayed.</p>
+      <p>At the top right of the Layers View you can switch between
+      <img src="../ext/docs/CoreLayersView/resources/UnionMode.png" alt="Layers View : Union Mode" />
+      and
+      <img src="../ext/docs/CoreLayersView/resources/IntersectionMode.png" alt="Layers View : Intersection Mode" /><br />
+      In Union Mode, when multiple layers are selected/active, then
+      <strong>all</strong> graph elements belonging to
+      <strong>any</strong> active layer will be displayed.<br />
+      In Intersection Mode, when multiple layers are selected/active,
+      then <strong>only</strong> graph elements belonging to
+      <strong>every</strong> active layer will be displayed.</p>
       <p>Union sample:<br />
       <img src="../ext/docs/CoreLayersView/resources/Layers2and7union.png" alt="Layers View : Union sample" /></p>
       <p>Intersection sample:<br />
@@ -173,7 +222,7 @@
           <!-- Copyright -->
           <div class="copyright">
             <ul class="menu">
-              <li>&copy; 2025 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
+              <li>&copy; 2026 | Website developed by the <a href="https://github.com/constellation-app">Constellation community</a>. All rights reserved.</li>
             </ul>
           </div>
         </div>
