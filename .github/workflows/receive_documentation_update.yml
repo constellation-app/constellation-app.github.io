@@ -7,7 +7,7 @@ jobs:
   rebuild-documentation:
     runs-on: ubuntu-latest
     container:
-      image: docker://pandoc/latex:2.9
+      image: docker://pandoc/latex:latest
       options: --entrypoint=bash
     steps:
       - name: get actions tools
