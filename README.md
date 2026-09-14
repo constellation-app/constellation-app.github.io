@@ -1,7 +1,7 @@
 # Official Constellation Website Repository
 
-This is the repository that builds https://constellation-app.com hosted
-using GitHub Pages located at https://constellation-app.github.io.
+This is the repository that builds https://constellation-app.github.io hosted
+using GitHub Pages.
 
 # File Structure Explained
 
